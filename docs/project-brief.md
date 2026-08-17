@@ -101,6 +101,10 @@ Full page content, homepage section design, and copywriting were explicitly out 
 
 Full design and build of the homepage (`index.html`) only — all 13 sections, using approved facts and genuine repository assets, with restrained motion and full responsive/accessibility QA. Every other page remains an untouched Stage 1 shell; per the Stage 2 brief, they are explicitly not started yet.
 
+## Stage 4 scope — sitewide first-person voice conversion
+
+All Teresha-authored copy sitewide (homepage plus every other page) was converted from third-person narration to first person, and every remaining visible TODO/placeholder/dev-note was removed from rendered pages (including two that JavaScript was generating dynamically on News/Resources). No factual claims, layout, or visual system changed as part of this pass. See `docs/voice-guide.md` for the permanent rule this establishes for all future page development.
+
 ## Cloudflare prototype indexing protection
 
 The Cloudflare Pages preview for this project is protected from search-engine indexing via `robots.txt` (disallow all) and a Cloudflare Pages `_headers` file (`X-Robots-Tag: noindex, nofollow` on every path).
