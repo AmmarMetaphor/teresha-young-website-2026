@@ -1,0 +1,24 @@
+{
+  "_meta": {
+    "purpose": "Backing data for news.html and homepage media-mention references.",
+    "rule": "Only the outlet names below are approved facts. Do not invent headlines, dates, summaries, or links — every item ships with status: \"TODO\" until real article details are supplied.",
+    "source": "docs/approved-facts.md"
+  },
+  "items": [
+    { "outlet": "BBC Radio Kent", "headline": "TODO", "date": "TODO", "url": "TODO", "summary": "TODO", "status": "TODO" },
+    { "outlet": "BBC Radio London", "headline": "TODO", "date": "TODO", "url": "TODO", "summary": "TODO", "status": "TODO" },
+    { "outlet": "Channel 4", "headline": "TODO", "date": "TODO", "url": "TODO", "summary": "TODO", "status": "TODO" },
+    { "outlet": "The Mirror", "headline": "TODO", "date": "TODO", "url": "TODO", "summary": "TODO", "status": "TODO" },
+    { "outlet": "Daily Record", "headline": "TODO", "date": "TODO", "url": "TODO", "summary": "TODO", "status": "TODO" },
+    { "outlet": "OK!", "headline": "TODO", "date": "TODO", "url": "TODO", "summary": "TODO", "status": "TODO" },
+    { "outlet": "New", "headline": "TODO", "date": "TODO", "url": "TODO", "summary": "TODO", "status": "TODO" },
+    { "outlet": "Cosmopolitan UK", "headline": "TODO", "date": "TODO", "url": "TODO", "summary": "TODO", "status": "TODO" },
+    { "outlet": "HuffPost", "headline": "TODO", "date": "TODO", "url": "TODO", "summary": "TODO", "status": "TODO" },
+    { "outlet": "Breathe", "headline": "TODO", "date": "TODO", "url": "TODO", "summary": "TODO", "status": "TODO" },
+    { "outlet": "Thrive Global", "headline": "TODO", "date": "TODO", "url": "TODO", "summary": "TODO", "status": "TODO" },
+    { "outlet": "iCN", "headline": "TODO", "date": "TODO", "url": "TODO", "summary": "TODO", "status": "TODO" },
+    { "outlet": "The List", "headline": "TODO", "date": "TODO", "url": "TODO", "summary": "TODO", "status": "TODO" },
+    { "outlet": "Nicki Swift", "headline": "TODO", "date": "TODO", "url": "TODO", "summary": "TODO", "status": "TODO" },
+    { "outlet": "Glam", "headline": "TODO", "date": "TODO", "url": "TODO", "summary": "TODO", "status": "TODO" }
+  ]
+}

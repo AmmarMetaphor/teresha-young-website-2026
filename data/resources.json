@@ -1,0 +1,19 @@
+{
+  "_meta": {
+    "purpose": "Backing data for resources.html and the homepage free-resource preview section.",
+    "rule": "No approved resource (guide, download, assessment, etc.) currently exists in the brief. Do not invent a resource title, format, or gated-content mechanic. Populate this file only once real resource content is supplied.",
+    "source": "docs/approved-facts.md"
+  },
+  "items": [
+    {
+      "id": "resource-placeholder-1",
+      "title": "TODO",
+      "format": "TODO",
+      "description": "TODO",
+      "audience": "TODO",
+      "ctaLabel": "TODO",
+      "url": "TODO",
+      "status": "TODO"
+    }
+  ]
+}
