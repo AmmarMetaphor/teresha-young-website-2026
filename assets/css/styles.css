@@ -314,8 +314,7 @@ p + p {
 
 .section--corporate .eyebrow,
 .section--relationship .eyebrow,
-.section--wellbeing .eyebrow,
-.preview-panel .eyebrow {
+.section--wellbeing .eyebrow {
   color: inherit;
   opacity: 0.85;
 }
@@ -445,27 +444,23 @@ p + p {
   font-weight: 600;
   line-height: 1;
   min-width: 0;
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .brand__name {
+    font-size: 1.15rem;
+  }
 }
 
 .brand__name span {
-  /* Tagline is hidden below 768px so the wordmark can't force the header into
-     horizontal overflow on narrow viewports; it has room to sit on one line
-     only once the header itself has room. */
+  /* Kept out of the header nav row at every width: with the full eight-item
+     nav plus CTA on one line (see .site-nav__list below), the tagline's
+     footprint is the first thing traded away, per the "reduce logo/tagline
+     footprint before letting nav wrap" direction. The full descriptor still
+     appears immediately in the hero eyebrow, so nothing is lost — it is
+     only removed from this cramped, competing context. */
   display: none;
-  font-family: var(--font-body);
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  margin-top: 0.2em;
-}
-
-@media (min-width: 768px) {
-  .brand__name span {
-    display: block;
-    white-space: nowrap;
-  }
 }
 
 .nav-toggle {
@@ -503,13 +498,13 @@ p + p {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: var(--space-lg);
+  gap: var(--space-md);
 }
 
 .site-nav__list {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
+  gap: var(--space-sm);
   flex-wrap: wrap;
 }
 
@@ -517,9 +512,10 @@ p + p {
   color: var(--color-ink);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   padding: var(--space-2xs) 0;
   border-bottom: 2px solid transparent;
+  white-space: nowrap;
   transition: border-color var(--duration-base) var(--ease-editorial),
     color var(--duration-base) var(--ease-editorial);
 }
@@ -534,6 +530,45 @@ p + p {
   align-items: center;
   gap: var(--space-sm);
 }
+
+@media (min-width: 1024px) {
+  .site-header__inner {
+    gap: var(--space-sm);
+  }
+
+  .site-nav {
+    gap: 0.6rem;
+  }
+
+  .site-nav__list {
+    gap: 0.55rem;
+  }
+
+  .site-nav__list a {
+    font-size: 0.85rem;
+  }
+
+  .site-header__actions .btn {
+    min-height: 44px;
+    padding: 0.6em 1.1em;
+    font-size: 0.82rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .site-nav__list {
+    gap: 0.45rem;
+  }
+
+  .site-nav__list a {
+    font-size: 0.8rem;
+  }
+}
+
+/* The container caps at --container-max (1200px) regardless of viewport, so
+   there is no extra room to relax nav sizing again past 1024px — the
+   compact sizing above is what keeps the eight-item nav + CTA on one line
+   at every desktop width, not just the smallest one. */
 
 @media (max-width: 1023px) {
   .nav-toggle {
@@ -911,9 +946,21 @@ p + p {
   outline-offset: 2px;
 }
 
+
 /* ==========================================================================
-   Homepage stage 2 — editorial section components
+   Homepage — editorial redesign
+   Component system for index.html only. Every class below is unique to the
+   homepage (verified against every other page's markup) so nothing here
+   changes the Stage-1 shells on other pages. Shared primitives (.section,
+   .btn, .card, .badge-strip, .grid, .image-frame, .eyebrow, etc.) are left
+   untouched above and reused as-is.
    ========================================================================== */
+
+/* ---------------------------------------------------------------------- */
+/* Shared homepage rhythm helpers                                         */
+/* ---------------------------------------------------------------------- */
+
+.section--snug { padding-block: var(--space-lg); }
 
 /* ---------------------------------------------------------------------- */
 /* Hover-zoom image utility — quiet, image-only, disabled under reduced   */
@@ -929,13 +976,157 @@ p + p {
 }
 
 /* ---------------------------------------------------------------------- */
-/* Authority strip credentials line                                       */
+/* Hero                                                                    */
 /* ---------------------------------------------------------------------- */
 
-.authority-credentials {
-  margin-top: var(--space-md);
+.hero {
+  padding-block: var(--space-2xl) var(--space-xl);
+}
+
+.hero__grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .hero__grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: var(--space-2xl);
+  }
+}
+
+.hero__eyebrow {
+  color: var(--color-berry);
+}
+
+.hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2xs) var(--space-sm);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--fs-sm);
+  font-weight: 600;
   color: var(--color-text-muted);
-  max-width: 60ch;
+  max-width: 46ch;
+}
+
+.hero__trust span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.hero__trust span + span::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin-inline-end: var(--space-sm);
+  border-radius: 50%;
+  background: var(--color-accent-dark);
+  vertical-align: middle;
+  transform: translateY(-2px);
+}
+
+/* Hero portrait: shown smaller and framed with room around it rather than
+   full-bleed, so the source photo's tight, phone-shot crop reads as a
+   deliberate close editorial portrait instead of an accidental selfie fill.
+   See docs/open-decisions.md#5 — same source image, revised treatment. */
+.hero__media {
+  position: relative;
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+@media (min-width: 1024px) {
+  .hero__media {
+    margin-inline: 0 0 0 auto;
+  }
+}
+
+.hero__media::before {
+  content: '';
+  position: absolute;
+  inset: var(--space-lg) calc(-1 * var(--space-lg)) calc(-1 * var(--space-lg)) var(--space-lg);
+  background: var(--color-stone-200);
+  border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 0;
+  z-index: -1;
+}
+
+.hero__frame {
+  position: relative;
+  border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 0;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -30px rgba(36, 27, 22, 0.35);
+}
+
+.hero__frame img {
+  width: 100%;
+}
+
+.hero__frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(36, 27, 22, 0.12) 0%, rgba(36, 27, 22, 0) 28%, rgba(36, 27, 22, 0) 72%, rgba(36, 27, 22, 0.22) 100%),
+    radial-gradient(120% 90% at 50% 15%, rgba(255, 255, 255, 0) 55%, rgba(123, 82, 61, 0.16) 100%);
+  pointer-events: none;
+}
+
+.hero__ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--color-accent);
+  opacity: 0.45;
+  z-index: -1;
+}
+
+.hero__ring--a { width: 130px; height: 130px; top: -34px; right: 18%; }
+.hero__ring--b { width: 84px; height: 84px; bottom: 14%; left: -30px; border-color: var(--color-berry); opacity: 0.3; }
+
+/* ---------------------------------------------------------------------- */
+/* Authority strip — tight trust band directly under the hero              */
+/* ---------------------------------------------------------------------- */
+
+.authority-band {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.authority-band__badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--space-sm);
+}
+
+.authority-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 76px;
+  padding: var(--space-xs) var(--space-md);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.authority-badge img {
+  height: 100%;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+}
+
+.authority-credentials {
+  margin: 0;
+  color: var(--color-text-muted);
+  max-width: 46ch;
+  font-size: var(--fs-sm);
 }
 
 .authority-credentials strong {
@@ -943,85 +1134,41 @@ p + p {
 }
 
 /* ---------------------------------------------------------------------- */
-/* Editorial pathway index (Section 3 — How can I help?)                  */
+/* Pathway link — reused by the "Other ways to work together" cards        */
+/* below; reads --pathway-color from whichever card sets it.               */
 /* ---------------------------------------------------------------------- */
 
-.pathways {
-  border-top: 1px solid var(--color-border);
-}
-
-.pathway-row {
-  display: grid;
-  gap: var(--space-md);
-  padding-block: var(--space-lg);
-  border-bottom: 1px solid var(--color-border);
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-  .pathway-row {
-    grid-template-columns: 5rem 1fr;
-    align-items: baseline;
-  }
-}
-
-.pathway-row__index {
-  font-family: var(--font-heading);
-  font-style: italic;
-  font-size: 2.5rem;
-  line-height: 1;
-  color: var(--pathway-color, var(--color-walnut));
-}
-
-.pathway-row__body .eyebrow {
-  color: var(--pathway-color, var(--color-walnut));
-}
-
-.pathway-row__body h3 {
-  margin-bottom: var(--space-2xs);
-}
-
-.pathway-row__body p {
-  color: var(--color-text-muted);
-}
-
-.pathway-row__link {
+.pathway-card__link {
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
-  margin-top: var(--space-xs);
   font-weight: 700;
   text-decoration: none;
+  color: var(--pathway-color, var(--color-walnut));
   border-bottom: 2px solid transparent;
   transition: border-color var(--duration-base) var(--ease-editorial);
 }
 
-.pathway-row__link:hover {
+.pathway-card__link:hover {
   border-color: currentColor;
 }
 
-.pathway-row--corporate { --pathway-color: var(--color-slate); }
-.pathway-row--relationship { --pathway-color: var(--color-berry); }
-.pathway-row--media { --pathway-color: var(--color-walnut); }
-
-/* ---------------------------------------------------------------------- */
-/* Organisational topics index (Section 5)                                */
-/* ---------------------------------------------------------------------- */
-
-.topics-index {
+.topics-grid {
   display: grid;
   gap: 0;
   border-top: 1px solid var(--color-border);
+  margin-top: var(--space-lg);
 }
 
-@media (min-width: 768px) {
-  .topics-index {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: var(--space-xl);
-  }
+@media (min-width: 640px) {
+  .topics-grid { grid-template-columns: repeat(2, 1fr); column-gap: var(--space-xl); }
 }
 
-.topics-index__item {
+@media (min-width: 1024px) {
+  .topics-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.topics-grid__item {
   display: flex;
   align-items: baseline;
   gap: var(--space-sm);
@@ -1029,39 +1176,20 @@ p + p {
   border-bottom: 1px solid var(--color-border);
 }
 
-.topics-index__num {
+.topics-grid__num {
   font-family: var(--font-heading);
   font-size: 1.1rem;
   color: var(--color-slate);
-  min-width: 2.25rem;
+  min-width: 2rem;
 }
 
-.topics-index__label {
+.topics-grid__label {
   font-weight: 600;
+  font-size: var(--fs-sm);
 }
 
 /* ---------------------------------------------------------------------- */
-/* Development-only content placeholders (testimonials, unwired forms)    */
-/* ---------------------------------------------------------------------- */
-
-.placeholder--quote {
-  position: relative;
-  font-family: var(--font-heading);
-}
-
-.placeholder--quote .placeholder__tag {
-  font-family: var(--font-body);
-}
-
-.placeholder--quote blockquote {
-  font-size: var(--fs-h3);
-  font-style: italic;
-  color: var(--color-text-muted);
-  margin: 0;
-}
-
-/* ---------------------------------------------------------------------- */
-/* Credential list (Why Teresha)                                          */
+/* Why Teresha — credential list + circle-motif authority graphic          */
 /* ---------------------------------------------------------------------- */
 
 .credential-list {
@@ -1087,14 +1215,14 @@ p + p {
 }
 
 /* ---------------------------------------------------------------------- */
-/* S.A.F.E.™ interlocking circle diagram (Section 8)                 */
+/* S.A.F.E.™ interlocking circle diagram — kept quiet and compact          */
 /* ---------------------------------------------------------------------- */
 
 .safe-diagram {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-block: var(--space-md);
+  padding-block: var(--space-sm);
 }
 
 .safe-diagram__item {
@@ -1103,8 +1231,8 @@ p + p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 132px;
-  height: 132px;
+  width: 112px;
+  height: 112px;
   border-radius: 50%;
   border: 1px solid var(--color-forest);
   background: var(--color-bg);
@@ -1113,19 +1241,19 @@ p + p {
 }
 
 .safe-diagram__item + .safe-diagram__item {
-  margin-inline-start: -28px;
+  margin-inline-start: -24px;
 }
 
 .safe-diagram__letter {
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 600;
   color: var(--color-forest);
   line-height: 1;
 }
 
 .safe-diagram__word {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   color: var(--color-text-muted);
@@ -1133,140 +1261,50 @@ p + p {
 }
 
 @media (max-width: 767px) {
-  .safe-diagram {
-    flex-direction: column;
-  }
-
   .safe-diagram__item + .safe-diagram__item {
-    margin-inline-start: 0;
-    margin-top: -28px;
+    margin-inline-start: -16px;
   }
 }
-
-/* ---------------------------------------------------------------------- */
-/* Soft navigational preview panels (Sections 9 & 10)                     */
-/* ---------------------------------------------------------------------- */
-
-.preview-panel {
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
-  border-left: 4px solid var(--panel-color, var(--color-walnut));
-}
-
-.preview-panel--relationship {
-  --panel-color: var(--color-berry);
-  background: var(--tint-relationship);
-}
-
-.preview-panel--media {
-  --panel-color: var(--color-walnut);
-  background: var(--color-stone-100);
-  border-top: 2px solid var(--color-accent);
-  border-left: none;
-}
-
-.preview-panel .eyebrow {
-  color: var(--panel-color, var(--color-walnut));
-  opacity: 1;
-}
-
-/* ---------------------------------------------------------------------- */
-/* Typographic citation row (media outlets — no logo assets exist)        */
-/* ---------------------------------------------------------------------- */
-
-.citation-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--space-sm) var(--space-md);
-  margin-top: var(--space-md);
-}
-
-.citation-row span {
-  font-family: var(--font-heading);
-  font-style: italic;
-  color: var(--color-ink-soft);
-}
-
-.citation-row span:nth-child(3n+1) {
-  font-size: 1.35rem;
-  color: var(--color-ink);
-}
-
-.citation-row span:nth-child(3n+2) {
-  font-size: 1.1rem;
-}
-
-.citation-row span:nth-child(3n) {
-  font-size: 0.95rem;
-  opacity: 0.75;
-}
-
-/* ---------------------------------------------------------------------- */
-/* Podcast chips                                                          */
-/* ---------------------------------------------------------------------- */
 
 .chip-row {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2xs);
-  margin-block: var(--space-sm);
+  margin-block: var(--space-xs);
 }
 
 .chip {
   display: inline-block;
-  font-size: var(--fs-eyebrow);
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   border: 1px solid var(--color-border);
   border-radius: 999px;
-  padding: 0.35em 0.9em;
+  padding: 0.3em 0.75em;
   color: var(--color-text-muted);
 }
 
 /* ---------------------------------------------------------------------- */
-/* Resource sign-up form                                                  */
+/* Final CTA — three-circle signature motif                                */
 /* ---------------------------------------------------------------------- */
 
-.resource-form {
-  display: grid;
-  gap: var(--space-sm);
-  max-width: 34rem;
+.final-cta__motif {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block: var(--space-lg);
 }
 
-@media (min-width: 640px) {
-  .resource-form__row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-sm);
-  }
+.final-cta__motif span {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid;
 }
 
-.resource-form .form-field {
-  margin-bottom: 0;
-}
-
-.resource-form__note {
-  font-size: var(--fs-sm);
-  color: var(--color-text-muted);
-}
-
-.resource-form__success {
-  display: none;
-  padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius-sm);
-  background: var(--tint-wellbeing);
-  color: var(--color-forest);
-  font-weight: 600;
-}
-
-.resource-form__success.is-visible {
-  display: block;
-}
-
-/* ---------------------------------------------------------------------- */
-/* Final CTA text link                                                    */
-/* ---------------------------------------------------------------------- */
+.final-cta__motif span:nth-child(1) { border-color: var(--color-slate); }
+.final-cta__motif span:nth-child(2) { border-color: var(--color-berry); margin-inline-start: -12px; }
+.final-cta__motif span:nth-child(3) { border-color: var(--color-forest); margin-inline-start: -12px; }
 
 .text-link {
   display: inline-flex;
@@ -1281,4 +1319,510 @@ p + p {
 
 .text-link:hover {
   border-color: currentColor;
+}
+
+/* ==========================================================================
+   Homepage V2 — navigation ribbon, immersive hero, restrained colour system
+   Component classes below are unique to index.html (verified against every
+   other page's markup), except the header/nav density fixes above, which
+   are shared sitewide on purpose (the two-row wrap was a global bug).
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------- */
+/* Homepage-only: header sits solid from the very first paint. A           */
+/* transparent-over-hero header was considered (Part P) but rejected: the  */
+/* hero photograph's tone cannot be guaranteed to contrast reliably with   */
+/* fixed ink-coloured nav text, and usability wins over visual cleverness. */
+/* ---------------------------------------------------------------------- */
+
+body[data-page="home"] .site-header {
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom-color: var(--color-border);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Pathway ribbon — a quiet second wayfinding line, not a SaaS tab bar.    */
+/* Sticky beneath the header so the five major pathways stay one tap/click */
+/* away from anywhere on the page, without ever competing visually with   */
+/* the primary nav above it.                                              */
+/* ---------------------------------------------------------------------- */
+
+.pathway-ribbon {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 90;
+  background: rgba(250, 247, 243, 0.94);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pathway-ribbon__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-block: var(--space-2xs);
+}
+
+.pathway-ribbon__inner::-webkit-scrollbar {
+  display: none;
+}
+
+.pathway-ribbon__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  flex-shrink: 0;
+  padding: var(--space-2xs) var(--space-2xs);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color var(--duration-base) var(--ease-editorial),
+    border-color var(--duration-base) var(--ease-editorial),
+    background-color var(--duration-base) var(--ease-editorial),
+    transform var(--duration-fast) var(--ease-editorial);
+}
+
+.pathway-ribbon__item svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke: currentColor;
+}
+
+.pathway-ribbon__item:hover,
+.pathway-ribbon__item:focus-visible {
+  color: var(--color-walnut);
+  border-color: var(--color-accent-dark);
+  transform: translateY(-1px);
+}
+
+.pathway-ribbon__item[aria-current='page'] {
+  color: var(--color-walnut);
+  border-color: var(--color-walnut);
+}
+
+@media (max-width: 767px) {
+  .pathway-ribbon {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Hero V2 — immersive background photography                             */
+/* ---------------------------------------------------------------------- */
+
+.hero-v2 {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(560px, 82vh, 880px);
+}
+
+.hero-v2__media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.hero-v2__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-v2__media img {
+    animation: hero-breathe 24s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes hero-breathe {
+  from { transform: scale(1); }
+  to { transform: scale(1.045); }
+}
+
+.hero-v2__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(36, 27, 22, 0.82) 0%, rgba(36, 27, 22, 0.38) 42%, rgba(36, 27, 22, 0.12) 68%, rgba(36, 27, 22, 0.05) 100%);
+}
+
+.hero-v2__rings {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-v2__rings span {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.hero-v2__rings span:first-child {
+  width: 220px;
+  height: 220px;
+  top: 12%;
+  right: -70px;
+}
+
+.hero-v2__rings span:last-child {
+  width: 140px;
+  height: 140px;
+  bottom: 8%;
+  right: 14%;
+  border-color: rgba(201, 170, 125, 0.4);
+}
+
+.hero-v2__content {
+  position: relative;
+  z-index: 1;
+  padding-block: var(--space-xl) var(--space-2xl);
+  color: var(--color-white);
+  max-width: 40rem;
+}
+
+.hero-v2__eyebrow {
+  color: var(--color-white) !important;
+  opacity: 0.92;
+}
+
+.hero-v2 h1 {
+  color: var(--color-white);
+  font-size: clamp(2.25rem, 1.8rem + 2vw, 3.4rem);
+}
+
+.hero-v2__lede {
+  font-size: var(--fs-lg);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 46ch;
+}
+
+.hero-v2__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.hero-v2__actions .btn-secondary {
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+.hero-v2__actions .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.hero-v2__media-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  color: var(--color-white);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--duration-base) var(--ease-editorial);
+}
+
+.hero-v2__media-link:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-v2__trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2xs) var(--space-md);
+  margin-top: var(--space-lg);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-v2__trust span + span::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin-inline-end: var(--space-md);
+  border-radius: 50%;
+  background: var(--color-accent);
+  vertical-align: middle;
+  transform: translateY(-2px);
+}
+
+.hero-v2__scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: var(--space-md);
+  transform: translateX(-50%);
+  width: 1px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+}
+
+.hero-v2__scroll-cue::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 6px;
+  height: 6px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-v2__scroll-cue {
+    animation: hero-scroll-cue 2.4s ease-in-out infinite;
+  }
+}
+
+@keyframes hero-scroll-cue {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@media (max-width: 1023px) {
+  .hero-v2 {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+  }
+
+  .hero-v2__media {
+    position: relative;
+    inset: auto;
+    height: 46vh;
+    min-height: 320px;
+  }
+
+  .hero-v2__media img {
+    object-position: center 18%;
+  }
+
+  .hero-v2__media::after {
+    background: linear-gradient(0deg, var(--color-bg) 0%, rgba(36, 27, 22, 0.05) 22%, rgba(36, 27, 22, 0) 55%);
+  }
+
+  .hero-v2__rings {
+    display: none;
+  }
+
+  .hero-v2__content {
+    color: var(--color-text);
+    max-width: none;
+    padding-block: var(--space-lg) var(--space-xl);
+  }
+
+  .hero-v2__eyebrow {
+    color: var(--color-berry) !important;
+    opacity: 1;
+  }
+
+  .hero-v2 h1 {
+    color: var(--color-ink);
+  }
+
+  .hero-v2__lede {
+    color: var(--color-text-muted);
+  }
+
+  .hero-v2__actions .btn-secondary {
+    color: var(--color-walnut);
+    border-color: var(--color-walnut);
+  }
+
+  .hero-v2__actions .btn-secondary:hover {
+    background: var(--color-walnut);
+    color: var(--color-white);
+  }
+
+  .hero-v2__media-link {
+    color: var(--color-walnut);
+  }
+
+  .hero-v2__media-link:hover {
+    border-color: currentColor;
+  }
+
+  .hero-v2__trust {
+    color: var(--color-text-muted);
+  }
+
+  .hero-v2__scroll-cue {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-v2__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-v2__actions .btn {
+    width: 100%;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* For Organisations — restrained (colour as accent, not a full fill)      */
+/* ---------------------------------------------------------------------- */
+
+.org-highlight {
+  border-top: 4px solid var(--color-slate);
+  background: var(--color-bg-muted);
+}
+
+.org-highlight__trusted {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.org-highlight__trusted-names {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  color: var(--color-ink);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Corporate proof — a single restrained trust line, no colour fill        */
+/* ---------------------------------------------------------------------- */
+
+.proof-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2xs) var(--space-sm);
+  padding-block: var(--space-md);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.proof-line strong {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h4);
+  color: var(--color-ink);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Why Teresha — professional portrait card (image-4, distinct crop from   */
+/* the hero background so the same photo doesn't feel repeated)            */
+/* ---------------------------------------------------------------------- */
+
+.portrait-card {
+  position: relative;
+  border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 0;
+  overflow: hidden;
+  max-width: 380px;
+}
+
+.portrait-card img {
+  width: 100%;
+  display: block;
+}
+
+.portrait-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--color-accent);
+  border-radius: inherit;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Other ways to work together — two restrained cards (colour as accent)   */
+/* ---------------------------------------------------------------------- */
+
+.other-pathways {
+  display: grid;
+  gap: var(--space-md);
+}
+
+@media (min-width: 700px) {
+  .other-pathways {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.other-pathway-card {
+  padding: var(--space-lg);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--pathway-color, var(--color-walnut));
+  border-radius: var(--radius-md);
+}
+
+.other-pathway-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: var(--space-sm);
+  border-radius: 50%;
+  border: 1px solid var(--pathway-color, var(--color-walnut));
+  color: var(--pathway-color, var(--color-walnut));
+}
+
+.other-pathway-card__icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+.other-pathway-card .eyebrow {
+  color: var(--pathway-color, var(--color-walnut));
+}
+
+.other-pathway-card--relationship { --pathway-color: var(--color-berry); }
+.other-pathway-card--media { --pathway-color: var(--color-walnut); }
+
+/* ---------------------------------------------------------------------- */
+/* Media authority — citation strip, consistent weight                    */
+/* ---------------------------------------------------------------------- */
+
+.media-authority__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm) var(--space-xl);
+  margin-top: var(--space-lg);
+  text-align: center;
+}
+
+.media-authority__list span {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--color-ink-soft);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Awards & recognition                                                   */
+/* ---------------------------------------------------------------------- */
+
+.awards-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
 }

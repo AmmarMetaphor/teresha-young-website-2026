@@ -76,21 +76,32 @@
     }
   }
 
+  /**
+   * Only items with real (non-"TODO") content are ever rendered — no
+   * visible TODO/status badge or "pending" language reaches a visitor.
+   * See docs/voice-guide.md.
+   */
+  function isApproved(value) {
+    return typeof value === 'string' && value.trim() !== '' && value.trim().toUpperCase() !== 'TODO';
+  }
+
   function initNewsList() {
     var list = document.querySelector('[data-news-list]');
     if (!list) return;
 
     fetchJSON('data/news.json')
       .then(function (data) {
-        renderList(list, data.items, function (item) {
+        var approved = (data.items || []).filter(function (item) {
+          return isApproved(item.headline);
+        });
+        renderList(list, approved, function (item) {
           return (
             '<article class="card">' +
             '<p class="eyebrow">' + escapeHTML(item.outlet) + '</p>' +
-            '<span class="placeholder__tag">' + escapeHTML(item.status) + '</span>' +
-            '<p>Headline and link pending approval.</p>' +
+            '<h3>' + escapeHTML(item.headline) + '</h3>' +
             '</article>'
           );
-        });
+        }, 'More to follow soon.');
       })
       .catch(function () {
         renderError(list, 'Media mentions could not be loaded.');
@@ -103,15 +114,17 @@
 
     fetchJSON('data/resources.json')
       .then(function (data) {
-        renderList(list, data.items, function (item) {
+        var approved = (data.items || []).filter(function (item) {
+          return isApproved(item.title);
+        });
+        renderList(list, approved, function (item) {
           return (
             '<article class="card">' +
-            '<span class="placeholder__tag">' + escapeHTML(item.status) + '</span>' +
-            '<h3>Resource pending</h3>' +
-            '<p>No approved resource exists yet — this card will describe it once confirmed.</p>' +
+            '<h3>' + escapeHTML(item.title) + '</h3>' +
+            '<p>' + escapeHTML(item.description) + '</p>' +
             '</article>'
           );
-        });
+        }, 'New resources will appear here.');
       })
       .catch(function () {
         renderError(list, 'Resources could not be loaded.');
@@ -125,9 +138,9 @@
     });
   }
 
-  function renderList(listEl, items, itemTemplate) {
+  function renderList(listEl, items, itemTemplate, emptyMessage) {
     if (!items || !items.length) {
-      renderError(listEl, 'Nothing to show yet.');
+      renderError(listEl, emptyMessage || 'Nothing to show yet.');
       return;
     }
 
@@ -139,10 +152,7 @@
   }
 
   function renderError(listEl, message) {
-    listEl.innerHTML =
-      '<li class="placeholder"><span class="placeholder__tag">Placeholder</span><p>' +
-      escapeHTML(message) +
-      '</p></li>';
+    listEl.innerHTML = '<li><p>' + escapeHTML(message) + '</p></li>';
   }
 
   function escapeHTML(value) {
