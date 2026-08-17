@@ -1,0 +1,34 @@
+{
+  "_meta": {
+    "purpose": "Categorised testimonial content for contextual placement within relevant pages. There is no standalone testimonials page by design.",
+    "rule": "No real testimonial quote, name, or result currently exists in the approved brief. Every entry is a structural placeholder with status: \"TODO\" — do not fabricate quotes, names, initials, or outcomes.",
+    "categories": ["organisations", "private-coaching", "media"],
+    "source": "docs/approved-facts.md"
+  },
+  "items": [
+    {
+      "id": "testimonial-organisations-1",
+      "category": "organisations",
+      "quote": "TODO",
+      "attribution": "TODO",
+      "context": "TODO",
+      "status": "TODO"
+    },
+    {
+      "id": "testimonial-private-coaching-1",
+      "category": "private-coaching",
+      "quote": "TODO",
+      "attribution": "TODO",
+      "context": "TODO",
+      "status": "TODO"
+    },
+    {
+      "id": "testimonial-media-1",
+      "category": "media",
+      "quote": "TODO",
+      "attribution": "TODO",
+      "context": "TODO",
+      "status": "TODO"
+    }
+  ]
+}
