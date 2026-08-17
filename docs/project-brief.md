@@ -84,7 +84,7 @@ Header CTA: **Start a conversation**
 
 Never fabricate testimonials, statistics, client results, programme lengths, prices, links, qualifications, media appearances, awards, corporate clients, endorsements, podcast metrics, or personal stories. Missing approved content is marked with a visible `TODO` rather than invented.
 
-## Foundation-stage scope (this PR)
+## Foundation-stage scope (Stage 1, merged)
 
 1. Asset audit
 2. Project architecture
@@ -95,4 +95,14 @@ Never fabricate testimonials, statistics, client results, programme lengths, pri
 7. Basic accessibility foundations
 8. Homepage structural skeleton only
 
-Full page content, homepage section design, and copywriting are explicitly out of scope for this stage.
+Full page content, homepage section design, and copywriting were explicitly out of scope for that stage.
+
+## Stage 2 scope (this PR)
+
+Full design and build of the homepage (`index.html`) only — all 13 sections, using approved facts and genuine repository assets, with restrained motion and full responsive/accessibility QA. Every other page remains an untouched Stage 1 shell; per the Stage 2 brief, they are explicitly not started yet.
+
+## Cloudflare prototype indexing protection
+
+The Cloudflare Pages preview for this project is protected from search-engine indexing via `robots.txt` (disallow all) and a Cloudflare Pages `_headers` file (`X-Robots-Tag: noindex, nofollow` on every path).
+
+**IMPORTANT — these indexing restrictions exist for the Cloudflare prototype and must not be blindly carried into the final public WordPress website.** `robots.txt` and `_headers` are static-hosting-specific files; they will not automatically apply inside WordPress, but whoever configures the production WordPress site should make an explicit, deliberate decision about indexing rather than assuming these files transfer forward. No Cloudflare Access/authentication settings were touched by this change.

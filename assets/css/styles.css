@@ -79,6 +79,14 @@
   --ease-editorial: cubic-bezier(0.22, 0.61, 0.36, 1);
   --duration-fast: 160ms;
   --duration-base: 280ms;
+  --duration-slow: 700ms;
+
+  /* Soft navigational tints (~8-10% of the service colour into white) —
+     for calm panel backgrounds where a full-saturation block would read
+     as too loud next to another full-colour block directly below it. */
+  --tint-corporate: #F1F1F4;
+  --tint-relationship: #F8EBEE;
+  --tint-wellbeing: #EEF0EF;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -298,8 +306,18 @@ p + p {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-accent-dark);
+  /* Walnut, not dark-gold: dark-gold-on-white measures ~2.9:1, below WCAG AA
+     for text. Gold stays reserved for decorative marks, not for text. */
+  color: var(--color-walnut);
   margin-bottom: var(--space-xs);
+}
+
+.section--corporate .eyebrow,
+.section--relationship .eyebrow,
+.section--wellbeing .eyebrow,
+.preview-panel .eyebrow {
+  color: inherit;
+  opacity: 0.85;
 }
 
 .grid {
@@ -763,10 +781,6 @@ p + p {
   }
 }
 
-.hero__eyebrow {
-  color: var(--color-accent-dark);
-}
-
 .hero__lede {
   font-size: var(--fs-lg);
   color: var(--color-text-muted);
@@ -895,4 +909,376 @@ p + p {
 .form-field select:focus-visible {
   outline: 3px solid var(--color-focus);
   outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Homepage stage 2 — editorial section components
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------- */
+/* Hover-zoom image utility — quiet, image-only, disabled under reduced   */
+/* motion by the global transition-duration override.                    */
+/* ---------------------------------------------------------------------- */
+
+.image-frame--zoom img {
+  transition: transform var(--duration-slow) var(--ease-editorial);
+}
+
+.image-frame--zoom:hover img {
+  transform: scale(1.035);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Authority strip credentials line                                       */
+/* ---------------------------------------------------------------------- */
+
+.authority-credentials {
+  margin-top: var(--space-md);
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
+.authority-credentials strong {
+  color: var(--color-ink);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Editorial pathway index (Section 3 — How can I help?)                  */
+/* ---------------------------------------------------------------------- */
+
+.pathways {
+  border-top: 1px solid var(--color-border);
+}
+
+.pathway-row {
+  display: grid;
+  gap: var(--space-md);
+  padding-block: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .pathway-row {
+    grid-template-columns: 5rem 1fr;
+    align-items: baseline;
+  }
+}
+
+.pathway-row__index {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--pathway-color, var(--color-walnut));
+}
+
+.pathway-row__body .eyebrow {
+  color: var(--pathway-color, var(--color-walnut));
+}
+
+.pathway-row__body h3 {
+  margin-bottom: var(--space-2xs);
+}
+
+.pathway-row__body p {
+  color: var(--color-text-muted);
+}
+
+.pathway-row__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: var(--space-xs);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--duration-base) var(--ease-editorial);
+}
+
+.pathway-row__link:hover {
+  border-color: currentColor;
+}
+
+.pathway-row--corporate { --pathway-color: var(--color-slate); }
+.pathway-row--relationship { --pathway-color: var(--color-berry); }
+.pathway-row--media { --pathway-color: var(--color-walnut); }
+
+/* ---------------------------------------------------------------------- */
+/* Organisational topics index (Section 5)                                */
+/* ---------------------------------------------------------------------- */
+
+.topics-index {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+@media (min-width: 768px) {
+  .topics-index {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--space-xl);
+  }
+}
+
+.topics-index__item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  padding-block: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topics-index__num {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-slate);
+  min-width: 2.25rem;
+}
+
+.topics-index__label {
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Development-only content placeholders (testimonials, unwired forms)    */
+/* ---------------------------------------------------------------------- */
+
+.placeholder--quote {
+  position: relative;
+  font-family: var(--font-heading);
+}
+
+.placeholder--quote .placeholder__tag {
+  font-family: var(--font-body);
+}
+
+.placeholder--quote blockquote {
+  font-size: var(--fs-h3);
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Credential list (Why Teresha)                                          */
+/* ---------------------------------------------------------------------- */
+
+.credential-list {
+  display: grid;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.credential-list li {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+}
+
+.credential-list li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: 0.5em;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+/* ---------------------------------------------------------------------- */
+/* S.A.F.E.™ interlocking circle diagram (Section 8)                 */
+/* ---------------------------------------------------------------------- */
+
+.safe-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-block: var(--space-md);
+}
+
+.safe-diagram__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  border: 1px solid var(--color-forest);
+  background: var(--color-bg);
+  text-align: center;
+  padding: var(--space-sm);
+}
+
+.safe-diagram__item + .safe-diagram__item {
+  margin-inline-start: -28px;
+}
+
+.safe-diagram__letter {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-forest);
+  line-height: 1;
+}
+
+.safe-diagram__word {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-top: 0.2em;
+}
+
+@media (max-width: 767px) {
+  .safe-diagram {
+    flex-direction: column;
+  }
+
+  .safe-diagram__item + .safe-diagram__item {
+    margin-inline-start: 0;
+    margin-top: -28px;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Soft navigational preview panels (Sections 9 & 10)                     */
+/* ---------------------------------------------------------------------- */
+
+.preview-panel {
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  border-left: 4px solid var(--panel-color, var(--color-walnut));
+}
+
+.preview-panel--relationship {
+  --panel-color: var(--color-berry);
+  background: var(--tint-relationship);
+}
+
+.preview-panel--media {
+  --panel-color: var(--color-walnut);
+  background: var(--color-stone-100);
+  border-top: 2px solid var(--color-accent);
+  border-left: none;
+}
+
+.preview-panel .eyebrow {
+  color: var(--panel-color, var(--color-walnut));
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Typographic citation row (media outlets — no logo assets exist)        */
+/* ---------------------------------------------------------------------- */
+
+.citation-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-sm) var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.citation-row span {
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: var(--color-ink-soft);
+}
+
+.citation-row span:nth-child(3n+1) {
+  font-size: 1.35rem;
+  color: var(--color-ink);
+}
+
+.citation-row span:nth-child(3n+2) {
+  font-size: 1.1rem;
+}
+
+.citation-row span:nth-child(3n) {
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Podcast chips                                                          */
+/* ---------------------------------------------------------------------- */
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  margin-block: var(--space-sm);
+}
+
+.chip {
+  display: inline-block;
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.35em 0.9em;
+  color: var(--color-text-muted);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Resource sign-up form                                                  */
+/* ---------------------------------------------------------------------- */
+
+.resource-form {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 34rem;
+}
+
+@media (min-width: 640px) {
+  .resource-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+  }
+}
+
+.resource-form .form-field {
+  margin-bottom: 0;
+}
+
+.resource-form__note {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.resource-form__success {
+  display: none;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--tint-wellbeing);
+  color: var(--color-forest);
+  font-weight: 600;
+}
+
+.resource-form__success.is-visible {
+  display: block;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Final CTA text link                                                    */
+/* ---------------------------------------------------------------------- */
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  font-weight: 700;
+  color: var(--color-walnut);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--duration-base) var(--ease-editorial);
+}
+
+.text-link:hover {
+  border-color: currentColor;
 }

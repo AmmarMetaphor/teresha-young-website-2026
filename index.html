@@ -46,197 +46,339 @@
 
 <main id="main">
 
-  <!-- 1. Hero -->
+  <!-- ============================================================ -->
+  <!-- 1. HERO                                                       -->
+  <!-- Image: teresha-young-image-5.jpg — chosen over the transparent
+       "principal-image" cutouts (foundation-stage tentative pick) for
+       authority + resolution: a cutout-over-shape treatment reads closer
+       to a coach/speaker template than the calmer editorial portrait we
+       want here. See docs/open-decisions.md#5 for the full rationale. -->
+  <!-- ============================================================ -->
   <section class="hero">
     <div class="container hero__grid">
       <div>
         <p class="eyebrow hero__eyebrow">Relationship &amp; Emotional Well-being Expert</p>
-        <h1>Trusted by organisations. Featured across the media. Working with private clients.</h1>
-        <p class="hero__lede">TODO — final hero headline, sub-headline, and tone pass pending approved copy. Structure only at this stage.</p>
+        <h1>Better relationships change how people feel, work and live.</h1>
+        <p class="hero__lede">Teresha Young helps organisations and individuals strengthen emotional well-being, communication and connection through practical, human-centred coaching and training.</p>
         <div class="hero__actions">
-          <a class="btn btn-primary" href="contact.html">Start a conversation</a>
-          <a class="btn btn-secondary" href="#pathways">Explore how I can help</a>
+          <a class="btn btn-primary" href="organisations.html">Explore support for organisations</a>
+          <a class="btn btn-secondary" href="private-coaching.html">Private coaching</a>
         </div>
       </div>
       <div class="hero__media motif-circles">
-        <img src="assets/background/principal-image-teresha.png" alt="Portrait of Teresha Young, Relationship &amp; Emotional Well-being Expert" width="687" height="798">
-        <!-- Two near-identical hero crops exist; canonical choice is an open decision — see docs/open-decisions.md#5 -->
+        <div class="image-frame image-frame--zoom">
+          <img
+            src="assets/teresha/teresha-young-image-5.jpg"
+            alt="Teresha Young, Relationship &amp; Emotional Well-being Expert, looking directly at camera"
+            width="600" height="800"
+            fetchpriority="high"
+            style="aspect-ratio: 3 / 4; object-fit: cover; object-position: center 22%;">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. Authority / trust strip -->
+  <!-- ============================================================ -->
+  <!-- 2. AUTHORITY STRIP                                            -->
+  <!-- ============================================================ -->
   <section class="section section--tight section--muted" aria-labelledby="trust-heading">
     <div class="container">
       <p class="eyebrow" id="trust-heading">Recognised expertise</p>
+      <h2 class="visually-hidden">Credentials and recognition</h2>
       <div class="badge-strip">
-        <img src="assets/logos/logo-amc.png" alt="International Authority for Professional Coaching &amp; Mentoring — Accredited Master Coach" width="220" height="103">
-        <img src="assets/award/award-relationship-coach-of-the-year-uk-2026.png" alt="Corporate LiveWire Global Awards 2026 winner badge — Relationship Coach of the Year, UK" width="84" height="84">
-        <img src="assets/award/award-sme-most-dedicated-wellness-relationship-expert-2025.png" alt="SME News Southern Enterprise Awards 2025 badge — Most Dedicated Wellness &amp; Relationship Expert" width="84" height="84">
-        <img src="assets/award/award-uk-enterprise-2025.png" alt="SME News UK Enterprise Awards 2025 badge — Leading Wellness &amp; Relationship Coach" width="84" height="84">
-        <img src="assets/award/award-southern-enterprise-2024.png" alt="SME News Southern Enterprise Awards 2024 badge — Best One-to-One Coaching Boutique, South East" width="84" height="84">
+        <img src="assets/logos/logo-amc.png" alt="International Authority for Professional Coaching &amp; Mentoring — Accredited Master Coach" width="220" height="103" loading="lazy" decoding="async">
+        <img src="assets/award/award-relationship-coach-of-the-year-uk-2026.png" alt="Corporate LiveWire Global Awards 2026 winner badge — Relationship Coach of the Year, UK" width="84" height="84" loading="lazy" decoding="async">
+        <img src="assets/award/award-sme-most-dedicated-wellness-relationship-expert-2025.png" alt="SME News Southern Enterprise Awards 2025 badge — Most Dedicated Wellness &amp; Relationship Expert" width="84" height="84" loading="lazy" decoding="async">
+        <img src="assets/award/award-uk-enterprise-2025.png" alt="SME News UK Enterprise Awards 2025 badge — Leading Wellness &amp; Relationship Coach" width="84" height="84" loading="lazy" decoding="async">
+        <img src="assets/award/award-southern-enterprise-2024.png" alt="SME News Southern Enterprise Awards 2024 badge — Best One-to-One Coaching Boutique, South East" width="84" height="84" loading="lazy" decoding="async">
       </div>
+      <p class="authority-credentials"><strong>IAPC&amp;M Accredited Master Coach</strong> · Appointed Head of Mental Health &amp; Well-being for IAPC&amp;M members · Multi-award-winning · Relationship expertise featured on BBC Radio Kent and BBC Radio London · Trusted by organisations including Channel 4 and Mind. Teresha's expertise reaches well beyond relationship coaching alone.</p>
       <!-- A 2026/27 "multi award winner" badge also exists in the repository but is withheld pending client confirmation — see docs/open-decisions.md#3 -->
     </div>
   </section>
 
-  <!-- 3. How can I help? — three pathways -->
+  <!-- ============================================================ -->
+  <!-- 3. HOW CAN I HELP? — three editorial pathways                 -->
+  <!-- ============================================================ -->
   <section class="section" id="pathways" aria-labelledby="pathways-heading">
     <div class="container">
       <div class="section-header">
         <p class="eyebrow">How can I help?</p>
         <h2 id="pathways-heading">Three ways to work together</h2>
       </div>
-      <div class="grid grid--3">
-        <article class="card" style="border-top: 4px solid var(--color-corporate);">
-          <p class="eyebrow" style="color: var(--color-corporate);">Organisations</p>
-          <h3>For Organisations</h3>
-          <p>TODO — outcome-focused summary for HR, L&amp;D and leadership audiences.</p>
-          <p><a href="organisations.html">Learn more →</a></p>
+      <div class="pathways">
+        <article class="pathway-row pathway-row--corporate">
+          <span class="pathway-row__index" aria-hidden="true">01</span>
+          <div class="pathway-row__body">
+            <p class="eyebrow">For Organisations</p>
+            <h3>Support for people-first workplaces</h3>
+            <p>For HR, People, L&amp;D and wellbeing teams, and the leaders and employee communities they serve — helping people communicate, regulate and work better together.</p>
+            <a class="pathway-row__link" href="organisations.html">Explore support for organisations →</a>
+          </div>
         </article>
-        <article class="card" style="border-top: 4px solid var(--color-relationship);">
-          <p class="eyebrow" style="color: var(--color-relationship);">Private clients</p>
-          <h3>Private Coaching</h3>
-          <p>TODO — outcome-focused summary for private-client audiences.</p>
-          <p><a href="private-coaching.html">Learn more →</a></p>
+        <article class="pathway-row pathway-row--relationship">
+          <span class="pathway-row__index" aria-hidden="true">02</span>
+          <div class="pathway-row__body">
+            <p class="eyebrow">Private Coaching</p>
+            <h3>Space to work through what's personal</h3>
+            <p>Relationship coaching, personal growth and emotional well-being support for individuals working through patterns, communication and connection.</p>
+            <a class="pathway-row__link" href="private-coaching.html">Explore private coaching →</a>
+          </div>
         </article>
-        <article class="card" style="border-top: 4px solid var(--color-wellbeing);">
-          <p class="eyebrow" style="color: var(--color-wellbeing);">Media &amp; speaking</p>
-          <h3>Media &amp; Speaking</h3>
-          <p>TODO — outcome-focused summary for press, event and podcast enquiries.</p>
-          <p><a href="media-speaking.html">Learn more →</a></p>
+        <article class="pathway-row pathway-row--media">
+          <span class="pathway-row__index" aria-hidden="true">03</span>
+          <div class="pathway-row__body">
+            <p class="eyebrow">Media &amp; Speaking</p>
+            <h3>Authority beyond the coaching room</h3>
+            <p>Expert commentary, interviews, podcasts, keynotes and event contributions on relationships and emotional well-being.</p>
+            <a class="pathway-row__link" href="media-speaking.html">Explore media &amp; speaking →</a>
+          </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- 4. Corporate recognition -->
+  <!-- ============================================================ -->
+  <!-- 4. ORGANISATIONAL RECOGNITION                                 -->
+  <!-- ============================================================ -->
   <section class="section section--corporate" aria-labelledby="corporate-heading">
-    <div class="container">
-      <p class="eyebrow" style="color: var(--color-gold);">Corporate recognition</p>
-      <h2 id="corporate-heading">Trusted by organisations including Channel 4 and Mind</h2>
-      <p>Appointed Head of Mental Health &amp; Well-being for IAPC&amp;M members. IAPC&amp;M-accredited at Master Coach level.</p>
-      <div class="placeholder" style="margin-top: var(--space-lg); background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.3); color: var(--color-stone-100);">
-        <span class="placeholder__tag" style="color:#fff; border-color:#fff;">Placeholder</span>
-        <p>Client logo marks for Channel 4 and Mind Charity are not yet available in the asset library — see docs/open-decisions.md#7. Text-only mention shown until logos are supplied and permission is confirmed.</p>
+    <div class="container grid grid--2">
+      <div>
+        <p class="eyebrow">For organisations</p>
+        <h2 id="corporate-heading">What healthy workplaces actually depend on</h2>
+        <p>Healthy workplaces depend on more than policies. They depend on how people communicate, regulate emotion, navigate pressure, establish boundaries and relate to one another.</p>
+        <p>Teresha works alongside HR, People and wellbeing teams to help organisations recognise and address these dynamics directly — not as an abstract wellbeing add-on, but as a practical part of how a workplace functions.</p>
+        <p><a class="btn btn-secondary" href="organisations.html">Explore organisational support</a></p>
+      </div>
+      <div>
+        <p class="eyebrow">Trusted by</p>
+        <p style="font-family: var(--font-heading); font-size: var(--fs-h3); color: var(--color-white);">Channel 4 · Mind</p>
+        <div class="placeholder" style="margin-top: var(--space-md); background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.35); color: var(--color-stone-100);">
+          <span class="placeholder__tag" style="color:#fff; border-color:#fff;">Development placeholder</span>
+          <p>Client logo marks for Channel 4 and Mind are not yet available in the asset library — see docs/open-decisions.md#7. This text-only mention will be replaced with approved logos once supplied and usage is confirmed.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. Organisational topics -->
+  <!-- ============================================================ -->
+  <!-- 5. ORGANISATIONAL TOPICS                                      -->
+  <!-- ============================================================ -->
   <section class="section" aria-labelledby="topics-heading">
     <div class="container">
       <div class="section-header">
         <p class="eyebrow">For organisations</p>
-        <h2 id="topics-heading">Topics &amp; programmes</h2>
+        <h2 id="topics-heading">The topics that shape healthier workplaces</h2>
       </div>
-      <div class="placeholder">
-        <span class="placeholder__tag">Placeholder</span>
-        <p>TODO — the brief does not yet specify confirmed corporate topics or programme names. This section will list organisational focus areas once supplied; nothing is invented here.</p>
-      </div>
+      <ol class="topics-index" role="list">
+        <li class="topics-index__item"><span class="topics-index__num" aria-hidden="true">01</span><span class="topics-index__label">Emotional wellness and resilience</span></li>
+        <li class="topics-index__item"><span class="topics-index__num" aria-hidden="true">02</span><span class="topics-index__label">Relationships at work</span></li>
+        <li class="topics-index__item"><span class="topics-index__num" aria-hidden="true">03</span><span class="topics-index__label">Self-awareness</span></li>
+        <li class="topics-index__item"><span class="topics-index__num" aria-hidden="true">04</span><span class="topics-index__label">Stress management</span></li>
+        <li class="topics-index__item"><span class="topics-index__num" aria-hidden="true">05</span><span class="topics-index__label">Healthy communication</span></li>
+        <li class="topics-index__item"><span class="topics-index__num" aria-hidden="true">06</span><span class="topics-index__label">Psychological safety</span></li>
+        <li class="topics-index__item"><span class="topics-index__num" aria-hidden="true">07</span><span class="topics-index__label">Boundaries</span></li>
+        <li class="topics-index__item"><span class="topics-index__num" aria-hidden="true">08</span><span class="topics-index__label">Burnout prevention</span></li>
+        <li class="topics-index__item"><span class="topics-index__num" aria-hidden="true">09</span><span class="topics-index__label">Emotional regulation</span></li>
+        <li class="topics-index__item"><span class="topics-index__num" aria-hidden="true">10</span><span class="topics-index__label">Confidence</span></li>
+        <li class="topics-index__item"><span class="topics-index__num" aria-hidden="true">11</span><span class="topics-index__label">Personal effectiveness</span></li>
+      </ol>
     </div>
   </section>
 
-  <!-- 6. Corporate proof / testimonial -->
+  <!-- ============================================================ -->
+  <!-- 6. CORPORATE PROOF                                            -->
+  <!-- ============================================================ -->
   <section class="section section--muted" aria-labelledby="corporate-proof-heading">
     <div class="container">
       <p class="eyebrow" id="corporate-proof-heading">In their words</p>
-      <div class="placeholder">
-        <span class="placeholder__tag">Placeholder</span>
-        <p>TODO — an organisational testimonial will be placed here once approved content is supplied. See data/testimonials.json (category: "organisations").</p>
+      <h2 class="visually-hidden">Organisational testimonial</h2>
+      <div class="placeholder placeholder--quote">
+        <span class="placeholder__tag">Development placeholder — approved testimonial required</span>
+        <blockquote>“An approved organisational testimonial has not yet been supplied for this space. This box is a development placeholder only and must not be read as real client feedback.”</blockquote>
+        <p style="margin-top: var(--space-sm); font-family: var(--font-body); font-style: normal; font-size: var(--fs-sm);">See <code>data/testimonials.json</code> (category: "organisations").</p>
       </div>
     </div>
   </section>
 
-  <!-- 7. Why Teresha? -->
+  <!-- ============================================================ -->
+  <!-- 7. WHY TERESHA?                                               -->
+  <!-- Secondary portrait: teresha-young-image-7.jpg, deliberately a  -->
+  <!-- different image from the hero.                                 -->
+  <!-- ============================================================ -->
   <section class="section" aria-labelledby="why-heading">
     <div class="container grid grid--2">
+      <div class="image-frame image-frame--zoom">
+        <img
+          src="assets/teresha/teresha-young-image-7.jpg"
+          alt="Teresha Young, portrait"
+          width="600" height="800"
+          loading="lazy" decoding="async"
+          style="aspect-ratio: 3 / 4; object-fit: cover; object-position: center 18%;">
+      </div>
       <div>
         <p class="eyebrow">Why Teresha</p>
-        <h2 id="why-heading">A grounded, credentialed voice on relationships and emotional well-being</h2>
-        <p>IAPC&amp;M-accredited at Master Coach level. Appointed Head of Mental Health &amp; Well-being for IAPC&amp;M members. Recognised with multiple 2024–2026 industry awards.</p>
-        <p><a href="about.html">More about Teresha →</a></p>
-      </div>
-      <div class="image-frame">
-        <img src="assets/teresha/teresha-young-image-5.jpg" alt="Teresha Young, Relationship &amp; Emotional Well-being Expert, portrait" width="600" height="800">
+        <h2 id="why-heading">Reasons to trust her approach</h2>
+        <p>Teresha's authority comes from credentials, recognition and range — not just years in a single role.</p>
+        <ul class="credential-list" role="list">
+          <li>IAPC&amp;M-accredited at Master Coach level</li>
+          <li>Appointed Head of Mental Health &amp; Well-being for IAPC&amp;M members</li>
+          <li>Multi-award-winning, including Relationship Coach of the Year (UK) 2026 — Corporate LiveWire Global Awards</li>
+          <li>National media authority, including BBC Radio Kent, BBC Radio London and Channel 4</li>
+          <li>Experience spanning both organisational and private-client contexts</li>
+        </ul>
+        <p style="margin-top: var(--space-md);"><a class="btn btn-secondary" href="about.html">Discover Teresha's approach</a></p>
       </div>
     </div>
   </section>
 
-  <!-- 8. S.A.F.E.™ -->
+  <!-- ============================================================ -->
+  <!-- 8. S.A.F.E.™                                                  -->
+  <!-- Kept deliberately quiet: prominence is an open client decision -->
+  <!-- (docs/open-decisions.md#1). Expressed through the interlocking -->
+  <!-- circle geometry rather than bold claims about outcomes.        -->
+  <!-- ============================================================ -->
   <section class="section section--muted" aria-labelledby="safe-heading">
-    <div class="container">
-      <div class="section-header">
-        <p class="eyebrow">Signature framework</p>
+    <div class="container" style="text-align:center;">
+      <div class="section-header" style="margin-inline:auto;">
+        <p class="eyebrow">A supporting framework</p>
         <h2 id="safe-heading">The S.A.F.E.&trade; framework</h2>
+        <p style="margin-inline:auto;">A quiet reference point behind Teresha's work with both organisations and individuals.</p>
       </div>
-      <div class="grid grid--4">
-        <div class="card"><h3>S</h3><p>Secure</p></div>
-        <div class="card"><h3>A</h3><p>Aligned</p></div>
-        <div class="card"><h3>F</h3><p>Fulfilled</p></div>
-        <div class="card"><h3>E</h3><p>Empowered</p></div>
-      </div>
-      <div class="placeholder" style="margin-top: var(--space-lg);">
-        <span class="placeholder__tag">Open decision</span>
-        <p>Final prominence and use of S.A.F.E.&trade; across the site requires client confirmation — see docs/open-decisions.md#1.</p>
+      <div class="safe-diagram">
+        <div class="safe-diagram__item">
+          <span class="safe-diagram__letter">S</span>
+          <span class="safe-diagram__word">Secure</span>
+        </div>
+        <div class="safe-diagram__item">
+          <span class="safe-diagram__letter">A</span>
+          <span class="safe-diagram__word">Aligned</span>
+        </div>
+        <div class="safe-diagram__item">
+          <span class="safe-diagram__letter">F</span>
+          <span class="safe-diagram__word">Fulfilled</span>
+        </div>
+        <div class="safe-diagram__item">
+          <span class="safe-diagram__letter">E</span>
+          <span class="safe-diagram__word">Empowered</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 9. Private Coaching preview -->
-  <section class="section section--relationship" aria-labelledby="private-preview-heading">
+  <!-- ============================================================ -->
+  <!-- 9. PRIVATE COACHING PREVIEW                                   -->
+  <!-- Berry used sparingly: a tinted panel with a left rule, not a   -->
+  <!-- full-bleed saturated block. Audience kept non-gendered — see   -->
+  <!-- docs/open-decisions.md#2.                                      -->
+  <!-- ============================================================ -->
+  <section class="section" aria-labelledby="private-preview-heading">
     <div class="container">
-      <p class="eyebrow" style="color: var(--color-gold);">Private clients</p>
-      <h2 id="private-preview-heading">Private Coaching</h2>
-      <p>TODO — preview summary pending copy. Audience framing (women-focused vs. broader private-client audience) is an open decision — see docs/open-decisions.md#2.</p>
-      <p><a class="btn btn-secondary" href="private-coaching.html">Explore Private Coaching</a></p>
+      <div class="preview-panel preview-panel--relationship">
+        <p class="eyebrow">Private clients</p>
+        <h2 id="private-preview-heading">A warmer place to work through what's on your mind</h2>
+        <p>Relationship patterns, self-awareness, emotional well-being, communication, boundaries and confidence — explored one-to-one, at a pace that respects where you're starting from.</p>
+        <p><a class="btn btn-secondary" href="private-coaching.html">Explore private coaching</a></p>
+      </div>
     </div>
   </section>
 
-  <!-- 10. Media & Speaking preview -->
-  <section class="section section--wellbeing" aria-labelledby="media-preview-heading">
+  <!-- ============================================================ -->
+  <!-- 10. MEDIA & SPEAKING PREVIEW                                  -->
+  <!-- No outlet logo assets exist in the repository — a typographic  -->
+  <!-- citation treatment is used instead of fabricating logos.       -->
+  <!-- ============================================================ -->
+  <section class="section" aria-labelledby="media-preview-heading">
     <div class="container">
-      <p class="eyebrow" style="color: var(--color-gold);">Media &amp; speaking</p>
-      <h2 id="media-preview-heading">Featured across the media</h2>
-      <p>BBC Radio Kent · BBC Radio London · Channel 4 · The Mirror · Daily Record · OK! · New · Cosmopolitan UK · HuffPost · Breathe · Thrive Global · iCN · The List · Nicki Swift · Glam</p>
-      <p><a class="btn btn-secondary" href="media-speaking.html">Explore Media &amp; Speaking</a></p>
+      <div class="preview-panel preview-panel--media">
+        <div class="grid grid--2" style="align-items:center;">
+          <div>
+            <p class="eyebrow">Media &amp; speaking</p>
+            <h2 id="media-preview-heading">Available for interviews, panels and keynote conversations</h2>
+            <p>Teresha contributes expert commentary on relationships and emotional well-being for journalists, broadcast and podcast producers, and event and conference teams.</p>
+            <p><a class="btn btn-secondary" href="media-speaking.html">Media &amp; Speaking</a></p>
+          </div>
+          <div>
+            <p class="eyebrow" style="opacity:1;">Featured in</p>
+            <div class="citation-row">
+              <span>BBC Radio Kent</span><span>BBC Radio London</span><span>Channel 4</span>
+              <span>The Mirror</span><span>Cosmopolitan UK</span><span>HuffPost</span>
+              <span>Daily Record</span><span>OK!</span><span>Thrive Global</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- 11. REAL-ationship Talk -->
-  <section class="section" aria-labelledby="podcast-heading">
+  <!-- ============================================================ -->
+  <!-- 11. REAL-ATIONSHIP TALK                                       -->
+  <!-- ============================================================ -->
+  <section class="section section--muted" aria-labelledby="podcast-heading">
     <div class="container grid grid--2">
       <div class="image-frame">
-        <img src="assets/podcast/rlt-podcast-cover.png" alt="REAL-ationship Talk podcast cover art, hosted by Teresha Young" width="600" height="600">
+        <img src="assets/podcast/rlt-podcast-cover.png" alt="REAL-ationship Talk podcast cover art, hosted by Teresha Young" width="560" height="560" loading="lazy" decoding="async" style="aspect-ratio: 1 / 1; object-fit: cover;">
       </div>
       <div>
         <p class="eyebrow">The podcast</p>
         <h2 id="podcast-heading">REAL-ationship Talk</h2>
-        <p>A Spotify for Creators award-winning, globally charting podcast. Guests have included Paul C. Brunson, Susan Winter and Charlene Douglas.</p>
-        <p><a href="media-speaking.html">Listen &amp; learn more →</a></p>
+        <div class="chip-row">
+          <span class="chip">Spotify for Creators award-winning</span>
+          <span class="chip">Globally charting</span>
+        </div>
+        <p>Conversations on relationships and emotional well-being, with guests including Paul C. Brunson, Susan Winter and Charlene Douglas.</p>
+        <p><a class="text-link" href="media-speaking.html">Discover the podcast →</a></p>
       </div>
     </div>
   </section>
 
-  <!-- 12. Free resource -->
-  <section class="section section--muted" aria-labelledby="resource-heading">
+  <!-- ============================================================ -->
+  <!-- 12. FREE RESOURCE                                             -->
+  <!-- No live email platform connected yet; hidden fields scaffold   -->
+  <!-- the intended tracking architecture only.                       -->
+  <!-- ============================================================ -->
+  <section class="section" aria-labelledby="resource-heading">
     <div class="container">
-      <p class="eyebrow" id="resource-heading">A place to start</p>
-      <div class="placeholder">
-        <span class="placeholder__tag">Placeholder</span>
-        <p>TODO — no approved free resource exists yet. See data/resources.json and docs/open-decisions.md.</p>
+      <div class="section-header">
+        <p class="eyebrow">A place to start</p>
+        <h2 id="resource-heading">A useful place to begin.</h2>
+        <p>Practical, grounded guidance on relationships and emotional well-being, sent directly to your inbox.</p>
       </div>
-      <p><a href="resources.html">Visit Resources →</a></p>
+      <form class="resource-form" data-resource-form action="#" method="post">
+        <div class="resource-form__row">
+          <div class="form-field">
+            <label for="resource-name">Name</label>
+            <input type="text" id="resource-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="form-field">
+            <label for="resource-email">Email</label>
+            <input type="email" id="resource-email" name="email" autocomplete="email" required>
+          </div>
+        </div>
+        <input type="hidden" name="resource_id" value="TODO-resource-id">
+        <input type="hidden" name="source_page" value="homepage">
+        <input type="hidden" name="audience" value="general">
+        <p>
+          <button class="btn btn-primary" type="submit">Send me the guide</button>
+        </p>
+        <p class="resource-form__success" data-resource-form-success role="status">Thanks — noted. This form isn't connected to a live email service yet, so nothing has actually been sent.</p>
+        <p class="resource-form__note">No specific guide has been approved yet — see <code>data/resources.json</code> and docs/open-decisions.md. This section builds the intended sign-up pattern ahead of that content.</p>
+      </form>
     </div>
   </section>
 
-  <!-- 13. Final CTA -->
+  <!-- ============================================================ -->
+  <!-- 13. FINAL CTA                                                 -->
+  <!-- ============================================================ -->
   <section class="section" aria-labelledby="final-cta-heading">
     <div class="container" style="text-align:center;">
       <div class="divider-circles" aria-hidden="true"><span></span><span></span><span></span></div>
-      <h2 id="final-cta-heading">Start a conversation</h2>
-      <p style="margin-inline:auto;">Whether you're exploring support for your organisation, yourself, or a media opportunity, the first step is a conversation.</p>
-      <p><a class="btn btn-primary" href="contact.html">Start a conversation</a></p>
+      <h2 id="final-cta-heading">Not sure where to begin?</h2>
+      <p style="margin-inline:auto;">Whether you're exploring support for your organisation, looking for private coaching, or inviting Teresha to contribute to a conversation, you're welcome to get in touch.</p>
+      <div class="hero__actions" style="justify-content:center;">
+        <a class="btn btn-primary" href="contact.html">Start a conversation</a>
+        <a class="text-link" href="#pathways">Explore your options</a>
+      </div>
     </div>
   </section>
 
@@ -264,7 +406,7 @@
       <nav aria-label="More">
         <p class="site-footer__heading">More</p>
         <ul class="site-footer__list" role="list">
-          <li><a href="resources.html">Resources</a></li>
+          <li><a href="resources.html">Free resources</a></li>
           <li><a href="news.html">News</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>

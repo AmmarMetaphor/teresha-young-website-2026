@@ -44,6 +44,12 @@ No other client names, logos, or case-study detail are approved. No corporate cl
 - Confirmed named guests: **Paul C. Brunson, Susan Winter, Charlene Douglas.**
 - No listener figures, chart positions, episode counts, launch date, or other metrics are approved — do not invent any.
 
+## Organisational topics (approved for homepage/Organisations use)
+
+Supplied directly by the client for the Stage 2 homepage build. These eleven topics may be listed as areas Teresha's organisational work touches on. No claims about outcomes, methodology, or programme structure beyond the topic names themselves are approved:
+
+Emotional wellness and resilience · Relationships at work · Self-awareness · Stress management · Healthy communication · Psychological safety · Boundaries · Burnout prevention · Emotional regulation · Confidence · Personal effectiveness.
+
 ## Signature framework
 
 - **S.A.F.E.™** — Secure, Aligned, Fulfilled, Empowered.

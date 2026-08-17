@@ -18,13 +18,13 @@ The repository contains a badge (`award-relationship-coach-of-the-year-uk-2027.p
 
 Several portrait assets (`teresha-young-image-4.jpg`, `-6.jpg`, and especially the phone-photo `-8.jpg`) were shot in informal, personal settings (home interiors, a phone selfie with visible EXIF/device metadata) rather than a neutral/editorial studio context. The brand personality target is "premium, calm, editorial, elegant, sophisticated" and explicitly not "generic" or "over-decorated," but says nothing about excluding warmth or humanity — informal photos are not disqualified on tone alone. **Action needed:** client/designer to confirm which of these, if any, are appropriate for public page use versus social-only or excluded entirely. `teresha-young-image-8.jpg` is held back from the structural build pending this decision.
 
-## 5. Canonical hero portrait crop
+## 5. Canonical hero portrait crop — RESOLVED for Stage 2 (confirm before final launch)
 
-Two nearly identical transparent-background portrait cutouts exist (`principal-image-teresha.png` and `principal-image-teresha-2.png`). **Action needed:** confirm which is the canonical homepage hero crop (or confirm both are kept for different breakpoints/contexts). Both are currently referenced as candidates in the homepage skeleton; only one should ship in the final build.
+**Stage 2 decision:** the homepage hero now uses `teresha-young-image-5.jpg`, not either transparent cutout (`principal-image-teresha.png` / `-2.png`). Rationale: a cutout floated over a coloured shape is a strong visual signature of coach/speaker template sites — exactly the feel the brief asks Teresha's site to avoid. A calm, editorial, neutral-background photograph reads more premium and sidesteps the resolution ceiling of the cutouts (see #6). The two cutouts remain unused and available for a future About-page treatment. **Action needed:** client to confirm this hero image choice; a different confirmed photograph can be swapped in without any structural change.
 
-## 6. Hero image resolution
+## 6. Hero image resolution — largely resolved by the Stage 2 image choice
 
-Both hero-candidate cutouts are 687×798px, which is workable at moderate display sizes but not ideal for a large full-bleed desktop hero treatment at 1440px+. **Action needed:** confirm whether a higher-resolution source cutout can be supplied, or whether the design should deliberately keep the portrait at a contained/moderate size (rather than full-bleed) to avoid visible softness.
+Using `teresha-young-image-5.jpg` (2544×3392px) for the hero sidesteps the resolution ceiling that applied to the 687×798px transparent cutouts, since it stays sharp at large desktop hero sizes. If a future decision reintroduces a cutout-style treatment, the original resolution concern would apply again.
 
 ## 7. Corporate client logos
 
@@ -40,4 +40,12 @@ The IAPC&M logo (`logo-amc.png`) and the award-body badges are third-party marks
 
 ## 10. Podcast and branded-portrait file sizes
 
-`rlt-podcast-cover.png` (6.6MB) and `teresha-young-image-3.png` (7.2MB) are far larger than is appropriate for web delivery. Per instructions, the original source files are not recompressed or overwritten. **Action needed (next stage):** produce optimised web derivatives (compressed PNG/WebP at appropriate max dimensions) as new build assets when the Media & Speaking / podcast sections are actually built.
+`rlt-podcast-cover.png` (6.6MB) is now referenced directly on the homepage (Section 11, lazy-loaded, below the fold). Per instructions, the original source file is not recompressed or overwritten during this stage. **Action needed (next stage):** produce an optimised web derivative (compressed PNG/WebP at a smaller max dimension) as a new build asset — this is a real page-weight cost on the live homepage now, not just a theoretical one. `teresha-young-image-3.png` (7.2MB) remains unused on the homepage for this stage.
+
+## 11. Media & Speaking preview — no outlet logo assets
+
+The homepage's Media & Speaking preview (Section 10) and News page reference confirmed outlet names (BBC Radio Kent, Channel 4, Cosmopolitan UK, etc.) as plain typographic citations, because no outlet logo image assets exist anywhere in the repository. **Action needed:** if the client can supply approved outlet logos (with usage permission confirmed), the typographic citation row could be upgraded to a restrained logo treatment.
+
+## 12. Free-resource sign-up form is architecture only
+
+The homepage's "A useful place to begin" sign-up form (Section 12) is a working UI pattern with hidden `resource_id` / `source_page` / `audience` fields, but it is **not connected to any real email platform**, and no specific downloadable resource has been approved yet (`data/resources.json` is still all `TODO`). Submitting the form shows an honest inline note rather than a fabricated success state. **Action needed:** confirm the actual resource (title, format) and the email platform/integration before this goes live.

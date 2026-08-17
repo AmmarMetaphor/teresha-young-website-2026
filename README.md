@@ -43,3 +43,9 @@ This repository is not the final production WordPress website.
 Website imagery, logos, awards and other brand assets are client-supplied or approved assets.
 
 Do not reuse or redistribute project assets without permission.
+
+## Prototype indexing protection
+
+This repository includes `robots.txt` and `_headers` (Cloudflare Pages) that disallow crawling and send `X-Robots-Tag: noindex, nofollow` on every response, so the `*.pages.dev` preview URL is not indexed by search engines while this is a review prototype.
+
+**IMPORTANT — these indexing restrictions exist for the Cloudflare prototype and must not be blindly carried into the final public WordPress website.** They are static files specific to this Cloudflare Pages deployment and will not transfer automatically into WordPress, but anyone rebuilding the site there should deliberately choose the correct production robots/indexing configuration rather than copying these files.

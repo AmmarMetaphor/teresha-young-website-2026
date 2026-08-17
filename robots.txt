@@ -1,0 +1,7 @@
+# PROTOTYPE-ONLY FILE.
+# This disallows all crawling on the Cloudflare Pages preview (*.pages.dev)
+# for this review prototype. Do not carry this file forward unchanged into
+# the final public WordPress production site — see docs/project-brief.md
+# and README.md ("Prototype indexing protection") for the full note.
+User-agent: *
+Disallow: /

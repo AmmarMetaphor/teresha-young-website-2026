@@ -15,6 +15,7 @@
   initMobileNav();
   initNewsList();
   initResourcesList();
+  initResourceForm();
 
   function markCurrentNavLink() {
     if (!window.SITE_CONFIG || !Array.isArray(window.SITE_CONFIG.nav)) return;
@@ -148,5 +149,26 @@
     var div = document.createElement('div');
     div.textContent = String(value == null ? '' : value);
     return div.innerHTML;
+  }
+
+  /**
+   * The homepage resource form has no live email-platform connection yet
+   * (see docs/open-decisions.md). This only prevents a real navigation
+   * away from the page and is honest with the reviewer about that status
+   * instead of pretending the sign-up succeeded against a real service.
+   */
+  function initResourceForm() {
+    var form = document.querySelector('[data-resource-form]');
+    if (!form) return;
+
+    var success = form.querySelector('[data-resource-form-success]');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (success) {
+        success.classList.add('is-visible');
+      }
+      form.reset();
+    });
   }
 })();
