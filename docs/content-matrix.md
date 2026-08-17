@@ -1,12 +1,14 @@
-# Content Matrix — Foundation Stage
+# Content Matrix
 
-Maps each page to its role in the customer journey, its primary audience question, its colour system, and the sections currently present as structural placeholders (not final copy/design).
+Maps each page to its role in the customer journey, its primary audience question, its colour system, and the sections currently present.
+
+**Status:** `index.html` was fully designed and built in Stage 2 (see `docs/project-brief.md`). All other pages remain foundation-stage structural shells, per that stage's explicit scope ("do not begin building the remaining pages").
 
 Journey stages referenced below: **(1) Recognise → (2) Understood → (3) Trust → (4) See the help → (5) Next step.**
 
 | Page | Primary audience question answered | Colour system | Journey emphasis | Sections in this stage |
 |---|---|---|---|---|
-| `index.html` | Who is this for? / Why Teresha? | All three navigational colours introduced, gold restrained | Full 1→5 arc | Hero, Authority/trust strip, 3 pathways, Corporate recognition, Organisational topics, Corporate proof, Why Teresha, S.A.F.E.™, Private Coaching preview, Media & Speaking preview, REAL-ationship Talk, Free resource, Final CTA |
+| `index.html` | Who is this for? / Why Teresha? | All three navigational colours introduced, gold kept decorative-only (never as small text, per contrast fix) | Full 1→5 arc | **Built (Stage 2):** Hero, Authority strip, 3 editorial pathways, Organisational recognition, Organisational topics index, Corporate proof (dev placeholder), Why Teresha, S.A.F.E.™ (restrained), Private Coaching preview, Media & Speaking preview, REAL-ationship Talk, Free resource sign-up (unwired), Final CTA |
 | `organisations.html` | Can Teresha help my organisation? | Corporate Slate | 1→5 for HR/L&D/leadership visitors | Hero shell, outcomes-for-organisations shell, credibility shell, CTA shell |
 | `private-coaching.html` | Can Teresha help me personally? | Relationship Berry | 1→5 for private-client visitors | Hero shell, outcomes-for-individuals shell, S.A.F.E.™ reference shell, CTA shell |
 | `media-speaking.html` | Why Teresha (authority/media proof)? | Emotional Well-being Forest + Gold accents | 3→5 (trust-forward) | Hero shell, media logos shell, podcast shell, speaking shell, CTA shell |
