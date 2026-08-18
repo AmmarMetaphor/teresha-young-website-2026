@@ -228,3 +228,11 @@ Method: visual inspection + file inspection (`file`, image dimensions) of every 
 | teresha-young-image-8.jpg | Phone photo | **No — REVIEW REQUIRED** |
 
 No assets were renamed, moved, deleted, recompressed, or overwritten in the course of this audit.
+
+---
+
+## Derivatives created — Sitewide Refinement stage
+
+- `teresha-young-image-4-hero.jpg` (1900×2533, plain resize) and `teresha-young-image-5-hero.jpg` (1900×2533, plain resize) are used together in the homepage hero's rotation. `-5-hero.jpg` was regenerated this stage from the unused original — an earlier, orphaned derivative of the same name had been over-cropped to forehead-to-lips only; it has been replaced with a full-frame resize matching the `-4-hero.jpg` convention. Also reused (unresized) for the About page portrait, replacing a much larger unoptimised original.
+- `teresha-young-image-7-card.jpg` (900×1200, plain resize, no crop) is new this stage and is used as the "Why Teresha" section image. See `docs/open-decisions.md` item 14 for why a landscape crop was not used instead.
+- `assets/docs/resources/` is a new, empty scaffold folder (plus a `README.md`) for the two approved resource PDFs, which have not been supplied — see `docs/open-decisions.md` item 12. No PDF files were fabricated.

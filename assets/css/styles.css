@@ -602,12 +602,21 @@ p + p {
 }
 
 @media (min-width: 1180px) and (max-width: 1339px) {
+  /* Eight items (Home + 7 pathways) plus the CTA need tighter spacing than
+     the seven-item version this band was originally tuned for. */
   .nav-ribbon__list {
-    gap: 0.9rem;
+    gap: 0.55rem;
   }
 
   .nav-ribbon__list a {
-    font-size: 0.83rem;
+    gap: 0.35em;
+    padding: 0.35em 0.35em;
+    font-size: 0.78rem;
+  }
+
+  .nav-ribbon__cta {
+    padding: 0.55em 1rem;
+    font-size: 0.78rem;
   }
 }
 
@@ -1024,6 +1033,50 @@ p + p {
   color: var(--color-ink);
 }
 
+/* Reusable primary/secondary credential pairing — mirrors the hero's
+   accreditation hierarchy (primary credential larger, secondary smaller)
+   for use on subsidiary pages. */
+.credential-line {
+  margin-top: var(--space-sm);
+}
+
+.credential-line__primary {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.credential-line__secondary {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin: 0.3rem 0 0;
+}
+
+/* Private Coaching page — Relationship Berry used intentionally as an
+   accent (eyebrows + pull-quote), not as a full-page block of colour. */
+body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow {
+  color: var(--color-berry);
+}
+
+.pull-quote {
+  margin: 0;
+  padding-left: var(--space-lg);
+  border-left: 3px solid var(--color-berry);
+  max-width: 42ch;
+}
+
+.pull-quote p {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.35rem, 1.1rem + 1vw, 1.75rem);
+  line-height: 1.35;
+  color: var(--color-ink);
+  margin: 0;
+}
+
 /* ---------------------------------------------------------------------- */
 /* Pathway link — reused by the "Other ways to work together" cards        */
 /* below; reads --pathway-color from whichever card sets it.               */
@@ -1291,46 +1344,26 @@ p + p {
   margin-top: var(--space-lg);
 }
 
-.hero__media-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  font-weight: 700;
-  font-size: var(--fs-sm);
-  color: var(--color-walnut);
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: border-color var(--duration-base) var(--ease-editorial);
-}
-
-.hero__media-link:hover {
-  border-color: currentColor;
-}
-
 .hero__trust {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-2xs) var(--space-md);
+  flex-direction: column;
+  gap: 0.3rem;
   margin-top: var(--space-lg);
   padding-top: var(--space-md);
   border-top: 1px solid var(--color-border);
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  color: var(--color-text-muted);
   max-width: 46ch;
 }
 
-.hero__trust span + span::before {
-  content: '';
-  display: inline-block;
-  width: 4px;
-  height: 4px;
-  margin-inline-end: var(--space-md);
-  border-radius: 50%;
-  background: var(--color-accent-dark);
-  vertical-align: middle;
-  transform: translateY(-2px);
+.hero__trust-primary {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-ink);
+}
+
+.hero__trust-secondary {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
 }
 
 .hero__photo {
@@ -1338,6 +1371,7 @@ p + p {
   overflow: hidden;
   isolation: isolate;
   min-height: 340px;
+  background: var(--color-ink);
 }
 
 @media (min-width: 1024px) {
@@ -1347,31 +1381,38 @@ p + p {
   }
 }
 
-.hero__photo img {
+.hero__photo-img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 16%;
+  opacity: 0;
+  transition: opacity 1.3s ease;
+}
+
+.hero__photo-img.is-active {
+  opacity: 1;
+  z-index: 1;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero__photo img {
+  .hero__photo-img {
     animation: hero-breathe 24s ease-in-out infinite alternate;
   }
 }
 
 @keyframes hero-breathe {
   from { transform: scale(1); }
-  to { transform: scale(1.045); }
+  to { transform: scale(1.025); }
 }
 
 .hero__rings {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero__rings span {
@@ -1404,46 +1445,6 @@ p + p {
   }
 }
 
-.hero__scroll-cue {
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .hero__scroll-cue {
-    display: block;
-    position: absolute;
-    left: max(var(--container-pad), calc((100vw - var(--container-max)) / 2 + var(--container-pad)));
-    bottom: var(--space-md);
-    width: 1px;
-    height: 34px;
-    background: var(--color-border);
-    z-index: 1;
-  }
-
-  .hero__scroll-cue::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 6px;
-    height: 6px;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    background: var(--color-accent-dark);
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .hero__scroll-cue {
-      animation: hero-scroll-cue 2.4s ease-in-out infinite;
-    }
-  }
-}
-
-@keyframes hero-scroll-cue {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
-}
-
 @media (max-width: 1023px) {
   .hero__photo {
     height: 52vh;
@@ -1451,7 +1452,7 @@ p + p {
     order: -1;
   }
 
-  .hero__photo img {
+  .hero__photo-img {
     object-position: center 14%;
   }
 }
@@ -1528,6 +1529,10 @@ p + p {
   border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 0;
   overflow: hidden;
   max-width: 380px;
+  /* Grid items stretch to the row height by default — without this, the
+     card's own box (not just the image) would stretch to match whatever
+     taller column sits beside it, leaving empty space below the image. */
+  align-self: start;
 }
 
 .portrait-card img {
@@ -1610,6 +1615,40 @@ p + p {
   color: var(--color-ink-soft);
 }
 
+/* Media & Speaking page — full editorial outlet grid. Text treatment only:
+   no approved outlet logo files exist yet beyond the AMC accreditation
+   mark (which belongs in credibility, not here). See docs/asset-manifest.md. */
+.media-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg) var(--space-xl);
+  margin: var(--space-lg) 0 0;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+@media (min-width: 640px) {
+  .media-logo-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .media-logo-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.media-logo-grid li {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  text-align: center;
+  padding-block: var(--space-sm);
+  transition: color var(--duration-base) var(--ease-editorial);
+}
+
+.media-logo-grid li:hover {
+  color: var(--color-berry);
+}
+
 /* ---------------------------------------------------------------------- */
 /* Awards & recognition                                                   */
 /* ---------------------------------------------------------------------- */
@@ -1619,4 +1658,100 @@ p + p {
   flex-wrap: wrap;
   gap: var(--space-sm);
   margin-top: var(--space-lg);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Resources page — editorial guide list (not generic SaaS cards)          */
+/* ---------------------------------------------------------------------- */
+
+.resource-list {
+  list-style: none;
+  margin: var(--space-lg) 0 0;
+  padding: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.resource-card {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  column-gap: var(--space-lg);
+  padding-block: var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+@media (max-width: 640px) {
+  .resource-card {
+    grid-template-columns: auto 1fr;
+    row-gap: var(--space-sm);
+  }
+  .resource-card__arrow { display: none; }
+}
+
+.resource-card__num {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-slate);
+}
+
+.resource-card__icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  color: var(--resource-color, var(--color-berry));
+}
+
+.resource-card__tag {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--resource-color, var(--color-berry));
+  margin-bottom: 0.5rem;
+}
+
+.resource-card__body h3 {
+  font-size: clamp(1.3rem, 1.1rem + 0.9vw, 1.75rem);
+  margin: 0 0 0.4rem;
+}
+
+.resource-card__desc {
+  margin: 0;
+  color: var(--color-text-muted);
+  max-width: 58ch;
+}
+
+.resource-card__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  color: var(--color-ink);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--duration-base) var(--ease-editorial),
+    color var(--duration-base) var(--ease-editorial);
+}
+
+a.resource-card__action:hover {
+  border-color: currentColor;
+  color: var(--resource-color, var(--color-berry));
+}
+
+.resource-card__action svg {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--duration-base) var(--ease-editorial);
+}
+
+a.resource-card__action:hover svg {
+  transform: translateX(3px);
+}
+
+.resource-card__action[aria-disabled="true"] {
+  color: var(--color-text-muted);
+  cursor: default;
 }
