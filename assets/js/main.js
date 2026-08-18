@@ -16,6 +16,7 @@
   initNewsList();
   initResourcesList();
   initResourceForm();
+  initHeroRotation();
 
   function markCurrentNavLink() {
     if (!window.SITE_CONFIG || !Array.isArray(window.SITE_CONFIG.nav)) return;
@@ -180,5 +181,34 @@
       }
       form.reset();
     });
+  }
+
+  /**
+   * Homepage hero photo rotation. Progressive enhancement: the first
+   * photo is marked `.is-active` in the static HTML, so a visitor with
+   * JS disabled (or on a connection where this file fails to load)
+   * simply sees a single still photo — never a blank or broken hero.
+   *
+   * Under `prefers-reduced-motion: reduce`, the interval is never
+   * started at all, so the strongest single photo stays static rather
+   * than being swapped out from under a visitor who asked for less
+   * motion.
+   */
+  function initHeroRotation() {
+    var photos = document.querySelectorAll('[data-hero-photo]');
+    if (photos.length < 2) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var activeIndex = 0;
+    Array.prototype.forEach.call(photos, function (photo, i) {
+      if (photo.classList.contains('is-active')) activeIndex = i;
+    });
+
+    setInterval(function () {
+      var nextIndex = (activeIndex + 1) % photos.length;
+      photos[activeIndex].classList.remove('is-active');
+      photos[nextIndex].classList.add('is-active');
+      activeIndex = nextIndex;
+    }, 7000);
   }
 })();

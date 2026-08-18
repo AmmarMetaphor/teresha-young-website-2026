@@ -1,40 +1,60 @@
 # Teresha Website Voice Guide
 
-This is the permanent voice rule for all current and future page development on this site. It was introduced as a sitewide editorial pass (see git history: "Convert sitewide brand voice to first person") and applies to every page built after it, not just the pages that existed at the time.
+This is the permanent voice rule for all current and future page development on this site. It supersedes the previous "first-person" pass (see git history: "Convert sitewide brand voice to first person") — that pass over-corrected, and this version replaces it. Every page built after this point must follow the rule below, not the first-person version.
 
-## The core rule
+## The core rule: generalized, audience-first expert voice
 
-- Teresha speaks in **first person singular** — I / me / my.
-- Visitors are addressed directly in **second person** — you / your.
-- Avoid third-person narration of Teresha ("Teresha helps...", "her approach", "she has worked with..."). If a sentence describes what Teresha does, thinks, or has achieved, it should read as if she is saying it herself.
-- Avoid corporate "we" / "us" / "our" as a stand-in for "I". This is a personal-expert brand, not a company. The one approved exception is "we" meaning **Teresha and the client together** — e.g. "In our work together, I'll help you..." A universal/conceptual "we" in a conceptual headline (e.g. "Better relationships shape how *we* feel, work and live") is also fine — that's a proposition about people in general, not corporate narration.
+The site's general marketing copy is written in a **generalized editorial voice** — not first-person autobiography, and not repetitive third-person biography either.
 
-## What stays third person / unchanged
+- **Avoid first person as the default register**: "I help...", "my approach", "I've worked with...", "you may have heard me..." should not carry the site's general copy.
+- **Avoid stacking third-person narration**: don't turn every paragraph into "Teresha does... Teresha believes... she has...". A page that repeats her name or "she/her" in every sentence reads as an external biography, not a confident expert brand.
+- Instead, prefer **neutral editorial constructions** that state the value, outcome, or fact directly:
+  - *Old:* "I help organisations and individuals strengthen emotional well-being, communication and connection."
+  - *Better:* "Practical, human-centred support for healthier relationships, stronger communication and emotional well-being — for organisations and individuals."
+  - *Old:* "My authority comes from credentials, recognition and range."
+  - *Better:* "Professional credibility built through accreditation, industry recognition and experience across organisational and private-client settings."
+  - *Old:* "I've worked with organisations including Channel 4 and Mind."
+  - *Better:* "Trusted by organisations including Channel 4 and Mind."
+  - *Old:* "You may have seen or heard me across outlets including..."
+  - *Better:* remove the sentence and let the media proof (logos/names) speak for itself.
 
-Her name is still appropriate in:
+## Writing style
 
-- the logo/brand name and page titles
-- SEO/meta titles
-- structured data
-- media article titles (an external headline is a quotation, not the site's own voice)
-- award certificates and official credential names
-- image alt text where identifying who is pictured is genuinely useful
-- the copyright line
-- formal credentials, organisation names and award titles (never rewritten into first person — only the copy *around* them changes voice)
+- Audience-first: lead with what matters to the visitor (relevance, outcome), not a description of Teresha.
+- Expert-led, editorial, authoritative — confident without being pushy.
+- Warm without being conversational for the sake of it.
+- Use strong statements, concise factual evidence, and descriptive editorial headings rather than hedged or chatty phrasing.
+- Avoid generic/hyped marketing phrasing ("unlock your potential," "transform your life," "navigate the complexities of modern life") in favour of direct, natural British English.
+- No forceful conversion language; CTAs stay warm and invitational, not pushy.
 
-**The rule is "don't narrate Teresha in third person," not "never display her name."**
+## Using Teresha's name
+
+Use her name when it's natural or necessary for factual identification — e.g. "Teresha Young is an IAPC&M Accredited Master Coach." Don't repeat it (or "she/her") in every paragraph. Vary sentence construction so the copy doesn't lean on either "I" or "Teresha" as a crutch — many sentences can simply state the fact or benefit with no subject-pronoun at all ("Trusted by organisations including...", "Professional credibility built through...").
+
+## Corporate "we"
+
+Avoid corporate "we/us/our" as a stand-in for an individual voice — this is a personal-expert brand, not a company. Two exceptions remain acceptable:
+
+1. **Client-and-Teresha "our"** in a genuinely collaborative context — e.g. "Support can focus on the patterns that shape your relationships" is preferred, but a phrase like "the work" framed around the client's process is fine; avoid "our work together" as a first-person-coded default.
+2. **Universal/conceptual "we"** in a proposition about people in general — e.g. "Better relationships shape how we feel, work and live." That's a statement about people, not corporate narration, and stays approved.
+
+## What stays as-is regardless of voice pass
+
+- The logo/brand name and page titles.
+- SEO/meta titles and structured data.
+- Media article titles (an external headline is a quotation, not the site's own voice).
+- Award certificates and official credential names.
+- Image alt text where identifying who is pictured is genuinely useful.
+- The copyright line.
+- Formal credentials, organisation names and award titles — never rewritten, only the copy *around* them changes voice.
 
 ## Testimonials — always verbatim
 
-Testimonials belong to the person who gave them. Never rewrite a testimonial's wording, voice, or perspective, even if it says "Teresha helped me...". The first-person rule applies only to the site's own narrative copy, never to someone else's quoted words.
-
-## Tone
-
-First person should not make the site casual, chatty, over-familiar, or self-centred. Protect: warmth, integrity, humanity, calm confidence, reflection, professional authority, relationship-first thinking. Vary sentence structure — don't stack multiple sentences that all start with "I". Avoid generic/hyped marketing phrasing ("unlock your potential," "transform your life," "navigate the complexities of modern life") in favour of direct, natural British English.
+Testimonials belong to the person who gave them. Never rewrite a testimonial's wording, voice, or perspective, even if it says "Teresha helped me...". The generalized-voice rule applies only to the site's own authored copy, never to someone else's quoted words. (No testimonial content exists on the site yet — this rule is ready for when one is approved.)
 
 ## Content discipline still applies
 
-This voice pass is about *how* things are said, not licence to invent *what* is said. Every constraint in `docs/approved-facts.md` still applies in full: no invented biography, statistics, results, programme details, or personal history. Where no approved content exists for a section, write honestly and briefly in the established voice rather than fabricating detail to sound more personal.
+This voice pass is about *how* things are said, not licence to invent *what* is said. Every constraint in `docs/approved-facts.md` still applies in full: no invented biography, statistics, results, programme details, media claims, awards, or personal history. Where no approved content exists for a section, write honestly and briefly rather than fabricating detail.
 
 ## No visible development language
 
