@@ -18,13 +18,15 @@ The repository contains a badge (`award-relationship-coach-of-the-year-uk-2027.p
 
 Several portrait assets (`teresha-young-image-4.jpg`, `-6.jpg`, and especially the phone-photo `-8.jpg`) were shot in informal, personal settings (home interiors, a phone selfie with visible EXIF/device metadata) rather than a neutral/editorial studio context. The brand personality target is "premium, calm, editorial, elegant, sophisticated" and explicitly not "generic" or "over-decorated," but says nothing about excluding warmth or humanity — informal photos are not disqualified on tone alone. **Action needed:** client/designer to confirm which of these, if any, are appropriate for public page use versus social-only or excluded entirely. `teresha-young-image-8.jpg` is held back from the structural build pending this decision.
 
-## 5. Canonical hero portrait crop — RESOLVED for Stage 2 (confirm before final launch)
+## 5. Canonical hero portrait crop — RESOLVED for now (confirm before final launch)
 
-**Stage 2 decision:** the homepage hero now uses `teresha-young-image-5.jpg`, not either transparent cutout (`principal-image-teresha.png` / `-2.png`). Rationale: a cutout floated over a coloured shape is a strong visual signature of coach/speaker template sites — exactly the feel the brief asks Teresha's site to avoid. A calm, editorial, neutral-background photograph reads more premium and sidesteps the resolution ceiling of the cutouts (see #6). The two cutouts remain unused and available for a future About-page treatment. **Action needed:** client to confirm this hero image choice; a different confirmed photograph can be swapped in without any structural change.
+**Current decision:** the homepage hero uses `teresha-young-image-4.jpg`, via the optimised derivative `assets/teresha/teresha-young-image-4-hero.jpg` (a resize only — full original framing preserved, nothing cropped out of the derivative itself). Neither transparent cutout (`principal-image-teresha.png` / `-2.png`) is used. Rationale: a cutout floated over a coloured shape is a strong visual signature of coach/speaker template sites — exactly the feel the brief asks Teresha's site to avoid. The two cutouts remain unused and available for a future About-page treatment. **Action needed:** client to confirm this hero image choice; a different confirmed photograph can be swapped in without any structural change.
 
-## 6. Hero image resolution — largely resolved by the Stage 2 image choice
+An earlier version of this hero displayed the photo as a full-bleed `cover` background under a ~2:1 wide banner box. Because the source is a 3:4 portrait, covering that box required cropping away roughly 60% of the image's height, which is what caused the reported "eyes fill the whole screen" problem. The hero is now built as an asymmetrical split instead — the photo gets its own panel at close to native ratio (~43–46% of the viewport width at desktop sizes, run at close to full hero height) — which needs only a gentle crop and keeps hair, both shoulders and visible surroundings in frame, while also solving the text/face collision structurally: copy sits in its own panel and never overlaps the photograph.
 
-Using `teresha-young-image-5.jpg` (2544×3392px) for the hero sidesteps the resolution ceiling that applied to the 687×798px transparent cutouts, since it stays sharp at large desktop hero sizes. If a future decision reintroduces a cutout-style treatment, the original resolution concern would apply again.
+## 6. Hero image resolution — resolved by the current crop treatment
+
+`teresha-young-image-4-hero.jpg` (1900×2533px derivative of the 2544×3392px original) stays sharp at the panel size actually used (well under its native resolution at every tested breakpoint). The 687×798px transparent cutouts remain a resolution concern only if a future decision reintroduces a cutout-style treatment.
 
 ## 7. Corporate client logos
 

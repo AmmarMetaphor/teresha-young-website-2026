@@ -41,15 +41,15 @@
   --color-focus: var(--color-walnut);
 
   /* Typography */
-  --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+  --font-heading: 'Bodoni Moda', 'Didot', 'Georgia', serif;
   --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-  --fs-base: 1rem;
+  --fs-base: 1.0625rem;
   --fs-sm: 0.9rem;
-  --fs-lg: 1.15rem;
-  --fs-h1: clamp(2.25rem, 1.7rem + 2.4vw, 3.75rem);
-  --fs-h2: clamp(1.75rem, 1.4rem + 1.5vw, 2.75rem);
-  --fs-h3: clamp(1.35rem, 1.15rem + 0.8vw, 1.85rem);
+  --fs-lg: 1.2rem;
+  --fs-h1: clamp(2.6rem, 1.95rem + 2.8vw, 4.1rem);
+  --fs-h2: clamp(1.9rem, 1.5rem + 1.7vw, 3rem);
+  --fs-h3: clamp(1.4rem, 1.2rem + 0.85vw, 1.95rem);
   --fs-h4: 1.25rem;
   --fs-eyebrow: 0.8rem;
 
@@ -73,7 +73,7 @@
   --radius-sm: 6px;
   --radius-md: 14px;
   --radius-lg: 28px;
-  --header-height: 84px;
+  --header-height: 72px;
 
   /* Motion */
   --ease-editorial: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -342,9 +342,12 @@ p + p {
   align-items: center;
   justify-content: center;
   gap: var(--space-2xs);
-  min-height: 48px;
-  padding: 0.85em 1.75em;
-  border-radius: 999px;
+  min-height: 46px;
+  padding: 0.75em 1.5em;
+  /* A refined rounded rectangle rather than a full pill — the brief's
+     "not oversized pills" note applies to primary/secondary buttons
+     wherever they appear, not only in the nav. */
+  border-radius: 10px;
   font-family: var(--font-body);
   font-weight: 700;
   font-size: var(--fs-sm);
@@ -402,69 +405,96 @@ p + p {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: saturate(140%) blur(10px);
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--duration-base) var(--ease-editorial),
-    box-shadow var(--duration-base) var(--ease-editorial);
+  background: var(--color-white);
+  box-shadow: none;
+  transition: box-shadow var(--duration-base) var(--ease-editorial);
 }
 
 .site-header.is-scrolled {
-  border-bottom-color: var(--color-border);
   box-shadow: 0 8px 24px -20px rgba(36, 27, 22, 0.4);
 }
 
-.site-header__inner {
+/* Level 1 — masthead: brand only, no nav, no CTA. */
+
+.brand-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-md);
   min-height: var(--header-height);
+  border-bottom: 1px solid var(--color-border);
+}
+
+@media (min-width: 768px) {
+  :root {
+    /* Also read by the mobile nav-ribbon overlay's `inset` below, so the
+       two can never drift out of sync the way a hardcoded duplicate did. */
+    --header-height: 88px;
+  }
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: var(--space-sm);
   text-decoration: none;
   color: var(--color-ink);
   min-width: 0;
-  flex-shrink: 1;
 }
 
 .brand__mark {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .brand__mark {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 .brand__name {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1;
   min-width: 0;
   white-space: nowrap;
 }
 
-@media (min-width: 1024px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .brand__name {
-    font-size: 1.15rem;
+    font-size: 1.85rem;
   }
 }
 
 .brand__name span {
-  /* Kept out of the header nav row at every width: with the full eight-item
-     nav plus CTA on one line (see .site-nav__list below), the tagline's
-     footprint is the first thing traded away, per the "reduce logo/tagline
-     footprint before letting nav wrap" direction. The full descriptor still
-     appears immediately in the hero eyebrow, so nothing is lost — it is
-     only removed from this cramped, competing context. */
-  display: none;
+  /* Freed up by moving navigation to its own row below: the masthead now
+     has room to carry the tagline on every page, not just the homepage.
+     white-space must be reset here — it would otherwise inherit `nowrap`
+     from .brand__name and force this longer line past the viewport edge
+     on narrow screens instead of wrapping. */
+  display: block;
+  white-space: normal;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 0.3em;
+}
+
+@media (min-width: 768px) {
+  .brand__name span {
+    font-size: 0.7rem;
+  }
 }
 
 .nav-toggle {
-  display: inline-flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -495,136 +525,160 @@ p + p {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-.site-nav {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
+/* Level 2 — nav ribbon: every pathway plus a compact CTA, one line only. */
+
+.nav-ribbon {
+  background: var(--color-bg-muted);
+  border-bottom: 1px solid var(--color-border);
 }
 
-.site-nav__list {
+.nav-ribbon__inner {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  padding-block: 0.65rem;
 }
 
-.site-nav__list a {
-  color: var(--color-ink);
-  text-decoration: none;
+.nav-ribbon__list {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  flex-wrap: nowrap;
+}
+
+.nav-ribbon__list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.35em 0.5em;
+  border-radius: 8px;
+  font-size: 0.88rem;
   font-weight: 600;
-  font-size: 0.9rem;
-  padding: var(--space-2xs) 0;
-  border-bottom: 2px solid transparent;
+  color: var(--color-ink-soft);
+  text-decoration: none;
   white-space: nowrap;
-  transition: border-color var(--duration-base) var(--ease-editorial),
-    color var(--duration-base) var(--ease-editorial);
+  border-bottom: 2px solid transparent;
+  transition: color var(--duration-base) var(--ease-editorial),
+    background-color var(--duration-base) var(--ease-editorial),
+    border-color var(--duration-base) var(--ease-editorial),
+    transform var(--duration-fast) var(--ease-editorial);
 }
 
-.site-nav__list a:hover,
-.site-nav__list a[aria-current='page'] {
+.nav-ribbon__list svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  opacity: 0.75;
+}
+
+.nav-ribbon__list a:hover,
+.nav-ribbon__list a:focus-visible {
+  color: var(--color-walnut);
+  background: rgba(201, 170, 125, 0.14);
   border-color: var(--color-accent-dark);
+  transform: translateY(-1px);
 }
 
-.site-header__actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
+.nav-ribbon__list a[aria-current='page'] {
+  color: var(--color-walnut);
+  font-weight: 700;
+  border-color: var(--color-walnut);
 }
 
-@media (min-width: 1024px) {
-  .site-header__inner {
-    gap: var(--space-sm);
-  }
-
-  .site-nav {
-    gap: 0.6rem;
-  }
-
-  .site-nav__list {
-    gap: 0.55rem;
-  }
-
-  .site-nav__list a {
-    font-size: 0.85rem;
-  }
-
-  .site-header__actions .btn {
-    min-height: 44px;
-    padding: 0.6em 1.1em;
-    font-size: 0.82rem;
-  }
+.nav-ribbon__cta {
+  flex-shrink: 0;
+  min-height: 40px;
+  padding: 0.55em 1.3em;
+  font-size: 0.82rem;
 }
 
-@media (min-width: 1024px) and (max-width: 1199px) {
-  .site-nav__list {
-    gap: 0.45rem;
+/* Widen just this row's measure so seven labelled icons plus a CTA have
+   room to sit on one line without crushing type size — permitted by the
+   brief ("adjust ... container width" before allowing an ugly wrap). */
+.nav-ribbon__inner {
+  max-width: 1360px;
+}
+
+@media (min-width: 1180px) and (max-width: 1339px) {
+  .nav-ribbon__list {
+    gap: 0.9rem;
   }
 
-  .site-nav__list a {
-    font-size: 0.8rem;
+  .nav-ribbon__list a {
+    font-size: 0.83rem;
   }
 }
 
-/* The container caps at --container-max (1200px) regardless of viewport, so
-   there is no extra room to relax nav sizing again past 1024px — the
-   compact sizing above is what keeps the eight-item nav + CTA on one line
-   at every desktop width, not just the smallest one. */
-
-@media (max-width: 1023px) {
+@media (max-width: 1179px) {
   .nav-toggle {
     display: inline-flex;
   }
 
-  .site-nav {
+  .nav-ribbon {
     position: fixed;
     inset: var(--header-height) 0 0 0;
+    z-index: 99;
     background: var(--color-white);
-    flex-direction: column;
-    align-items: stretch;
-    padding: var(--space-lg) var(--container-pad);
+    border-bottom: none;
     transform: translateY(-8px);
     opacity: 0;
     pointer-events: none;
+    overflow-y: auto;
     transition: opacity var(--duration-base) var(--ease-editorial),
       transform var(--duration-base) var(--ease-editorial);
-    overflow-y: auto;
   }
 
-  .site-nav.is-open {
+  .nav-ribbon.is-open {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
   }
 
-  .site-nav__list {
+  .nav-ribbon__inner {
     flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-md);
+    align-items: stretch;
+    gap: var(--space-lg);
+    padding: var(--space-lg) var(--container-pad);
+    max-width: none;
+  }
+
+  .nav-ribbon__list {
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: var(--space-xs);
     width: 100%;
   }
 
-  .site-nav__list a {
-    display: block;
+  .nav-ribbon__list a {
     width: 100%;
-    font-size: 1.15rem;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
+    min-height: 48px;
+    font-size: 1.05rem;
+    border-radius: var(--radius-sm);
+    border-bottom: none;
+    border-left: 3px solid transparent;
   }
 
-  .site-header__actions {
-    margin-top: var(--space-lg);
-    width: 100%;
+  .nav-ribbon__list svg {
+    width: 20px;
+    height: 20px;
   }
 
-  .site-header__actions .btn {
-    width: 100%;
+  .nav-ribbon__list a:hover,
+  .nav-ribbon__list a:focus-visible {
+    transform: none;
+    border-left-color: var(--color-accent-dark);
   }
-}
 
-@media (min-width: 1024px) {
-  .nav-toggle {
-    display: none;
+  .nav-ribbon__list a[aria-current='page'] {
+    border-left-color: var(--color-walnut);
+  }
+
+  .nav-ribbon__cta {
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -796,44 +850,6 @@ p + p {
 }
 
 /* ---------------------------------------------------------------------- */
-/* Hero                                                                   */
-/* ---------------------------------------------------------------------- */
-
-.hero {
-  padding-block: var(--space-2xl);
-  overflow: hidden;
-}
-
-.hero__grid {
-  display: grid;
-  gap: var(--space-xl);
-  align-items: center;
-}
-
-@media (min-width: 1024px) {
-  .hero__grid {
-    grid-template-columns: 1.1fr 0.9fr;
-  }
-}
-
-.hero__lede {
-  font-size: var(--fs-lg);
-  color: var(--color-text-muted);
-  max-width: 46ch;
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-  margin-top: var(--space-lg);
-}
-
-.hero__media {
-  position: relative;
-}
-
-/* ---------------------------------------------------------------------- */
 /* Placeholder blocks (foundation-stage structural markers)               */
 /* ---------------------------------------------------------------------- */
 
@@ -976,133 +992,8 @@ p + p {
 }
 
 /* ---------------------------------------------------------------------- */
-/* Hero                                                                    */
-/* ---------------------------------------------------------------------- */
-
-.hero {
-  padding-block: var(--space-2xl) var(--space-xl);
-}
-
-.hero__grid {
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 1024px) {
-  .hero__grid {
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: var(--space-2xl);
-  }
-}
-
-.hero__eyebrow {
-  color: var(--color-berry);
-}
-
-.hero__trust {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-2xs) var(--space-sm);
-  margin-top: var(--space-lg);
-  padding-top: var(--space-md);
-  border-top: 1px solid var(--color-border);
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  color: var(--color-text-muted);
-  max-width: 46ch;
-}
-
-.hero__trust span {
-  display: inline-flex;
-  align-items: center;
-}
-
-.hero__trust span + span::before {
-  content: '';
-  display: inline-block;
-  width: 4px;
-  height: 4px;
-  margin-inline-end: var(--space-sm);
-  border-radius: 50%;
-  background: var(--color-accent-dark);
-  vertical-align: middle;
-  transform: translateY(-2px);
-}
-
-/* Hero portrait: shown smaller and framed with room around it rather than
-   full-bleed, so the source photo's tight, phone-shot crop reads as a
-   deliberate close editorial portrait instead of an accidental selfie fill.
-   See docs/open-decisions.md#5 — same source image, revised treatment. */
-.hero__media {
-  position: relative;
-  max-width: 420px;
-  margin-inline: auto;
-}
-
-@media (min-width: 1024px) {
-  .hero__media {
-    margin-inline: 0 0 0 auto;
-  }
-}
-
-.hero__media::before {
-  content: '';
-  position: absolute;
-  inset: var(--space-lg) calc(-1 * var(--space-lg)) calc(-1 * var(--space-lg)) var(--space-lg);
-  background: var(--color-stone-200);
-  border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 0;
-  z-index: -1;
-}
-
-.hero__frame {
-  position: relative;
-  border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 0;
-  overflow: hidden;
-  box-shadow: 0 30px 60px -30px rgba(36, 27, 22, 0.35);
-}
-
-.hero__frame img {
-  width: 100%;
-}
-
-.hero__frame::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(36, 27, 22, 0.12) 0%, rgba(36, 27, 22, 0) 28%, rgba(36, 27, 22, 0) 72%, rgba(36, 27, 22, 0.22) 100%),
-    radial-gradient(120% 90% at 50% 15%, rgba(255, 255, 255, 0) 55%, rgba(123, 82, 61, 0.16) 100%);
-  pointer-events: none;
-}
-
-.hero__ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid var(--color-accent);
-  opacity: 0.45;
-  z-index: -1;
-}
-
-.hero__ring--a { width: 130px; height: 130px; top: -34px; right: 18%; }
-.hero__ring--b { width: 84px; height: 84px; bottom: 14%; left: -30px; border-color: var(--color-berry); opacity: 0.3; }
-
-/* ---------------------------------------------------------------------- */
 /* Authority strip — tight trust band directly under the hero              */
 /* ---------------------------------------------------------------------- */
-
-.authority-band {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-lg);
-}
-
-.authority-band__badges {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  gap: var(--space-sm);
-}
 
 .authority-badge {
   display: flex;
@@ -1221,7 +1112,6 @@ p + p {
 .safe-diagram {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   padding-block: var(--space-sm);
 }
 
@@ -1291,7 +1181,6 @@ p + p {
 .final-cta__motif {
   display: flex;
   align-items: center;
-  justify-content: center;
   margin-block: var(--space-lg);
 }
 
@@ -1329,117 +1218,146 @@ p + p {
    ========================================================================== */
 
 /* ---------------------------------------------------------------------- */
-/* Homepage-only: header sits solid from the very first paint. A           */
-/* transparent-over-hero header was considered (Part P) but rejected: the  */
-/* hero photograph's tone cannot be guaranteed to contrast reliably with   */
-/* fixed ink-coloured nav text, and usability wins over visual cleverness. */
+/* Hero — asymmetrical editorial split: text panel + photo panel           */
 /* ---------------------------------------------------------------------- */
 
-body[data-page="home"] .site-header {
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom-color: var(--color-border);
-}
-
-/* ---------------------------------------------------------------------- */
-/* Pathway ribbon — a quiet second wayfinding line, not a SaaS tab bar.    */
-/* Sticky beneath the header so the five major pathways stay one tap/click */
-/* away from anywhere on the page, without ever competing visually with   */
-/* the primary nav above it.                                              */
-/* ---------------------------------------------------------------------- */
-
-.pathway-ribbon {
-  position: sticky;
-  top: var(--header-height);
-  z-index: 90;
-  background: rgba(250, 247, 243, 0.94);
-  backdrop-filter: saturate(140%) blur(8px);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.pathway-ribbon__inner {
+.hero {
+  position: relative;
   display: flex;
-  align-items: center;
-  gap: var(--space-lg);
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding-block: var(--space-2xs);
+  flex-direction: column;
 }
 
-.pathway-ribbon__inner::-webkit-scrollbar {
-  display: none;
-}
-
-.pathway-ribbon__item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5em;
-  flex-shrink: 0;
-  padding: var(--space-2xs) var(--space-2xs);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--color-text-muted);
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: color var(--duration-base) var(--ease-editorial),
-    border-color var(--duration-base) var(--ease-editorial),
-    background-color var(--duration-base) var(--ease-editorial),
-    transform var(--duration-fast) var(--ease-editorial);
-}
-
-.pathway-ribbon__item svg {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-  stroke: currentColor;
-}
-
-.pathway-ribbon__item:hover,
-.pathway-ribbon__item:focus-visible {
-  color: var(--color-walnut);
-  border-color: var(--color-accent-dark);
-  transform: translateY(-1px);
-}
-
-.pathway-ribbon__item[aria-current='page'] {
-  color: var(--color-walnut);
-  border-color: var(--color-walnut);
-}
-
-@media (max-width: 767px) {
-  .pathway-ribbon {
-    display: none;
+@media (min-width: 1024px) {
+  .hero {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: clamp(560px, 80vh, 840px);
   }
 }
 
-/* ---------------------------------------------------------------------- */
-/* Hero V2 — immersive background photography                             */
-/* ---------------------------------------------------------------------- */
-
-.hero-v2 {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
+.hero__text {
   display: flex;
-  align-items: flex-end;
-  min-height: clamp(560px, 82vh, 880px);
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-2xl) var(--container-pad) var(--space-xl);
 }
 
-.hero-v2__media {
+@media (min-width: 1024px) {
+  .hero__text {
+    flex: 0 0 57%;
+    max-width: 57%;
+    /* Matches .container's own left content edge exactly, so the H1 lines
+       up with every heading in the sections below it, at any width. */
+    padding-left: max(var(--container-pad), calc((100vw - var(--container-max)) / 2 + var(--container-pad)));
+    padding-right: var(--space-2xl);
+    padding-block: var(--space-xl);
+  }
+}
+
+.hero__eyebrow {
+  color: var(--color-berry);
+}
+
+.hero h1 {
+  max-width: 22ch;
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  /* The text column is narrowest, in absolute px, right at this range (57%
+     of a smaller viewport) — hold the headline a size down from the fluid
+     clamp so it keeps the same clean three/four-line rhythm instead of
+     wrapping to five. */
+  .hero h1 {
+    font-size: 2.75rem;
+  }
+}
+
+.hero h1 em {
+  font-style: italic;
+}
+
+.hero__lede {
+  font-size: var(--fs-lg);
+  color: var(--color-text-muted);
+  max-width: 42ch;
+  margin-top: var(--space-sm);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.hero__media-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  color: var(--color-walnut);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--duration-base) var(--ease-editorial);
+}
+
+.hero__media-link:hover {
+  border-color: currentColor;
+}
+
+.hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2xs) var(--space-md);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  max-width: 46ch;
+}
+
+.hero__trust span + span::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin-inline-end: var(--space-md);
+  border-radius: 50%;
+  background: var(--color-accent-dark);
+  vertical-align: middle;
+  transform: translateY(-2px);
+}
+
+.hero__photo {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 340px;
+}
+
+@media (min-width: 1024px) {
+  .hero__photo {
+    flex: 1 1 43%;
+    min-height: 0;
+  }
+}
+
+.hero__photo img {
   position: absolute;
   inset: 0;
-  z-index: -1;
-}
-
-.hero-v2__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 22%;
+  object-position: center 16%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero-v2__media img {
+  .hero__photo img {
     animation: hero-breathe 24s ease-in-out infinite alternate;
   }
 }
@@ -1449,146 +1367,75 @@ body[data-page="home"] .site-header {
   to { transform: scale(1.045); }
 }
 
-.hero-v2__media::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, rgba(36, 27, 22, 0.82) 0%, rgba(36, 27, 22, 0.38) 42%, rgba(36, 27, 22, 0.12) 68%, rgba(36, 27, 22, 0.05) 100%);
-}
-
-.hero-v2__rings {
+.hero__rings {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 1;
 }
 
-.hero-v2__rings span {
+.hero__rings span {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.55);
 }
 
-.hero-v2__rings span:first-child {
-  width: 220px;
-  height: 220px;
-  top: 12%;
-  right: -70px;
-}
-
-.hero-v2__rings span:last-child {
-  width: 140px;
-  height: 140px;
+/* Positioned low and to the outer edge of the photo panel, well clear of
+   the face (which sits in the upper-middle of the frame — see the object
+   position above) so the motif never crosses her features. */
+.hero__rings span:first-child {
+  width: 130px;
+  height: 130px;
   bottom: 8%;
-  right: 14%;
-  border-color: rgba(201, 170, 125, 0.4);
+  left: -46px;
 }
 
-.hero-v2__content {
-  position: relative;
-  z-index: 1;
-  padding-block: var(--space-xl) var(--space-2xl);
-  color: var(--color-white);
-  max-width: 40rem;
+.hero__rings span:last-child {
+  width: 76px;
+  height: 76px;
+  bottom: 22%;
+  left: 8%;
+  border-color: rgba(201, 170, 125, 0.6);
 }
 
-.hero-v2__eyebrow {
-  color: var(--color-white) !important;
-  opacity: 0.92;
+@media (max-width: 1023px) {
+  .hero__rings {
+    display: none;
+  }
 }
 
-.hero-v2 h1 {
-  color: var(--color-white);
-  font-size: clamp(2.25rem, 1.8rem + 2vw, 3.4rem);
+.hero__scroll-cue {
+  display: none;
 }
 
-.hero-v2__lede {
-  font-size: var(--fs-lg);
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 46ch;
-}
+@media (min-width: 1024px) {
+  .hero__scroll-cue {
+    display: block;
+    position: absolute;
+    left: max(var(--container-pad), calc((100vw - var(--container-max)) / 2 + var(--container-pad)));
+    bottom: var(--space-md);
+    width: 1px;
+    height: 34px;
+    background: var(--color-border);
+    z-index: 1;
+  }
 
-.hero-v2__actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-sm);
-  margin-top: var(--space-lg);
-}
+  .hero__scroll-cue::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 6px;
+    height: 6px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: var(--color-accent-dark);
+  }
 
-.hero-v2__actions .btn-secondary {
-  color: var(--color-white);
-  border-color: rgba(255, 255, 255, 0.75);
-}
-
-.hero-v2__actions .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.14);
-}
-
-.hero-v2__media-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  font-weight: 700;
-  font-size: var(--fs-sm);
-  color: var(--color-white);
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: border-color var(--duration-base) var(--ease-editorial);
-}
-
-.hero-v2__media-link:hover {
-  border-color: rgba(255, 255, 255, 0.8);
-}
-
-.hero-v2__trust {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-2xs) var(--space-md);
-  margin-top: var(--space-lg);
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.hero-v2__trust span + span::before {
-  content: '';
-  display: inline-block;
-  width: 4px;
-  height: 4px;
-  margin-inline-end: var(--space-md);
-  border-radius: 50%;
-  background: var(--color-accent);
-  vertical-align: middle;
-  transform: translateY(-2px);
-}
-
-.hero-v2__scroll-cue {
-  position: absolute;
-  left: 50%;
-  bottom: var(--space-md);
-  transform: translateX(-50%);
-  width: 1px;
-  height: 34px;
-  background: rgba(255, 255, 255, 0.5);
-  z-index: 1;
-}
-
-.hero-v2__scroll-cue::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 6px;
-  height: 6px;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: var(--color-accent);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .hero-v2__scroll-cue {
-    animation: hero-scroll-cue 2.4s ease-in-out infinite;
+  @media (prefers-reduced-motion: no-preference) {
+    .hero__scroll-cue {
+      animation: hero-scroll-cue 2.4s ease-in-out infinite;
+    }
   }
 }
 
@@ -1598,84 +1445,34 @@ body[data-page="home"] .site-header {
 }
 
 @media (max-width: 1023px) {
-  .hero-v2 {
-    flex-direction: column;
-    align-items: stretch;
-    min-height: 0;
+  .hero__photo {
+    height: 52vh;
+    min-height: 380px;
+    order: -1;
   }
 
-  .hero-v2__media {
-    position: relative;
-    inset: auto;
-    height: 46vh;
-    min-height: 320px;
+  .hero__photo img {
+    object-position: center 14%;
   }
+}
 
-  .hero-v2__media img {
-    object-position: center 18%;
-  }
-
-  .hero-v2__media::after {
-    background: linear-gradient(0deg, var(--color-bg) 0%, rgba(36, 27, 22, 0.05) 22%, rgba(36, 27, 22, 0) 55%);
-  }
-
-  .hero-v2__rings {
-    display: none;
-  }
-
-  .hero-v2__content {
-    color: var(--color-text);
-    max-width: none;
-    padding-block: var(--space-lg) var(--space-xl);
-  }
-
-  .hero-v2__eyebrow {
-    color: var(--color-berry) !important;
-    opacity: 1;
-  }
-
-  .hero-v2 h1 {
-    color: var(--color-ink);
-  }
-
-  .hero-v2__lede {
-    color: var(--color-text-muted);
-  }
-
-  .hero-v2__actions .btn-secondary {
-    color: var(--color-walnut);
-    border-color: var(--color-walnut);
-  }
-
-  .hero-v2__actions .btn-secondary:hover {
-    background: var(--color-walnut);
-    color: var(--color-white);
-  }
-
-  .hero-v2__media-link {
-    color: var(--color-walnut);
-  }
-
-  .hero-v2__media-link:hover {
-    border-color: currentColor;
-  }
-
-  .hero-v2__trust {
-    color: var(--color-text-muted);
-  }
-
-  .hero-v2__scroll-cue {
-    display: none;
+@media (min-width: 600px) and (max-width: 1023px) {
+  /* At tablet widths the panel is proportionally much wider than at phone
+     widths, which alone would tighten the crop back up — a taller panel
+     keeps the same generous, zoomed-out framing used elsewhere. */
+  .hero__photo {
+    height: 62vh;
+    min-height: 460px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-v2__actions {
+  .hero__actions {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .hero-v2__actions .btn {
+  .hero__actions .btn {
     width: 100%;
   }
 }
@@ -1803,10 +1600,8 @@ body[data-page="home"] .site-header {
 .media-authority__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: var(--space-sm) var(--space-xl);
   margin-top: var(--space-lg);
-  text-align: center;
 }
 
 .media-authority__list span {
@@ -1822,7 +1617,6 @@ body[data-page="home"] .site-header {
 .awards-strip {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: var(--space-sm);
   margin-top: var(--space-lg);
 }
