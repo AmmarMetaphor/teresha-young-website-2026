@@ -56,6 +56,14 @@ Testimonials belong to the person who gave them. Never rewrite a testimonial's w
 
 This voice pass is about *how* things are said, not licence to invent *what* is said. Every constraint in `docs/approved-facts.md` still applies in full: no invented biography, statistics, results, programme details, media claims, awards, or personal history. Where no approved content exists for a section, write honestly and briefly rather than fabricating detail.
 
+## No AI-slop language
+
+Avoid generic, formulaic, inflated or unnecessarily promotional constructions, wherever they'd tempt a first draft — "navigate the complexities of," "unlock your potential," "transform your life," "empower you to," "thrive in today's fast-paced world," "meaningful transformation," "holistic journey," "journey towards," "designed to empower," "create lasting change," "discover what's possible," "at the heart of," "whether you're X, Y or Z," "elevate your wellbeing," "support you on your journey." Rewrite with specific language, shorter sentences and real visitor relevance instead of swapping in a different cliché. Copy should read as though an experienced human brand editor edited it, not as a first, unedited AI draft.
+
+## Dash and hyphen cleanup
+
+Audit visible editorial copy for em dashes, en dashes and stylistic hyphens used to stitch two clauses together, and rewrite using commas, full stops, colons or semicolons instead. This is an editorial-copy rule, not a global find-and-replace: it never applies to URLs, slugs, filenames, CSS, JavaScript, HTML attributes, technical identifiers, official award names, trademarked wording, grammatically required compounds, or approved brand terminology such as "Well-being." Page-title separators (e.g. "Page — Teresha Young") and quoted/verbatim source content (testimonials, PDF-derived exercise text) are exempt for the same reason those are exempt from the voice rules generally.
+
 ## No visible development language
 
 No visitor-facing page may show TODO, "Placeholder", "Open decision", "pending [copy/approval/confirmation]", a `see docs/...` reference, or other internal project-management language. If content isn't approved yet, omit it or write a brief, honest, plain-language line instead (e.g. "New resources will appear here.") — never expose the internal status note itself. Unresolved questions live in `docs/open-decisions.md` only.

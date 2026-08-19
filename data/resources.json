@@ -1,23 +1,25 @@
 {
   "_meta": {
-    "purpose": "Reference record of the two approved resource guides shown on resources.html. The page renders these statically in HTML rather than fetching this file — kept here as a single source of truth for the approved titles/descriptions and the expected PDF paths.",
+    "purpose": "Reference record of the two approved resource articles shown on resources.html. The page renders these statically in HTML rather than fetching this file — kept here as a single source of truth for the approved titles/descriptions and article paths.",
     "source": "docs/approved-facts.md",
-    "pdfStatus": "Real PDF files have not been supplied yet. Do not create placeholder/fake PDFs. See docs/open-decisions.md."
+    "pdfStatus": "Both source PDFs are supplied under assets/docs/resources/ and kept unchanged as archival files. The primary visitor experience is the native HTML article at articlePath; the PDF is a secondary, optional reference link."
   },
   "items": [
     {
       "id": "igniting-intimacy",
-      "title": "Igniting Intimacy — 12 Powerful Questions to Transform Your Relationship",
-      "format": "PDF guide",
-      "description": "Twelve reflective questions designed to open up honest conversation between partners.",
-      "expectedPath": "assets/docs/resources/igniting-intimacy-12-powerful-questions.pdf"
+      "title": "Igniting Intimacy: 12 Powerful Questions to Transform Your Relationship",
+      "format": "Article",
+      "description": "Twelve reflective questions, plus the L-RUGI technique, for building closeness and honest conversation between partners.",
+      "articlePath": "resources/igniting-intimacy-12-powerful-questions.html",
+      "sourcePdfPath": "assets/docs/resources/igniting-intimacy-12-powerful-questions.pdf"
     },
     {
       "id": "seven-day-me-time-plan",
       "title": "7 Day \"Me Time\" Plan",
-      "format": "PDF guide",
-      "description": "A seven-day structure for building small, consistent pockets of personal time into daily life.",
-      "expectedPath": "assets/docs/resources/7-day-me-time-plan.pdf"
+      "format": "Article",
+      "description": "A day-by-day structure for building small, consistent pockets of personal time into daily life.",
+      "articlePath": "resources/7-day-me-time-plan.html",
+      "sourcePdfPath": "assets/docs/resources/7-day-me-time-plan.pdf"
     }
   ]
 }

@@ -233,6 +233,32 @@ No assets were renamed, moved, deleted, recompressed, or overwritten in the cour
 
 ## Derivatives created — Sitewide Refinement stage
 
-- `teresha-young-image-4-hero.jpg` (1900×2533, plain resize) and `teresha-young-image-5-hero.jpg` (1900×2533, plain resize) are used together in the homepage hero's rotation. `-5-hero.jpg` was regenerated this stage from the unused original — an earlier, orphaned derivative of the same name had been over-cropped to forehead-to-lips only; it has been replaced with a full-frame resize matching the `-4-hero.jpg` convention. Also reused (unresized) for the About page portrait, replacing a much larger unoptimised original.
-- `teresha-young-image-7-card.jpg` (900×1200, plain resize, no crop) is new this stage and is used as the "Why Teresha" section image. See `docs/open-decisions.md` item 14 for why a landscape crop was not used instead.
-- `assets/docs/resources/` is a new, empty scaffold folder (plus a `README.md`) for the two approved resource PDFs, which have not been supplied — see `docs/open-decisions.md` item 12. No PDF files were fabricated.
+- `teresha-young-image-4-hero.jpg` (1900×2533, plain resize) and `teresha-young-image-5-hero.jpg` (1900×2533, plain resize) are used together in the homepage hero's rotation. Also reused (unresized) for the About and Private Coaching page portraits.
+- `teresha-young-image-7-card.jpg` (900×1200, plain resize, no crop) is used as the "Why Teresha" section image. See `docs/open-decisions.md` item 14 for why a landscape crop was not used instead.
+- `assets/docs/resources/` now holds the two approved resource PDFs (`igniting-intimacy-12-powerful-questions.pdf`, `7-day-me-time-plan.pdf`), unchanged as archival source files. No PDF files were fabricated or edited.
+
+---
+
+## Authority Homepage / Resources stage — media logos and article assets
+
+### `assets/logos/media/` — outlet logo files present and now in use
+
+All nine files in this directory are used, unedited, in the homepage "Recognised across the media" section and the Media & Speaking page's "Media appearances" section, inside a shared `.logo-field` component (consistent optical height via CSS, monochrome until hover, original aspect ratio preserved, no added card/border):
+
+| File | Outlet | Notes |
+|---|---|---|
+| `BBC-Radio-Kent-Logo.png` | BBC Radio Kent | Solid purple brand-colour background baked into the file (not transparent) |
+| `bbc-radio-london-logo.png` | BBC Radio London | Solid purple background baked into the file |
+| `channel-4-logo.png` | Channel 4 | Black wordmark, transparent/white background |
+| `cosmopolitan-logo.png` | Cosmopolitan UK | Magenta wordmark, transparent background |
+| `daily-record-logo.png` | Daily Record | Solid red background baked into the file |
+| `huffpost-logo.jpg` | HuffPost | White background (JPEG, no transparency) |
+| `ok!-logo.png` | OK! | Solid red background baked into the file |
+| `the-mirror-logo.png` | The Mirror | Transparent background |
+| `thrive-global-logo.jpg` | Thrive Global | White background (JPEG, no transparency) |
+
+**Not present:** logo files for New, Breathe, iCN, The List and Nicki Swift, and Glam — six of the fifteen approved-facts outlet names. These outlets are omitted from the live logo grid on both pages rather than represented with a fabricated wordmark; see `docs/open-decisions.md` item 11.
+
+### Resource article assets
+
+No new image derivatives were created for the two resource articles. `resources/igniting-intimacy-12-powerful-questions.html` and `resources/7-day-me-time-plan.html` are text-only editorial pages using the shared global stylesheet; the source PDFs are linked only as a secondary "View original PDF" reference and are otherwise unchanged in this directory.
