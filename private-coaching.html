@@ -46,16 +46,46 @@
 
 <main id="main">
 
-  <section class="page-hero page-hero--photo page-hero--coaching">
-    <div class="page-hero__photo">
-      <img src="assets/teresha/teresha-young-image-5-hero.jpg" alt="Teresha Young, Relationship &amp; Emotional Well-being Expert" width="1900" height="2533" loading="eager" fetchpriority="high" decoding="async">
+  <!-- ============================================================ -->
+  <!-- PRIVATE COACHING HERO — one continuous photographic           -->
+  <!-- composition, not a text panel beside an image panel. A blurred -->
+  <!-- continuation of the same approved photograph fills the whole   -->
+  <!-- frame, the sharp portrait sits right behind a soft mask, and a -->
+  <!-- walnut gradient develops across the left so the copy reads as  -->
+  <!-- part of the photograph. Warmer and more intimate than the      -->
+  <!-- Organisations and Homepage heroes, and deliberately static.    -->
+  <!-- ============================================================ -->
+  <section class="pc-hero">
+    <div class="pc-hero__ambient" aria-hidden="true"></div>
+
+    <div class="pc-hero__photo">
+      <img src="assets/teresha/private-coaching-hero.jpg"
+           alt="Teresha Young, Relationship &amp; Emotional Well-being Expert"
+           width="1400" height="1867" loading="eager" fetchpriority="high" decoding="async">
     </div>
-    <div class="page-hero__scrim" aria-hidden="true"></div>
-    <div class="container page-hero__content">
-      <p class="eyebrow" style="color: var(--color-berry);">Private Coaching</p>
-      <h1>Support for your relationship and emotional well-being</h1>
-      <p class="hero__lede" style="color: var(--color-stone-100);">Private coaching for relationship patterns, communication and emotional well-being, explored one-to-one, at a pace that respects where you're starting from.</p>
-      <p><a class="btn btn-secondary" href="contact.html">Start a conversation</a></p>
+
+    <div class="pc-hero__scrim" aria-hidden="true"></div>
+
+    <!-- Restrained connection geometry, far left, well clear of her face -->
+    <div class="pc-hero__rings" aria-hidden="true"><span></span><span></span><span></span></div>
+
+    <div class="container pc-hero__content">
+      <p class="eyebrow pc-hero__eyebrow">Private Coaching</p>
+      <h1 class="pc-hero__title">Support for your relationship and <em>emotional well-being</em></h1>
+      <p class="pc-hero__lede">Private coaching for relationship patterns, communication and emotional well-being, explored one-to-one, at a pace that respects where you&rsquo;re starting from.</p>
+      <div class="pc-hero__actions">
+        <a class="btn btn-primary" href="contact.html">Start a conversation</a>
+        <a class="pc-hero__secondary" href="#private-outcomes-heading">What this means for you</a>
+      </div>
+
+      <!-- Short excerpt from the approved Emma W testimonial already published
+           further down this page. Client words, attributed to the client. -->
+      <figure class="pc-hero__quote">
+        <blockquote>
+          <p>&ldquo;I have really noticed a difference in my self-confidence and self-belief.&rdquo;</p>
+        </blockquote>
+        <figcaption>Emma W</figcaption>
+      </figure>
     </div>
   </section>
 
