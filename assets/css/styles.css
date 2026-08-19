@@ -2314,3 +2314,606 @@ a.resource-card__action:hover svg {
   padding-top: var(--space-lg);
   border-top: 1px solid var(--color-border);
 }
+
+/* ==========================================================================
+   Contact page — "Start a conversation" (contact.html only)
+   Two-part editorial hero: intro + working pathway selector and enquiry form
+   on the left, Teresha portrait in a gold-circle composition on the right,
+   with a trust strip, FAQ accordion and secondary routes beneath. Every
+   class below is unique to contact.html, so no other page is affected.
+   ========================================================================== */
+
+.contact-hero {
+  position: relative;
+  background: linear-gradient(180deg, #FBF7F1 0%, #F6EFE5 100%);
+}
+
+.contact-hero__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  width: 100%;
+  max-width: 1360px;
+  margin-inline: auto;
+  padding: var(--space-xl) var(--container-pad) var(--space-2xl);
+}
+
+@media (min-width: 1080px) {
+  .contact-hero__inner {
+    /* Form side slightly wider, portrait keeps equal visual weight. */
+    grid-template-columns: 54% 46%;
+    align-items: center;
+    gap: var(--space-lg);
+    padding-block: var(--space-xl) var(--space-2xl);
+  }
+}
+
+.contact-hero__copy { min-width: 0; }
+
+.contact-hero__eyebrow { color: var(--color-walnut); }
+
+.contact-hero__title {
+  font-size: clamp(2.4rem, 1.6rem + 2.4vw, 3.6rem);
+  line-height: 1.1;
+  text-wrap: normal;
+  margin-bottom: var(--space-xs);
+}
+
+.contact-hero__title em {
+  font-style: normal;
+  color: var(--color-walnut);
+}
+
+.contact-hero__lede {
+  font-size: var(--fs-lg);
+  color: var(--color-text-muted);
+  max-width: 44ch;
+  margin-bottom: var(--space-lg);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Pathway selector                                                       */
+/* ---------------------------------------------------------------------- */
+
+.pathways {
+  border: 0;
+  padding: 0;
+  margin: 0 0 calc(var(--space-md) * -1);
+}
+
+.pathways__grid {
+  display: grid;
+  gap: var(--space-2xs);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  padding: var(--space-2xs);
+  padding-bottom: calc(var(--space-md) + var(--space-2xs));
+}
+
+@media (min-width: 700px) {
+  .pathways__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.pathway { position: relative; min-width: 0; }
+
+/* The radio stays in the accessibility tree and keeps native keyboard
+   behaviour; the visible control is the label. */
+.pathway input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+}
+
+.pathway label {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  height: 100%;
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--duration-base) var(--ease-editorial),
+    border-color var(--duration-base) var(--ease-editorial);
+}
+
+.pathway label:hover { background: var(--color-stone-100); }
+
+.pathway input:focus-visible + label {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.pathway__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--pathway-accent, var(--color-walnut));
+}
+
+.pathway__icon svg { width: 24px; height: 24px; }
+
+.pathway__body { min-width: 0; }
+
+.pathway__label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: 1.25;
+}
+
+.pathway__desc {
+  display: block;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+  margin-top: 0.2rem;
+}
+
+/* Absolutely positioned so it never steals width from the label, which
+   would otherwise wrap the active card taller than its siblings. */
+.pathway__check {
+  display: none;
+  position: absolute;
+  top: var(--space-2xs);
+  right: var(--space-2xs);
+  align-items: center;
+  justify-content: center;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--pathway-accent, var(--color-walnut));
+}
+
+.pathway__check svg { width: 13px; height: 13px; }
+
+/* Service colours as identifiers, not full-saturation blocks. */
+.pathway--organisations { --pathway-accent: var(--color-slate); }
+.pathway--coaching { --pathway-accent: var(--color-berry); }
+.pathway--media { --pathway-accent: var(--color-forest); }
+
+.pathway input:checked + label {
+  background: var(--color-walnut);
+  border-color: var(--color-walnut);
+}
+
+.pathway input:checked + label .pathway__label { color: var(--color-white); }
+.pathway input:checked + label .pathway__desc { color: rgba(255, 255, 255, 0.82); }
+.pathway input:checked + label .pathway__icon { color: var(--color-gold); }
+.pathway input:checked + label .pathway__check { display: inline-flex; }
+
+/* ---------------------------------------------------------------------- */
+/* Enquiry form panel                                                     */
+/* ---------------------------------------------------------------------- */
+
+.enquiry__panel {
+  position: relative;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: 0 24px 50px -40px rgba(36, 27, 22, 0.55);
+}
+
+.enquiry__heading {
+  font-size: 1.3rem;
+  margin-bottom: var(--space-md);
+}
+
+.enquiry__grid {
+  display: grid;
+  gap: 0 var(--space-md);
+}
+
+@media (min-width: 620px) {
+  .enquiry__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.enquiry__panel .form-field { margin-bottom: var(--space-sm); }
+
+.enquiry__panel textarea { min-height: 108px; }
+
+.enquiry__count {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: right;
+  margin-top: 0.3rem;
+}
+
+.form-error {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-berry);
+  margin-top: 0.3rem;
+}
+
+.form-error:empty { display: none; }
+
+.form-field input.is-invalid,
+.form-field textarea.is-invalid {
+  border-color: var(--color-berry);
+}
+
+.enquiry__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm) var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.enquiry__submit svg {
+  width: 17px;
+  height: 17px;
+  transition: transform var(--duration-base) var(--ease-editorial);
+}
+
+.enquiry__submit:hover svg { transform: translateX(3px); }
+
+.enquiry__privacy,
+.enquiry__prototype {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  max-width: 42ch;
+  margin: 0;
+}
+
+.enquiry__privacy { flex: 1 1 15rem; }
+
+.enquiry__prototype {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.enquiry__notice {
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-gold-dark);
+  background: #FBF3E7;
+  font-size: 0.86rem;
+  color: var(--color-ink);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Portrait composition                                                   */
+/* ---------------------------------------------------------------------- */
+
+.contact-hero__visual { min-width: 0; }
+
+.portrait-stage {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin-inline: auto;
+  aspect-ratio: 1 / 1;
+  isolation: isolate;
+}
+
+/* Gold circular framing device — the brand's connection/wholeness geometry,
+   used as a ground for the figure rather than an enlarged logo. */
+.portrait-stage__ring {
+  position: absolute;
+  inset: 6% 4% auto 4%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 26%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 46%),
+    linear-gradient(148deg, var(--color-gold) 0%, #E7D0AB 40%, var(--color-gold-dark) 78%, #A97F4E 100%);
+  z-index: -2;
+}
+
+/* Second, offset hairline ring — quiet echo of the interlocking geometry. */
+.portrait-stage__ring--inner {
+  inset: 20% 20% auto -2%;
+  width: auto;
+  background: none;
+  border: 1px solid rgba(123, 82, 61, 0.32);
+  z-index: -1;
+}
+
+.portrait-stage__img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 82%;
+  height: auto;
+  filter: drop-shadow(0 26px 40px rgba(58, 36, 27, 0.28));
+}
+
+.portrait-note,
+.portrait-badge {
+  position: absolute;
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 44px -30px rgba(36, 27, 22, 0.7);
+}
+
+.portrait-note {
+  top: 12%;
+  right: 0;
+  max-width: 15rem;
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--color-border);
+}
+
+.portrait-note__mark {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  line-height: 0.6;
+  color: var(--color-gold-dark);
+}
+
+.portrait-note p {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--color-ink-soft);
+  margin: var(--space-2xs) 0 0;
+}
+
+.portrait-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  bottom: 4%;
+  right: 0;
+  max-width: 17rem;
+  padding: var(--space-sm) var(--space-md);
+  background: #3A241B;
+  color: var(--color-stone-100);
+}
+
+.portrait-badge__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--color-gold);
+}
+
+.portrait-badge__icon svg { width: 22px; height: 22px; }
+
+.portrait-badge__body strong {
+  display: block;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--color-white);
+}
+
+.portrait-badge__body span {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(243, 231, 214, 0.78);
+  margin-top: 0.2rem;
+}
+
+/* Only once the hero has spare outer margin can the cards overhang the
+   stage without pushing past the viewport (1360 max-width + 2 x padding). */
+@media (min-width: 1456px) {
+  .portrait-note { right: -4%; }
+  .portrait-badge { right: -6%; }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Trust strip                                                            */
+/* ---------------------------------------------------------------------- */
+
+.contact-trust {
+  background: #EFE3D2;
+  border-top: 1px solid rgba(123, 82, 61, 0.14);
+}
+
+.contact-trust__list {
+  display: grid;
+  gap: var(--space-md);
+  padding-block: var(--space-md);
+}
+
+@media (min-width: 860px) {
+  .contact-trust__list { grid-template-columns: repeat(3, 1fr); }
+}
+
+.contact-trust__list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-width: 0;
+}
+
+.contact-trust__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-gold-dark);
+}
+
+.contact-trust__icon svg { width: 21px; height: 21px; }
+
+.contact-trust__list strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--color-ink);
+}
+
+.contact-trust__list span span,
+.contact-trust__list li > span {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--color-ink-soft);
+}
+
+/* ---------------------------------------------------------------------- */
+/* FAQ + other routes                                                     */
+/* ---------------------------------------------------------------------- */
+
+.contact-secondary {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 900px) {
+  .contact-secondary { grid-template-columns: 1fr 1fr; gap: var(--space-2xl); }
+}
+
+.faq {
+  align-self: start;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+.faq__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-2xs);
+}
+
+.faq__head h2 { font-size: 1.4rem; }
+
+.faq__mark {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--color-walnut);
+}
+
+.faq__mark svg { width: 26px; height: 26px; }
+
+.faq__item { border-bottom: 1px solid var(--color-border); }
+.faq__item:last-child { border-bottom: none; }
+
+.faq__item h3 { font-size: 1rem; margin: 0; }
+
+.faq__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-sm) 0;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  transition: color var(--duration-base) var(--ease-editorial);
+}
+
+.faq__trigger:hover { color: var(--color-walnut); }
+
+.faq__trigger svg {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+  color: var(--color-walnut);
+  transition: transform var(--duration-base) var(--ease-editorial);
+}
+
+.faq__trigger[aria-expanded='true'] svg { transform: rotate(180deg); }
+
+.faq__panel {
+  padding-bottom: var(--space-sm);
+}
+
+.faq__panel p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.connect__heading {
+  font-size: 1.4rem;
+  margin-bottom: var(--space-md);
+}
+
+.connect__list { display: grid; gap: var(--space-md); }
+
+.connect__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.connect__list li:last-child { border-bottom: none; padding-bottom: 0; }
+
+.connect__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--color-gold-dark);
+  color: var(--color-walnut);
+}
+
+.connect__icon svg { width: 20px; height: 20px; }
+
+.connect__list h3 { font-size: 1.05rem; margin-bottom: 0.2rem; }
+
+.connect__list p {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2xs);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Tablet / mobile                                                        */
+/* ---------------------------------------------------------------------- */
+
+@media (max-width: 1079px) {
+  /* Mobile order: intro → pathway selector → form → portrait → trust. */
+  .contact-hero__visual { order: 2; }
+  .portrait-stage { max-width: 440px; }
+
+  /* Stacked, the form would otherwise stretch the full viewport width. */
+  .contact-hero__copy { max-width: 720px; }
+}
+
+@media (max-width: 620px) {
+  .portrait-note {
+    right: auto;
+    left: 0;
+    top: 4%;
+    max-width: 12.5rem;
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .portrait-badge {
+    right: auto;
+    left: 0;
+    bottom: 0;
+    max-width: 15rem;
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .enquiry__panel { padding: var(--space-md); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pathway label,
+  .faq__trigger,
+  .faq__trigger svg,
+  .enquiry__submit svg {
+    transition: none;
+  }
+}
