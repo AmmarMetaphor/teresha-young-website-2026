@@ -920,6 +920,10 @@ p + p {
   gap: var(--space-md);
 }
 
+.list-plain--inline {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
 .error-page {
   min-height: 60vh;
   display: flex;
@@ -1000,39 +1004,6 @@ p + p {
   transform: scale(1.035);
 }
 
-/* ---------------------------------------------------------------------- */
-/* Authority strip — tight trust band directly under the hero              */
-/* ---------------------------------------------------------------------- */
-
-.authority-badge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 76px;
-  padding: var(--space-xs) var(--space-md);
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-}
-
-.authority-badge img {
-  height: 100%;
-  width: auto;
-  max-width: 150px;
-  object-fit: contain;
-}
-
-.authority-credentials {
-  margin: 0;
-  color: var(--color-text-muted);
-  max-width: 46ch;
-  font-size: var(--fs-sm);
-}
-
-.authority-credentials strong {
-  color: var(--color-ink);
-}
-
 /* Reusable primary/secondary credential pairing — mirrors the hero's
    accreditation hierarchy (primary credential larger, secondary smaller)
    for use on subsidiary pages. */
@@ -1078,61 +1049,6 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 }
 
 /* ---------------------------------------------------------------------- */
-/* Pathway link — reused by the "Other ways to work together" cards        */
-/* below; reads --pathway-color from whichever card sets it.               */
-/* ---------------------------------------------------------------------- */
-
-.pathway-card__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  font-weight: 700;
-  text-decoration: none;
-  color: var(--pathway-color, var(--color-walnut));
-  border-bottom: 2px solid transparent;
-  transition: border-color var(--duration-base) var(--ease-editorial);
-}
-
-.pathway-card__link:hover {
-  border-color: currentColor;
-}
-
-.topics-grid {
-  display: grid;
-  gap: 0;
-  border-top: 1px solid var(--color-border);
-  margin-top: var(--space-lg);
-}
-
-@media (min-width: 640px) {
-  .topics-grid { grid-template-columns: repeat(2, 1fr); column-gap: var(--space-xl); }
-}
-
-@media (min-width: 1024px) {
-  .topics-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
-.topics-grid__item {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-sm);
-  padding-block: var(--space-sm);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.topics-grid__num {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  color: var(--color-slate);
-  min-width: 2rem;
-}
-
-.topics-grid__label {
-  font-weight: 600;
-  font-size: var(--fs-sm);
-}
-
-/* ---------------------------------------------------------------------- */
 /* Why Teresha — credential list + circle-motif authority graphic          */
 /* ---------------------------------------------------------------------- */
 
@@ -1165,7 +1081,7 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 .safe-diagram {
   display: flex;
   flex-wrap: wrap;
-  padding-block: var(--space-sm);
+  padding-block: var(--space-md);
 }
 
 .safe-diagram__item {
@@ -1174,39 +1090,69 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 112px;
-  height: 112px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  border: 1px solid var(--color-forest);
+  border: 1.5px solid var(--color-forest);
   background: var(--color-bg);
   text-align: center;
   padding: var(--space-sm);
+  transition: transform var(--duration-base) var(--ease-editorial);
+}
+
+.safe-diagram__item:hover {
+  transform: translateY(-3px);
 }
 
 .safe-diagram__item + .safe-diagram__item {
-  margin-inline-start: -24px;
+  margin-inline-start: -34px;
 }
+
+/* Walnut, gold and forest, used sparingly to give each ring its own
+   identity within one connected system rather than four identical cards. */
+.safe-diagram__item:nth-child(1) { border-color: var(--color-forest); z-index: 4; }
+.safe-diagram__item:nth-child(2) { border-color: var(--color-gold-dark); z-index: 3; }
+.safe-diagram__item:nth-child(3) { border-color: var(--color-walnut); z-index: 2; }
+.safe-diagram__item:nth-child(4) { border-color: var(--color-forest); z-index: 1; }
+
+.safe-diagram__item:nth-child(1) .safe-diagram__letter { color: var(--color-forest); }
+.safe-diagram__item:nth-child(2) .safe-diagram__letter { color: var(--color-gold-dark); }
+.safe-diagram__item:nth-child(3) .safe-diagram__letter { color: var(--color-walnut); }
+.safe-diagram__item:nth-child(4) .safe-diagram__letter { color: var(--color-forest); }
 
 .safe-diagram__letter {
   font-family: var(--font-heading);
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 600;
-  color: var(--color-forest);
   line-height: 1;
 }
 
 .safe-diagram__word {
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   color: var(--color-text-muted);
-  margin-top: 0.2em;
+  margin-top: 0.25em;
 }
 
 @media (max-width: 767px) {
-  .safe-diagram__item + .safe-diagram__item {
-    margin-inline-start: -16px;
+  .safe-diagram {
+    justify-content: center;
   }
+
+  .safe-diagram__item {
+    width: 112px;
+    height: 112px;
+  }
+
+  .safe-diagram__item + .safe-diagram__item {
+    margin-inline-start: -22px;
+  }
+}
+
+.safe-diagram__intro {
+  max-width: 62ch;
+  margin-top: var(--space-xs);
 }
 
 .chip-row {
@@ -1271,113 +1217,58 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
    ========================================================================== */
 
 /* ---------------------------------------------------------------------- */
-/* Hero — asymmetrical editorial split: text panel + photo panel           */
+/* Hero — one editorial composition: photograph, warm bleed and copy merge */
+/* into a single frame rather than a white-panel/photo-panel split. The    */
+/* photo's left edge dissolves into a blurred, tinted echo of itself       */
+/* behind the copy, so there is no hard seam anywhere in the hero.         */
 /* ---------------------------------------------------------------------- */
 
 .hero {
   position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-@media (min-width: 1024px) {
-  .hero {
-    flex-direction: row;
-    align-items: stretch;
-    min-height: clamp(560px, 80vh, 840px);
-  }
-}
-
-.hero__text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: var(--space-2xl) var(--container-pad) var(--space-xl);
-}
-
-@media (min-width: 1024px) {
-  .hero__text {
-    flex: 0 0 57%;
-    max-width: 57%;
-    /* Matches .container's own left content edge exactly, so the H1 lines
-       up with every heading in the sections below it, at any width. */
-    padding-left: max(var(--container-pad), calc((100vw - var(--container-max)) / 2 + var(--container-pad)));
-    padding-right: var(--space-2xl);
-    padding-block: var(--space-xl);
-  }
-}
-
-.hero__eyebrow {
-  color: var(--color-berry);
-}
-
-.hero h1 {
-  max-width: 22ch;
-}
-
-@media (min-width: 1024px) and (max-width: 1279px) {
-  /* The text column is narrowest, in absolute px, right at this range (57%
-     of a smaller viewport) — hold the headline a size down from the fluid
-     clamp so it keeps the same clean three/four-line rhythm instead of
-     wrapping to five. */
-  .hero h1 {
-    font-size: 2.75rem;
-  }
-}
-
-.hero h1 em {
-  font-style: italic;
-}
-
-.hero__lede {
-  font-size: var(--fs-lg);
-  color: var(--color-text-muted);
-  max-width: 42ch;
-  margin-top: var(--space-sm);
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-sm);
-  margin-top: var(--space-lg);
-}
-
-.hero__trust {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  margin-top: var(--space-lg);
-  padding-top: var(--space-md);
-  border-top: 1px solid var(--color-border);
-  max-width: 46ch;
-}
-
-.hero__trust-primary {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--color-ink);
-}
-
-.hero__trust-secondary {
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  color: var(--color-text-muted);
-}
-
-.hero__photo {
-  position: relative;
-  overflow: hidden;
   isolation: isolate;
-  min-height: 340px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(560px, 88vh, 760px);
   background: var(--color-ink);
 }
 
 @media (min-width: 1024px) {
+  .hero {
+    align-items: center;
+    min-height: clamp(560px, 82vh, 880px);
+  }
+}
+
+/* A soft, heavily blurred echo of the same photograph fills the whole
+   frame behind everything else, so the text side reads as the same
+   photographic environment continuing behind the copy, not a flat panel
+   sitting next to an unrelated photo. */
+.hero__ambient {
+  position: absolute;
+  inset: -8%;
+  background-image: url('../teresha/teresha-young-image-4-hero.jpg');
+  background-size: cover;
+  background-position: center 22%;
+  filter: blur(70px) saturate(1.15);
+  opacity: 0.6;
+  transform: scale(1.1);
+}
+
+.hero__photo {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
   .hero__photo {
-    flex: 1 1 43%;
-    min-height: 0;
+    left: 28%;
+    /* A wide, soft dissolve rather than a hard vertical line — the sharp
+       photo fades into the blurred ambient bleed instead of ending at a
+       crisp edge, which is what removes the "two rectangles" seam. */
+    mask-image: linear-gradient(to right, transparent 0%, black 26%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 26%);
   }
 }
 
@@ -1387,7 +1278,7 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 16%;
+  object-position: center 20%;
   opacity: 0;
   transition: opacity 1.3s ease;
 }
@@ -1408,6 +1299,43 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
   to { transform: scale(1.025); }
 }
 
+@media (max-width: 1023px) {
+  .hero__photo-img {
+    object-position: center 15%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__photo-img {
+    object-position: center 13%;
+  }
+}
+
+/* Warm scrim: near-opaque over the copy, easing to nothing over the open
+   photograph — the gradient itself is what merges photo and copy into one
+   composition, rather than a boxed panel abutting a boxed photo. */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg,
+    rgba(36, 27, 22, 0.94) 0%,
+    rgba(36, 27, 22, 0.88) 26%,
+    rgba(36, 27, 22, 0.55) 46%,
+    rgba(36, 27, 22, 0.14) 66%,
+    rgba(36, 27, 22, 0) 84%);
+}
+
+@media (max-width: 1023px) {
+  .hero__scrim {
+    background: linear-gradient(to top,
+      rgba(36, 27, 22, 0.96) 0%,
+      rgba(36, 27, 22, 0.8) 32%,
+      rgba(36, 27, 22, 0.32) 56%,
+      rgba(36, 27, 22, 0.06) 74%,
+      rgba(36, 27, 22, 0) 88%);
+  }
+}
+
 .hero__rings {
   position: absolute;
   inset: 0;
@@ -1418,25 +1346,25 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 .hero__rings span {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* Positioned low and to the outer edge of the photo panel, well clear of
-   the face (which sits in the upper-middle of the frame — see the object
-   position above) so the motif never crosses her features. */
+/* Straddling the dissolve zone between the copy and the open photograph —
+   the brand's own interlocking-circle geometry, used as the visual bridge
+   between the two halves of the composition instead of a hard divider. */
 .hero__rings span:first-child {
-  width: 130px;
-  height: 130px;
-  bottom: 8%;
-  left: -46px;
+  width: 150px;
+  height: 150px;
+  bottom: 10%;
+  left: 22%;
 }
 
 .hero__rings span:last-child {
-  width: 76px;
-  height: 76px;
-  bottom: 22%;
-  left: 8%;
-  border-color: rgba(201, 170, 125, 0.6);
+  width: 88px;
+  height: 88px;
+  bottom: 26%;
+  left: 33%;
+  border-color: rgba(201, 170, 125, 0.65);
 }
 
 @media (max-width: 1023px) {
@@ -1445,26 +1373,89 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
   }
 }
 
-@media (max-width: 1023px) {
-  .hero__photo {
-    height: 52vh;
-    min-height: 380px;
-    order: -1;
-  }
+.hero__text {
+  position: relative;
+  z-index: 3;
+  max-width: 30rem;
+  padding: var(--space-xl) var(--container-pad) var(--space-2xl);
+  color: var(--color-white);
+}
 
-  .hero__photo-img {
-    object-position: center 14%;
+@media (min-width: 1024px) {
+  .hero__text {
+    max-width: 34rem;
+    /* Matches .container's own left content edge exactly, so the H1 lines
+       up with every heading in the sections below it, at any width. */
+    padding-left: max(var(--container-pad), calc((100vw - var(--container-max)) / 2 + var(--container-pad)));
+    padding-right: var(--space-2xl);
+    padding-block: var(--space-xl);
   }
 }
 
-@media (min-width: 600px) and (max-width: 1023px) {
-  /* At tablet widths the panel is proportionally much wider than at phone
-     widths, which alone would tighten the crop back up — a taller panel
-     keeps the same generous, zoomed-out framing used elsewhere. */
-  .hero__photo {
-    height: 62vh;
-    min-height: 460px;
+.hero__eyebrow {
+  color: var(--color-gold);
+}
+
+.hero h1 {
+  max-width: 22ch;
+  color: var(--color-white);
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .hero h1 {
+    font-size: 2.75rem;
   }
+}
+
+.hero h1 em {
+  font-style: italic;
+}
+
+.hero__lede {
+  font-size: var(--fs-lg);
+  color: rgba(255, 255, 255, 0.86);
+  max-width: 42ch;
+  margin-top: var(--space-sm);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.hero .btn-secondary {
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.hero .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--color-white);
+}
+
+.hero__trust {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  max-width: 46ch;
+}
+
+.hero__trust-primary {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+.hero__trust-secondary {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 @media (max-width: 480px) {
@@ -1476,47 +1467,6 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
   .hero__actions .btn {
     width: 100%;
   }
-}
-
-/* ---------------------------------------------------------------------- */
-/* For Organisations — restrained (colour as accent, not a full fill)      */
-/* ---------------------------------------------------------------------- */
-
-.org-highlight {
-  border-top: 4px solid var(--color-slate);
-  background: var(--color-bg-muted);
-}
-
-.org-highlight__trusted {
-  margin-top: var(--space-lg);
-  padding-top: var(--space-lg);
-  border-top: 1px solid var(--color-border);
-}
-
-.org-highlight__trusted-names {
-  font-family: var(--font-heading);
-  font-size: var(--fs-h3);
-  color: var(--color-ink);
-}
-
-/* ---------------------------------------------------------------------- */
-/* Corporate proof — a single restrained trust line, no colour fill        */
-/* ---------------------------------------------------------------------- */
-
-.proof-line {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--space-2xs) var(--space-sm);
-  padding-block: var(--space-md);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.proof-line strong {
-  font-family: var(--font-heading);
-  font-size: var(--fs-h4);
-  color: var(--color-ink);
 }
 
 /* ---------------------------------------------------------------------- */
@@ -1551,113 +1501,141 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 }
 
 /* ---------------------------------------------------------------------- */
-/* Other ways to work together — two restrained cards (colour as accent)   */
+/* Editorial logo field — media-outlet recognition, homepage and Media &  */
+/* Speaking alike. One quiet field, not a sponsor wall: consistent optical */
+/* height, original aspect ratio, restrained monochrome until hover.       */
 /* ---------------------------------------------------------------------- */
 
-.other-pathways {
-  display: grid;
-  gap: var(--space-md);
+.logo-field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-lg) var(--space-2xl);
+  margin-top: var(--space-lg);
 }
 
-@media (min-width: 700px) {
-  .other-pathways {
-    grid-template-columns: repeat(2, 1fr);
+.logo-field li {
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+
+.logo-field img {
+  height: 100%;
+  width: auto;
+  max-width: 132px;
+  object-fit: contain;
+  filter: grayscale(1) contrast(0.92) brightness(1.05);
+  opacity: 0.7;
+  transition: filter var(--duration-base) var(--ease-editorial),
+    opacity var(--duration-base) var(--ease-editorial),
+    transform var(--duration-fast) var(--ease-editorial);
+}
+
+.logo-field li:hover img,
+.logo-field li:focus-within img {
+  filter: none;
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-field img {
+    transform: none;
   }
 }
 
-.other-pathway-card {
-  padding: var(--space-lg);
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-left: 4px solid var(--pathway-color, var(--color-walnut));
-  border-radius: var(--radius-md);
+/* Media & Speaking page — a larger, more spacious variant of the same field. */
+.logo-field--large li {
+  height: 42px;
 }
 
-.other-pathway-card__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  margin-bottom: var(--space-sm);
-  border-radius: 50%;
-  border: 1px solid var(--pathway-color, var(--color-walnut));
-  color: var(--pathway-color, var(--color-walnut));
+.logo-field--large img {
+  max-width: 160px;
 }
-
-.other-pathway-card__icon svg {
-  width: 18px;
-  height: 18px;
-  stroke: currentColor;
-}
-
-.other-pathway-card .eyebrow {
-  color: var(--pathway-color, var(--color-walnut));
-}
-
-.other-pathway-card--relationship { --pathway-color: var(--color-berry); }
-.other-pathway-card--media { --pathway-color: var(--color-walnut); }
 
 /* ---------------------------------------------------------------------- */
-/* Media authority — citation strip, consistent weight                    */
+/* Awards & recognition — an editorial "recognised for the work" list,    */
+/* ordered by year, with the badge artwork as supporting proof rather      */
+/* than the whole design.                                                 */
 /* ---------------------------------------------------------------------- */
 
-.media-authority__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm) var(--space-xl);
-  margin-top: var(--space-lg);
-}
-
-.media-authority__list span {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  color: var(--color-ink-soft);
-}
-
-/* Media & Speaking page — full editorial outlet grid. Text treatment only:
-   no approved outlet logo files exist yet beyond the AMC accreditation
-   mark (which belongs in credibility, not here). See docs/asset-manifest.md. */
-.media-logo-grid {
+.awards-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-lg) var(--space-xl);
-  margin: var(--space-lg) 0 0;
-  padding-top: var(--space-lg);
+  gap: 0;
+  margin-top: var(--space-lg);
   border-top: 1px solid var(--color-border);
 }
 
-@media (min-width: 640px) {
-  .media-logo-grid { grid-template-columns: repeat(3, 1fr); }
+.awards-list__item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-md) var(--space-lg);
+  padding-block: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
 }
 
-@media (min-width: 1024px) {
-  .media-logo-grid { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 640px) {
+  .awards-list__item {
+    grid-template-columns: auto 1fr;
+  }
+
+  .awards-list__mark {
+    display: none;
+  }
 }
 
-.media-logo-grid li {
+.awards-list__year {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  color: var(--color-gold-dark);
+  min-width: 3.5ch;
+}
+
+.awards-list__title {
+  display: block;
   font-family: var(--font-heading);
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--color-ink-soft);
-  text-align: center;
-  padding-block: var(--space-sm);
-  transition: color var(--duration-base) var(--ease-editorial);
+  color: var(--color-ink);
 }
 
-.media-logo-grid li:hover {
-  color: var(--color-berry);
+.awards-list__body-sub {
+  display: block;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  margin-top: 0.2rem;
 }
 
-/* ---------------------------------------------------------------------- */
-/* Awards & recognition                                                   */
-/* ---------------------------------------------------------------------- */
+.awards-list__mark {
+  height: 56px;
+  width: auto;
+  max-width: 72px;
+  object-fit: contain;
+}
 
-.awards-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
+.awards-list__amc {
   margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.awards-list__amc img {
+  height: 68px;
+  width: auto;
+  object-fit: contain;
+}
+
+.awards-list__amc p {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  max-width: 42ch;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -1754,4 +1732,216 @@ a.resource-card__action:hover svg {
 .resource-card__action[aria-disabled="true"] {
   color: var(--color-text-muted);
   cursor: default;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Homepage resources preview — compact, links out to the full articles    */
+/* ---------------------------------------------------------------------- */
+
+.resource-preview-grid {
+  display: grid;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+@media (min-width: 700px) {
+  .resource-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.resource-preview-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.resource-preview-card__tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-berry);
+  margin-bottom: var(--space-xs);
+}
+
+.resource-preview-card h3 {
+  font-size: 1.3rem;
+  margin: 0 0 var(--space-2xs);
+}
+
+.resource-preview-card p {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.resource-preview-card .text-link {
+  margin-top: var(--space-md);
+}
+
+/* ==========================================================================
+   Resource articles — editorial reading pages (resources/*.html)
+   ========================================================================== */
+
+.breadcrumb {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  padding-block: var(--space-md);
+}
+
+.breadcrumb a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-walnut);
+  border-color: currentColor;
+}
+
+.breadcrumb__sep {
+  margin-inline: 0.5em;
+  opacity: 0.6;
+}
+
+.article {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.article__header {
+  padding-block: var(--space-md) var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-xl);
+}
+
+.article__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+  margin-top: var(--space-md);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.article__body {
+  font-size: 1.08rem;
+  line-height: var(--lh-body);
+}
+
+.article__body > * + * {
+  margin-top: var(--space-md);
+}
+
+.article__body h2 {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.article__body h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.article__body h3 {
+  margin-top: var(--space-lg);
+  font-size: var(--fs-h4);
+}
+
+.article__body ol,
+.article__body ul {
+  padding-left: 1.4em;
+}
+
+.article__body li + li {
+  margin-top: var(--space-sm);
+}
+
+.article__body li::marker {
+  font-family: var(--font-heading);
+  color: var(--color-berry);
+  font-weight: 600;
+}
+
+.article__question {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.article__callout {
+  padding: var(--space-lg);
+  background: var(--color-bg-muted);
+  border-left: 3px solid var(--color-gold-dark);
+  border-radius: var(--radius-sm);
+}
+
+.article__callout h3 {
+  margin-top: 0;
+}
+
+.article__callout dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35em var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.article__callout dt {
+  font-weight: 800;
+  color: var(--color-walnut);
+}
+
+.article__callout dd {
+  margin: 0;
+}
+
+.article__day {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.article__day:first-of-type {
+  margin-top: 0;
+}
+
+.article__day-num {
+  display: block;
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-forest);
+  margin-bottom: 0.3em;
+}
+
+.article__pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.article__pdf-link:hover {
+  color: var(--color-walnut);
+  border-color: currentColor;
+}
+
+.article__footer {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
 }

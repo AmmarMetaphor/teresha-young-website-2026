@@ -48,42 +48,18 @@
 <main id="main">
 
   <!-- ============================================================ -->
-  <!-- 1. HERO — asymmetrical editorial split, rotating photo panel  -->
-  <!-- Rotation set: teresha-young-image-4-hero.jpg and               -->
-  <!-- teresha-young-image-5-hero.jpg — the two portraits from         -->
-  <!-- assets/teresha/ with a level, undistorted angle, no in-frame    -->
-  <!-- gesture and a soft/neutral background (both re-generated as     -->
-  <!-- plain full-frame resizes of their originals, nothing cropped     -->
-  <!-- out — the previous image-5-hero.jpg derivative was an over-      -->
-  <!-- tight face-only crop left over from an earlier attempt and has   -->
-  <!-- been replaced). teresha-young-image-6.jpg and -7.jpg both have   -->
-  <!-- an in-frame gesture and a busier background; -8.jpg is the       -->
-  <!-- unresolved personal phone photo. Only two images cleared the     -->
-  <!-- same bar the first hero image was held to, so the rotation is    -->
-  <!-- two images, not three — see docs/open-decisions.md.              -->
-  <!--                                                                  -->
-  <!-- The photo gets its own panel at close to its native ratio        -->
-  <!-- (~43% of the viewport at desktop widths) rather than a full-      -->
-  <!-- bleed `cover` background under a wide banner box — the latter     -->
-  <!-- would force ~60% of either 3:4 source's height to be cropped      -->
-  <!-- away, which is what caused an earlier version's "eyes fill the    -->
-  <!-- screen" problem. Copy sits in its own panel and never overlaps    -->
-  <!-- the photograph.                                                   -->
+  <!-- 1. HERO — one full-bleed editorial composition. The photograph  -->
+  <!-- is the entire frame; a blurred ambient echo of it fills the     -->
+  <!-- background, and a warm scrim carries the copy, so photo and     -->
+  <!-- text read as one continuous picture rather than a white panel   -->
+  <!-- beside an image panel. Rotation set: teresha-young-image-4-hero -->
+  <!-- .jpg and -5-hero.jpg, the two genuinely professional portraits   -->
+  <!-- in assets/teresha/ (see docs/open-decisions.md for why -6, -7   -->
+  <!-- and -8 are not used). Only the photography crossfades — the     -->
+  <!-- eyebrow, H1, supporting copy, buttons and credentials stay put.  -->
   <!-- ============================================================ -->
   <section class="hero">
-    <div class="hero__text">
-      <p class="eyebrow hero__eyebrow">Relationship &amp; Emotional Well-being Expert</p>
-      <h1>Better relationships shape how we <em>feel</em>, work and live.</h1>
-      <p class="hero__lede">Practical, human-centred support for healthier relationships, stronger communication and emotional well-being — for organisations and individuals.</p>
-      <div class="hero__actions">
-        <a class="btn btn-primary" href="organisations.html">Explore support for organisations</a>
-        <a class="btn btn-secondary" href="private-coaching.html">Private coaching</a>
-      </div>
-      <div class="hero__trust">
-        <p class="hero__trust-primary">IAPC&amp;M Accredited Master Coach</p>
-        <p class="hero__trust-secondary">Multi-award-winning</p>
-      </div>
-    </div>
+    <div class="hero__ambient" aria-hidden="true"></div>
     <div class="hero__photo" data-hero-rotation>
       <img
         class="hero__photo-img is-active"
@@ -100,160 +76,105 @@
         alt="Teresha Young, Relationship &amp; Emotional Well-being Expert"
         width="1900" height="2533"
         decoding="async">
-      <span class="hero__rings" aria-hidden="true"><span></span><span></span></span>
     </div>
-  </section>
-
-  <!-- ============================================================ -->
-  <!-- 2. AUTHORITY — restrained, text-led                           -->
-  <!-- ============================================================ -->
-  <section class="section section--snug" id="authority" aria-labelledby="trust-heading">
-    <div class="container">
-      <p class="eyebrow" id="trust-heading">Recognised expertise</p>
-      <h2 class="visually-hidden">Credentials and recognition</h2>
-      <p class="authority-credentials" style="max-width:60ch; font-size: var(--fs-lg);"><strong>IAPC&amp;M Accredited Master Coach</strong> · Appointed Head of Mental Health &amp; Well-being for IAPC&amp;M members · Multi-award-winning · Relationship expertise featured on BBC Radio Kent and BBC Radio London.</p>
-    </div>
-  </section>
-
-  <!-- ============================================================ -->
-  <!-- 3. FOR ORGANISATIONS                                          -->
-  <!-- Colour used as a detail (top rule, eyebrow) rather than a full -->
-  <!-- background fill, per the "identifiers, not giant fills" note.  -->
-  <!-- ============================================================ -->
-  <section class="org-highlight" aria-labelledby="corporate-heading">
-    <div class="container" style="padding-block: var(--space-2xl);">
-      <div class="grid grid--2">
-        <div>
-          <p class="eyebrow" style="color: var(--color-slate);">For organisations</p>
-          <h2 id="corporate-heading">What healthy workplaces actually depend on</h2>
-          <p>Healthy workplaces depend on more than policies. They depend on how people communicate, regulate emotion, navigate pressure, establish boundaries and relate to one another.</p>
-          <p>Support works alongside HR, People and wellbeing teams to address these dynamics directly — not as an abstract wellbeing add-on, but as a practical part of how a workplace functions.</p>
-          <p><a class="btn btn-primary" href="organisations.html">Explore organisational support</a></p>
-        </div>
-        <div class="org-highlight__trusted">
-          <p class="eyebrow" style="color: var(--color-slate);">Trusted by</p>
-          <p class="org-highlight__trusted-names">Channel 4 · Mind</p>
-        </div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <span class="hero__rings" aria-hidden="true"><span></span><span></span></span>
+    <div class="hero__text">
+      <p class="eyebrow hero__eyebrow">Relationship &amp; Emotional Well-being Expert</p>
+      <h1>Better relationships shape how we <em>feel</em>, work and live.</h1>
+      <p class="hero__lede">Practical, human-centred support for healthier relationships, stronger communication and emotional well-being, for organisations and individuals.</p>
+      <div class="hero__actions">
+        <a class="btn btn-primary" href="organisations.html">Explore support for organisations</a>
+        <a class="btn btn-secondary" href="private-coaching.html">Private coaching</a>
+      </div>
+      <div class="hero__trust">
+        <p class="hero__trust-primary">IAPC&amp;M Accredited Master Coach</p>
+        <p class="hero__trust-secondary">Multi-award-winning</p>
       </div>
     </div>
   </section>
 
   <!-- ============================================================ -->
-  <!-- 4. ORGANISATIONAL TOPICS                                      -->
+  <!-- 2. AWARDS & RECOGNITION — first authority proof after the hero -->
   <!-- ============================================================ -->
-  <section class="section" aria-labelledby="topics-heading">
+  <section class="section" aria-labelledby="awards-heading">
     <div class="container">
-      <p class="eyebrow">For organisations</p>
-      <h2 id="topics-heading">The topics that shape healthier workplaces</h2>
-      <ol class="topics-grid" role="list">
-        <li class="topics-grid__item"><span class="topics-grid__num" aria-hidden="true">01</span><span class="topics-grid__label">Emotional wellness and resilience</span></li>
-        <li class="topics-grid__item"><span class="topics-grid__num" aria-hidden="true">02</span><span class="topics-grid__label">Relationships at work</span></li>
-        <li class="topics-grid__item"><span class="topics-grid__num" aria-hidden="true">03</span><span class="topics-grid__label">Self-awareness</span></li>
-        <li class="topics-grid__item"><span class="topics-grid__num" aria-hidden="true">04</span><span class="topics-grid__label">Stress management</span></li>
-        <li class="topics-grid__item"><span class="topics-grid__num" aria-hidden="true">05</span><span class="topics-grid__label">Healthy communication</span></li>
-        <li class="topics-grid__item"><span class="topics-grid__num" aria-hidden="true">06</span><span class="topics-grid__label">Psychological safety</span></li>
-        <li class="topics-grid__item"><span class="topics-grid__num" aria-hidden="true">07</span><span class="topics-grid__label">Boundaries</span></li>
-        <li class="topics-grid__item"><span class="topics-grid__num" aria-hidden="true">08</span><span class="topics-grid__label">Burnout prevention</span></li>
-        <li class="topics-grid__item"><span class="topics-grid__num" aria-hidden="true">09</span><span class="topics-grid__label">Emotional regulation</span></li>
-        <li class="topics-grid__item"><span class="topics-grid__num" aria-hidden="true">10</span><span class="topics-grid__label">Confidence</span></li>
-        <li class="topics-grid__item"><span class="topics-grid__num" aria-hidden="true">11</span><span class="topics-grid__label">Personal effectiveness</span></li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ============================================================ -->
-  <!-- 5. CORPORATE PROOF                                            -->
-  <!-- No approved organisational testimonial exists yet (see          -->
-  <!-- docs/testimonials data), so per the "omit rather than expose    -->
-  <!-- development notes" direction, this is the approved trust fact   -->
-  <!-- only — no placeholder box, no meta-commentary on the page.      -->
-  <!-- ============================================================ -->
-  <section class="section section--tight section--muted" aria-labelledby="proof-heading">
-    <div class="container">
-      <h2 class="visually-hidden" id="proof-heading">Corporate proof</h2>
-      <p class="proof-line">Trusted by organisations including <strong>Channel 4</strong> and <strong>Mind</strong>.</p>
-    </div>
-  </section>
-
-  <!-- ============================================================ -->
-  <!-- 6. WHY TERESHA                                                -->
-  <!-- Portrait: teresha-young-image-7-card.jpg, a plain full-frame    -->
-  <!-- resize of teresha-young-image-7.jpg (900x1200, same 3:4 ratio   -->
-  <!-- as the source — nothing cropped). Kept in its native portrait   -->
-  <!-- orientation rather than forced into a landscape frame: test      -->
-  <!-- crops of every unused portrait source into 3:2/16:10 landscape   -->
-  <!-- boxes were tried and rejected as awkward (see                    -->
-  <!-- docs/open-decisions.md) — no genuinely horizontal photograph      -->
-  <!-- exists in the asset library. A different image from the hero     -->
-  <!-- rotation set, for variety across the page. The empty-space-      -->
-  <!-- beneath-a-tall-box issue is fixed via align-self on the card,    -->
-  <!-- not by forcing a bad crop.                                       -->
-  <!-- ============================================================ -->
-  <section class="section" aria-labelledby="why-heading">
-    <div class="container grid grid--2">
-      <div class="portrait-card">
-        <img
-          src="assets/teresha/teresha-young-image-7-card.jpg"
-          alt="Teresha Young, portrait"
-          width="900" height="1200"
-          loading="lazy" decoding="async"
-          style="aspect-ratio: 3 / 4; object-fit: cover;">
-      </div>
-      <div>
-        <p class="eyebrow">Why Teresha</p>
-        <h2 id="why-heading">Credibility grounded in experience</h2>
-        <p>Professional credibility shaped by accreditation, industry recognition, media expertise and experience across both organisational and private-client settings.</p>
-        <ul class="credential-list" role="list">
-          <li>IAPC&amp;M-accredited at Master Coach level</li>
-          <li>Appointed Head of Mental Health &amp; Well-being for IAPC&amp;M members</li>
-          <li>Multi-award-winning, including Relationship Coach of the Year (UK) 2026 — Corporate LiveWire Global Awards</li>
-          <li>National media authority, including BBC Radio Kent, BBC Radio London and Channel 4</li>
-          <li>Experience spanning both organisational and private-client contexts</li>
-        </ul>
-        <p style="margin-top: var(--space-md);"><a class="btn btn-secondary" href="about.html">Discover the approach</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================ -->
-  <!-- 7. OTHER WAYS TO WORK TOGETHER                                -->
-  <!-- ============================================================ -->
-  <section class="section section--muted" aria-labelledby="other-ways-heading">
-    <div class="container">
-      <p class="eyebrow">Other ways to help</p>
-      <h2 id="other-ways-heading">Other ways to work together</h2>
-      <div class="other-pathways" style="margin-top: var(--space-lg);">
-        <article class="other-pathway-card other-pathway-card--relationship">
-          <span class="other-pathway-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>
+      <p class="eyebrow">Awards &amp; recognition</p>
+      <h2 id="awards-heading">Recognised for the work</h2>
+      <ul class="awards-list" role="list">
+        <li class="awards-list__item">
+          <span class="awards-list__year">2026</span>
+          <span class="awards-list__body">
+            <span class="awards-list__title">Relationship Coach of the Year (UK)</span>
+            <span class="awards-list__body-sub">Corporate LiveWire Global Awards</span>
           </span>
-          <p class="eyebrow">Private Coaching</p>
-          <h3>Space to work through what's personal</h3>
-          <p>Relationship coaching, personal growth and emotional well-being support for individuals working through patterns, communication and connection.</p>
-          <p style="margin-top: var(--space-sm);"><a class="pathway-card__link" href="private-coaching.html">Explore private coaching →</a></p>
-        </article>
-        <article class="other-pathway-card other-pathway-card--media">
-          <span class="other-pathway-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg>
+          <img class="awards-list__mark" src="assets/award/award-relationship-coach-of-the-year-uk-2026.png" alt="Corporate LiveWire Global Awards 2026 winner badge" width="84" height="84" loading="lazy" decoding="async">
+        </li>
+        <li class="awards-list__item">
+          <span class="awards-list__year">2025</span>
+          <span class="awards-list__body">
+            <span class="awards-list__title">Most Dedicated Wellness &amp; Relationship Expert</span>
+            <span class="awards-list__body-sub">SME News</span>
           </span>
-          <p class="eyebrow">Media &amp; Speaking</p>
-          <h3>Authority beyond the coaching room</h3>
-          <p>Expert commentary, interviews, podcasts, keynotes and event contributions on relationships and emotional well-being.</p>
-          <p style="margin-top: var(--space-sm);"><a class="pathway-card__link" href="media-speaking.html">Explore media &amp; speaking →</a></p>
-        </article>
+          <img class="awards-list__mark" src="assets/award/award-sme-most-dedicated-wellness-relationship-expert-2025.png" alt="SME News Southern Enterprise Awards 2025 badge" width="84" height="84" loading="lazy" decoding="async">
+        </li>
+        <li class="awards-list__item">
+          <span class="awards-list__year">2025</span>
+          <span class="awards-list__body">
+            <span class="awards-list__title">Leading Wellness &amp; Relationship Coach</span>
+            <span class="awards-list__body-sub">SME News</span>
+          </span>
+          <img class="awards-list__mark" src="assets/award/award-uk-enterprise-2025.png" alt="SME News UK Enterprise Awards 2025 badge" width="84" height="84" loading="lazy" decoding="async">
+        </li>
+        <li class="awards-list__item">
+          <span class="awards-list__year">2024</span>
+          <span class="awards-list__body">
+            <span class="awards-list__title">Best One-to-One Coaching Boutique, South East</span>
+            <span class="awards-list__body-sub">SME News</span>
+          </span>
+          <img class="awards-list__mark" src="assets/award/award-southern-enterprise-2024.png" alt="SME News Southern Enterprise Awards 2024 badge" width="84" height="84" loading="lazy" decoding="async">
+        </li>
+      </ul>
+      <div class="awards-list__amc">
+        <img src="assets/logos/logo-amc.png" alt="International Authority for Professional Coaching &amp; Mentoring — Accredited Master Coach" width="220" height="103" loading="lazy" decoding="async">
+        <p>IAPC&amp;M Accredited Master Coach, and appointed Head of Mental Health &amp; Well-being for IAPC&amp;M members.</p>
       </div>
+      <!-- A 2026/27 "multi award winner" badge also exists in the repository but is withheld pending client confirmation — see docs/open-decisions.md#3 -->
     </div>
   </section>
 
   <!-- ============================================================ -->
-  <!-- 8. S.A.F.E.™                                                  -->
-  <!-- Kept deliberately quiet: prominence is an open client decision. -->
+  <!-- 3. RECOGNISED ACROSS THE MEDIA — logo field, no explanatory     -->
+  <!-- prose; the marks carry the proof. Files present under          -->
+  <!-- assets/logos/media/; outlets with no supplied logo file are     -->
+  <!-- omitted rather than faked (see docs/open-decisions.md).        -->
+  <!-- ============================================================ -->
+  <section class="section section--tight section--muted" aria-labelledby="media-heading">
+    <div class="container">
+      <p class="eyebrow">Recognised across the media</p>
+      <h2 id="media-heading" class="visually-hidden">Media recognition</h2>
+      <ul class="logo-field" role="list">
+        <li><img src="assets/logos/media/BBC-Radio-Kent-Logo.png" alt="BBC Radio Kent" width="264" height="149" loading="lazy" decoding="async"></li>
+        <li><img src="assets/logos/media/bbc-radio-london-logo.png" alt="BBC Radio London" width="600" height="337" loading="lazy" decoding="async"></li>
+        <li><img src="assets/logos/media/channel-4-logo.png" alt="Channel 4" width="440" height="440" loading="lazy" decoding="async"></li>
+        <li><img src="assets/logos/media/the-mirror-logo.png" alt="The Mirror" width="440" height="440" loading="lazy" decoding="async"></li>
+        <li><img src="assets/logos/media/cosmopolitan-logo.png" alt="Cosmopolitan UK" width="750" height="422" loading="lazy" decoding="async"></li>
+        <li><img src="assets/logos/media/huffpost-logo.jpg" alt="HuffPost" width="600" height="315" loading="lazy" decoding="async"></li>
+        <li><img src="assets/logos/media/daily-record-logo.png" alt="Daily Record" width="620" height="330" loading="lazy" decoding="async"></li>
+        <li><img src="assets/logos/media/ok!-logo.png" alt="OK!" width="440" height="440" loading="lazy" decoding="async"></li>
+        <li><img src="assets/logos/media/thrive-global-logo.jpg" alt="Thrive Global" width="600" height="315" loading="lazy" decoding="async"></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 4. S.A.F.E.™                                                  -->
   <!-- ============================================================ -->
   <section class="section section--snug" aria-labelledby="safe-heading">
     <div class="container">
       <p class="eyebrow">A supporting framework</p>
       <h2 id="safe-heading">The S.A.F.E.&trade; framework</h2>
-      <p>A quiet reference point across organisational and private-client work alike.</p>
+      <p class="safe-diagram__intro">S.A.F.E.&trade; brings together four reference points for healthier relationships, clearer communication and greater emotional awareness: feeling secure, staying aligned with what matters, moving toward fulfilment, and building the confidence that comes with feeling empowered.</p>
       <div class="safe-diagram">
         <div class="safe-diagram__item">
           <span class="safe-diagram__letter">S</span>
@@ -276,26 +197,45 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- 9. MEDIA AUTHORITY                                            -->
-  <!-- No outlet logo assets exist in the repository — a typographic  -->
-  <!-- citation treatment is used instead of fabricating logos.       -->
+  <!-- 5. WHY TERESHA                                                -->
+  <!-- Portrait: teresha-young-image-7-card.jpg, a plain full-frame    -->
+  <!-- resize of teresha-young-image-7.jpg (900x1200, same 3:4 ratio   -->
+  <!-- as the source — nothing cropped). Kept in its native portrait   -->
+  <!-- orientation rather than forced into a landscape frame: no        -->
+  <!-- genuinely horizontal photograph exists in the asset library      -->
+  <!-- (see docs/open-decisions.md). The empty-space-beneath-a-tall-    -->
+  <!-- box issue is fixed via align-self on the card, not a bad crop.   -->
   <!-- ============================================================ -->
-  <section class="section section--tight section--muted" aria-labelledby="media-authority-heading">
-    <div class="container">
-      <p class="eyebrow">Recognised across the media</p>
-      <h2 id="media-authority-heading" class="visually-hidden">Media authority</h2>
-      <div class="media-authority__list">
-        <span>BBC Radio Kent</span><span>BBC Radio London</span><span>Channel 4</span>
-        <span>The Mirror</span><span>Cosmopolitan UK</span><span>HuffPost</span>
-        <span>Daily Record</span><span>OK!</span><span>Thrive Global</span>
+  <section class="section" aria-labelledby="why-heading">
+    <div class="container grid grid--2">
+      <div class="portrait-card">
+        <img
+          src="assets/teresha/teresha-young-image-7-card.jpg"
+          alt="Teresha Young, portrait"
+          width="900" height="1200"
+          loading="lazy" decoding="async"
+          style="aspect-ratio: 3 / 4; object-fit: cover;">
+      </div>
+      <div>
+        <p class="eyebrow">Why Teresha</p>
+        <h2 id="why-heading">Professional depth. Human understanding.</h2>
+        <p>Credibility built through accreditation, industry recognition, media experience and years of work across both organisational and private-client settings.</p>
+        <ul class="credential-list" role="list">
+          <li>IAPC&amp;M-accredited at Master Coach level</li>
+          <li>Appointed Head of Mental Health &amp; Well-being for IAPC&amp;M members</li>
+          <li>Multi-award-winning, including Relationship Coach of the Year (UK) 2026, Corporate LiveWire Global Awards</li>
+          <li>National media authority, including BBC Radio Kent, BBC Radio London and Channel 4</li>
+          <li>Experience spanning both organisational and private-client contexts</li>
+        </ul>
+        <p style="margin-top: var(--space-md);"><a class="btn btn-secondary" href="about.html">Discover the approach</a></p>
       </div>
     </div>
   </section>
 
   <!-- ============================================================ -->
-  <!-- 10. REAL-ATIONSHIP TALK                                       -->
+  <!-- 6. REAL-ATIONSHIP TALK                                        -->
   <!-- ============================================================ -->
-  <section class="section" aria-labelledby="podcast-heading">
+  <section class="section section--muted" aria-labelledby="podcast-heading">
     <div class="container grid grid--2">
       <div class="image-frame">
         <img src="assets/podcast/rlt-podcast-cover.png" alt="REAL-ationship Talk podcast cover art, hosted by Teresha Young" width="560" height="560" loading="lazy" decoding="async" style="aspect-ratio: 1 / 1; object-fit: cover;">
@@ -314,32 +254,38 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- 11. AWARDS & RECOGNITION                                      -->
+  <!-- 7. RESOURCES PREVIEW                                          -->
   <!-- ============================================================ -->
-  <section class="section section--muted" aria-labelledby="awards-heading">
+  <section class="section" aria-labelledby="resources-preview-heading">
     <div class="container">
-      <p class="eyebrow">Awards &amp; recognition</p>
-      <h2 id="awards-heading">Recognised expertise, independently confirmed</h2>
-      <p style="max-width: 48ch;">Recognised across a number of industry awards in recent years.</p>
-      <div class="awards-strip">
-        <span class="authority-badge"><img src="assets/logos/logo-amc.png" alt="International Authority for Professional Coaching &amp; Mentoring — Accredited Master Coach" width="220" height="103" loading="lazy" decoding="async"></span>
-        <span class="authority-badge"><img src="assets/award/award-relationship-coach-of-the-year-uk-2026.png" alt="Corporate LiveWire Global Awards 2026 winner badge — Relationship Coach of the Year, UK" width="84" height="84" loading="lazy" decoding="async"></span>
-        <span class="authority-badge"><img src="assets/award/award-sme-most-dedicated-wellness-relationship-expert-2025.png" alt="SME News Southern Enterprise Awards 2025 badge — Most Dedicated Wellness &amp; Relationship Expert" width="84" height="84" loading="lazy" decoding="async"></span>
-        <span class="authority-badge"><img src="assets/award/award-uk-enterprise-2025.png" alt="SME News UK Enterprise Awards 2025 badge — Leading Wellness &amp; Relationship Coach" width="84" height="84" loading="lazy" decoding="async"></span>
-        <span class="authority-badge"><img src="assets/award/award-southern-enterprise-2024.png" alt="SME News Southern Enterprise Awards 2024 badge — Best One-to-One Coaching Boutique, South East" width="84" height="84" loading="lazy" decoding="async"></span>
+      <p class="eyebrow">Resources</p>
+      <h2 id="resources-preview-heading">Useful resources</h2>
+      <div class="resource-preview-grid">
+        <article class="resource-preview-card">
+          <span class="resource-preview-card__tag">Article</span>
+          <h3>Igniting Intimacy: 12 Powerful Questions to Transform Your Relationship</h3>
+          <p>Twelve reflective questions designed to open up honest conversation between partners.</p>
+          <p><a class="text-link" href="resources/igniting-intimacy-12-powerful-questions.html">Read article →</a></p>
+        </article>
+        <article class="resource-preview-card">
+          <span class="resource-preview-card__tag">Article</span>
+          <h3>7 Day &lsquo;Me Time&rsquo; Plan</h3>
+          <p>A day-by-day structure for building small, consistent pockets of personal time into daily life.</p>
+          <p><a class="text-link" href="resources/7-day-me-time-plan.html">Read article →</a></p>
+        </article>
       </div>
-      <!-- A 2026/27 "multi award winner" badge also exists in the repository but is withheld pending client confirmation — see docs/open-decisions.md#3 -->
+      <p style="margin-top: var(--space-lg);"><a class="text-link" href="resources.html">Visit resources →</a></p>
     </div>
   </section>
 
   <!-- ============================================================ -->
-  <!-- 12. FINAL CTA                                                 -->
+  <!-- 8. FINAL CTA                                                  -->
   <!-- ============================================================ -->
   <section class="section" aria-labelledby="final-cta-heading">
     <div class="container">
       <div class="final-cta__motif" aria-hidden="true"><span></span><span></span><span></span></div>
       <h2 id="final-cta-heading">Not sure where to begin?</h2>
-      <p>Whether you're exploring support for your organisation, considering private coaching, or exploring a media or speaking opportunity, get in touch.</p>
+      <p>Get in touch to talk about organisational support, private coaching, or a media and speaking enquiry.</p>
       <div class="hero__actions">
         <a class="btn btn-primary" href="contact.html">Start a conversation</a>
         <a class="text-link" href="organisations.html">Explore your options</a>
