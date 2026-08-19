@@ -321,6 +321,11 @@ p + p {
 
 .grid {
   display: grid;
+  /* Explicit single column below the 768px breakpoint: without this, a grid
+     with no explicit columns falls back to an auto-sized implicit track,
+     which a fixed-width child (e.g. .portrait-card) can inflate past the
+     viewport width instead of the intended full-width single-column stack. */
+  grid-template-columns: 1fr;
   gap: var(--space-lg);
 }
 
@@ -387,7 +392,8 @@ p + p {
 .section--corporate .btn-secondary,
 .section--relationship .btn-secondary,
 .section--wellbeing .btn-secondary,
-.page-hero--photo .btn-secondary {
+.page-hero--photo .btn-secondary,
+.page-hero--split .btn-secondary {
   color: var(--color-white);
   border-color: rgba(255, 255, 255, 0.6);
 }
@@ -395,7 +401,8 @@ p + p {
 .section--corporate .btn-secondary:hover,
 .section--relationship .btn-secondary:hover,
 .section--wellbeing .btn-secondary:hover,
-.page-hero--photo .btn-secondary:hover {
+.page-hero--photo .btn-secondary:hover,
+.page-hero--split .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.12);
 }
 
@@ -847,6 +854,72 @@ p + p {
   margin-bottom: var(--space-2xs);
 }
 
+/* ---------------------------------------------------------------------- */
+/* Media & Speaking — category overview cards (Talks, Media Features,      */
+/* Podcast), each linking to its full section further down the page.       */
+/* ---------------------------------------------------------------------- */
+
+.media-categories {
+  display: grid;
+  gap: var(--space-md);
+}
+
+@media (min-width: 700px) {
+  .media-categories {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.media-category-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: border-color var(--duration-base) var(--ease-editorial),
+    transform var(--duration-fast) var(--ease-editorial);
+}
+
+.media-category-card:hover,
+.media-category-card:focus-visible {
+  border-color: var(--color-forest);
+  transform: translateY(-2px);
+}
+
+.media-category-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: var(--space-sm);
+  border-radius: 50%;
+  border: 1px solid var(--color-forest);
+  color: var(--color-forest);
+}
+
+.media-category-card__icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+.media-category-card__label {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.media-category-card__desc {
+  margin-top: var(--space-2xs);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
 .badge-strip {
   display: flex;
   flex-wrap: wrap;
@@ -895,6 +968,52 @@ p + p {
 }
 
 /* ---------------------------------------------------------------------- */
+/* Resources hero — no photograph needed for a reading/utility page; a     */
+/* warm Walnut-to-Gold gradient with the brand's interlocking-circle       */
+/* motif carries the same premium editorial feel instead.                 */
+/* ---------------------------------------------------------------------- */
+
+.page-hero--resources {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(135deg, var(--color-ink) 0%, var(--color-walnut) 55%, var(--color-gold-dark) 145%);
+  padding-block: var(--space-2xl) var(--space-xl);
+  border-bottom: none;
+  color: var(--color-white);
+}
+
+.page-hero--resources h1 {
+  color: var(--color-white);
+}
+
+.page-hero__circles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-hero__circles span {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.page-hero__circles span:nth-child(1) { width: 280px; height: 280px; top: -90px; right: -70px; }
+.page-hero__circles span:nth-child(2) { width: 170px; height: 170px; bottom: -60px; right: 140px; border-color: rgba(201, 170, 125, 0.4); }
+.page-hero__circles span:nth-child(3) { width: 100px; height: 100px; bottom: 30px; right: 320px; border-color: rgba(166, 5, 37, 0.3); }
+
+@media (max-width: 640px) {
+  .page-hero__circles span:nth-child(3) { display: none; }
+}
+
+.page-hero--resources .page-hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------------------------------------------------------------------- */
 /* Photographic secondary hero — shared by Organisations, Private Coaching */
 /* and About. A full-bleed approved photograph with a tinted scrim carries */
 /* the copy, echoing the Homepage hero's premium feel without copying it   */
@@ -922,7 +1041,7 @@ p + p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 22%;
+  object-position: center 8%;
 }
 
 .page-hero__scrim {
@@ -977,14 +1096,35 @@ p + p {
   color: rgba(255, 255, 255, 0.72);
 }
 
-/* For Organisations — Walnut-led, Corporate Slate kept as a small accent */
-.page-hero--org .page-hero__scrim {
-  background: linear-gradient(100deg,
-    rgba(36, 27, 22, 0.92) 0%,
-    rgba(123, 82, 61, 0.86) 30%,
-    rgba(123, 82, 61, 0.4) 58%,
-    rgba(123, 82, 61, 0.08) 80%,
-    rgba(123, 82, 61, 0) 92%);
+/* Organisations hero — split layout (see the HTML comment above this
+   markup for why this page doesn't use the shared full-bleed pattern):
+   Walnut/Gold gradient fill behind the copy, with the Why Teresha portrait
+   reused at its native 3:4 aspect in its own panel (no cover-crop loss). */
+.page-hero--split {
+  background: linear-gradient(135deg, var(--color-ink) 0%, var(--color-walnut) 62%, var(--color-gold-dark) 130%);
+  padding-block: var(--space-2xl);
+  color: var(--color-white);
+}
+
+.page-hero__split-inner {
+  align-items: center;
+}
+
+.page-hero--split h1 {
+  color: var(--color-white);
+  max-width: 20ch;
+}
+
+.page-hero__portrait {
+  width: 100%;
+  max-width: 460px;
+}
+
+@media (max-width: 767px) {
+  .page-hero__portrait {
+    max-width: 340px;
+    justify-self: center;
+  }
 }
 
 /* Private Coaching — Walnut/Gold foundation, Berry as a controlled accent
@@ -1165,6 +1305,57 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 }
 
 /* ---------------------------------------------------------------------- */
+/* Testimonials — Private Coaching. Stacked editorial entries (pull-quote, */
+/* full body, attribution) rather than a cramped 3-up card grid, since the */
+/* source quotes vary a lot in length; this keeps every word readable at   */
+/* a comfortable measure instead of squeezing the longest one into a card. */
+/* ---------------------------------------------------------------------- */
+
+.testimonials {
+  display: grid;
+  gap: var(--space-2xl);
+  margin-top: var(--space-lg);
+}
+
+.testimonial {
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.testimonial:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.testimonial .pull-quote {
+  max-width: 56ch;
+}
+
+.testimonial__body {
+  max-width: 66ch;
+  margin-top: var(--space-md);
+  color: var(--color-text-muted);
+}
+
+.testimonial__body p + p {
+  margin-top: var(--space-sm);
+}
+
+.testimonial__attribution {
+  display: block;
+  margin-top: var(--space-md);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-ink);
+}
+
+.testimonial__attribution::before {
+  content: '\2014\a0';
+  color: var(--color-berry);
+}
+
+/* ---------------------------------------------------------------------- */
 /* Why Teresha — credential list + circle-motif authority graphic          */
 /* ---------------------------------------------------------------------- */
 
@@ -1296,7 +1487,7 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 .final-cta__motif {
   display: flex;
   align-items: center;
-  margin-block: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .final-cta__motif span {
@@ -1393,7 +1584,7 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 26%;
+  object-position: center 8%;
   opacity: 0;
   transition: opacity 1.3s ease;
 }
@@ -1416,13 +1607,13 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 
 @media (max-width: 1023px) {
   .hero__photo-img {
-    object-position: center 18%;
+    object-position: center 6%;
   }
 }
 
 @media (max-width: 480px) {
   .hero__photo-img {
-    object-position: center 16%;
+    object-position: center 5%;
   }
 }
 
@@ -1538,11 +1729,23 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
   position: relative;
   border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 0;
   overflow: hidden;
-  max-width: 380px;
+  /* A percentage width (not a definite length like 520px) never becomes a
+     grid track's auto-sizing basis, so this can never blow the grid out
+     past the viewport at any breakpoint — max-width alone caps its growth
+     once the column actually has the room (was a fixed 380px, reading
+     noticeably smaller than the copy block beside it). */
+  width: 100%;
+  max-width: 520px;
   /* Grid items stretch to the row height by default — without this, the
      card's own box (not just the image) would stretch to match whatever
      taller column sits beside it, leaving empty space below the image. */
   align-self: start;
+}
+
+@media (min-width: 768px) {
+  .portrait-card {
+    justify-self: end;
+  }
 }
 
 .portrait-card img {
@@ -1578,13 +1781,13 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 .logo-field li {
   display: flex;
   align-items: center;
-  height: 64px;
+  height: 88px;
 }
 
 .logo-field img {
   height: 100%;
   width: auto;
-  max-width: 180px;
+  max-width: 220px;
   object-fit: contain;
   transition: transform var(--duration-fast) var(--ease-editorial);
 }
@@ -1602,11 +1805,75 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 
 @media (max-width: 640px) {
   .logo-field li {
-    height: 48px;
+    height: 56px;
   }
 
   .logo-field img {
-    max-width: 140px;
+    max-width: 160px;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Continuous logo marquee — homepage "Recognised across the media" only.  */
+/* Two identical .logo-field sets sit side by side in a flex track; the    */
+/* track scrolls left by exactly one set's width (-50%) and loops           */
+/* seamlessly. Paused on hover/focus for readability, and replaced with a   */
+/* plain static wrapped row under prefers-reduced-motion.                  */
+/* ---------------------------------------------------------------------- */
+
+.marquee {
+  overflow: hidden;
+  margin-top: var(--space-lg);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.marquee__track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: var(--space-2xl);
+}
+
+.marquee .logo-field {
+  flex-wrap: nowrap;
+  margin-top: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .marquee__track {
+    animation: marquee-scroll 34s linear infinite;
+  }
+
+  .marquee:hover .marquee__track,
+  .marquee:focus-within .marquee__track {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .marquee__track {
+    width: auto;
+    flex-wrap: wrap;
+  }
+
+  .marquee .logo-field {
+    flex-wrap: wrap;
+  }
+
+  .marquee__set[aria-hidden="true"] {
+    display: none;
   }
 }
 
@@ -1635,10 +1902,16 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 /* than the whole design.                                                 */
 /* ---------------------------------------------------------------------- */
 
+/* Section heading given more presence than the default H2, per the
+   "reduce the empty feeling" brief — scoped to this heading only. */
+#awards-heading {
+  font-size: clamp(2.4rem, 1.9rem + 2.2vw, 3.6rem);
+}
+
 .awards-list {
   display: grid;
   gap: 0;
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xl);
   border-top: 1px solid var(--color-border);
 }
 
@@ -1646,26 +1919,45 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: var(--space-md) var(--space-lg);
-  padding-block: var(--space-lg);
+  gap: var(--space-lg) var(--space-xl);
+  padding-block: var(--space-xl);
   border-bottom: 1px solid var(--color-border);
 }
 
 @media (max-width: 640px) {
+  /* The title needs the full row width at mobile sizes — squeezed into a
+     third column alongside the (now larger) year and badge, it doesn't
+     fit and overflows the viewport. Year+badge share a row; the title
+     drops to its own full-width row beneath. */
   .awards-list__item {
     grid-template-columns: auto 1fr auto;
-    column-gap: var(--space-sm);
+    grid-template-areas:
+      "year . mark"
+      "body body body";
+    column-gap: var(--space-md);
+    row-gap: var(--space-sm);
+    padding-block: var(--space-lg);
+  }
+
+  .awards-list__year {
+    grid-area: year;
+  }
+
+  .awards-list__body {
+    grid-area: body;
   }
 
   .awards-list__mark {
-    height: 52px;
-    max-width: 60px;
+    grid-area: mark;
+    justify-self: end;
+    height: 64px;
+    max-width: 76px;
   }
 }
 
 .awards-list__year {
   font-family: var(--font-heading);
-  font-size: var(--fs-h3);
+  font-size: clamp(2.2rem, 1.7rem + 2vw, 3.2rem);
   color: var(--color-gold-dark);
   min-width: 3.5ch;
 }
@@ -1673,44 +1965,44 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 .awards-list__title {
   display: block;
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: clamp(1.5rem, 1.3rem + 0.6vw, 1.85rem);
   font-weight: 600;
   color: var(--color-ink);
 }
 
 .awards-list__body-sub {
   display: block;
-  font-size: var(--fs-sm);
+  font-size: 1.05rem;
   color: var(--color-text-muted);
-  margin-top: 0.2rem;
+  margin-top: 0.3rem;
 }
 
 .awards-list__mark {
-  height: 96px;
+  height: 150px;
   width: auto;
-  max-width: 110px;
+  max-width: 170px;
   object-fit: contain;
 }
 
 .awards-list__amc {
-  margin-top: var(--space-lg);
-  padding-top: var(--space-lg);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
   border-top: 1px solid var(--color-border);
   display: flex;
   align-items: center;
-  gap: var(--space-md);
+  gap: var(--space-lg);
   flex-wrap: wrap;
 }
 
 .awards-list__amc img {
-  height: 68px;
+  height: 90px;
   width: auto;
   object-fit: contain;
 }
 
 .awards-list__amc p {
   margin: 0;
-  font-size: var(--fs-sm);
+  font-size: 1.05rem;
   color: var(--color-text-muted);
   max-width: 42ch;
 }
