@@ -151,17 +151,36 @@
     <div class="container">
       <p class="eyebrow">Recognised across the media</p>
       <h2 id="media-heading" class="visually-hidden">Media recognition</h2>
-      <ul class="logo-field" role="list">
-        <li><img src="assets/logos/media/BBC-Radio-Kent-Logo.png" alt="BBC Radio Kent" width="264" height="149" loading="lazy" decoding="async"></li>
-        <li><img src="assets/logos/media/bbc-radio-london-logo.png" alt="BBC Radio London" width="600" height="337" loading="lazy" decoding="async"></li>
-        <li><img src="assets/logos/media/channel-4-logo.png" alt="Channel 4" width="440" height="440" loading="lazy" decoding="async"></li>
-        <li><img src="assets/logos/media/the-mirror-logo.png" alt="The Mirror" width="440" height="440" loading="lazy" decoding="async"></li>
-        <li><img src="assets/logos/media/cosmopolitan-logo.png" alt="Cosmopolitan UK" width="750" height="422" loading="lazy" decoding="async"></li>
-        <li><img src="assets/logos/media/huffpost-logo.jpg" alt="HuffPost" width="600" height="315" loading="lazy" decoding="async"></li>
-        <li><img src="assets/logos/media/daily-record-logo.png" alt="Daily Record" width="620" height="330" loading="lazy" decoding="async"></li>
-        <li><img src="assets/logos/media/ok!-logo.png" alt="OK!" width="440" height="440" loading="lazy" decoding="async"></li>
-        <li><img src="assets/logos/media/thrive-global-logo.jpg" alt="Thrive Global" width="600" height="315" loading="lazy" decoding="async"></li>
-      </ul>
+      <!-- Continuous logo marquee: a real (screen-reader-visible) set plus an
+           aria-hidden duplicate set for the seamless CSS loop. Paused on
+           hover/focus, and replaced with a static wrapped row entirely under
+           prefers-reduced-motion (see .marquee rules in styles.css). -->
+      <div class="marquee">
+        <div class="marquee__track">
+          <ul class="logo-field marquee__set" role="list">
+            <li><img src="assets/logos/media/BBC-Radio-Kent-Logo.png" alt="BBC Radio Kent" width="264" height="149" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/bbc-radio-london-logo.png" alt="BBC Radio London" width="600" height="337" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/channel-4-logo.png" alt="Channel 4" width="440" height="440" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/the-mirror-logo.png" alt="The Mirror" width="440" height="440" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/cosmopolitan-logo.png" alt="Cosmopolitan UK" width="750" height="422" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/huffpost-logo.jpg" alt="HuffPost" width="600" height="315" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/daily-record-logo.png" alt="Daily Record" width="620" height="330" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/ok!-logo.png" alt="OK!" width="440" height="440" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/thrive-global-logo.jpg" alt="Thrive Global" width="600" height="315" loading="lazy" decoding="async"></li>
+          </ul>
+          <ul class="logo-field marquee__set" role="list" aria-hidden="true">
+            <li><img src="assets/logos/media/BBC-Radio-Kent-Logo.png" alt="" width="264" height="149" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/bbc-radio-london-logo.png" alt="" width="600" height="337" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/channel-4-logo.png" alt="" width="440" height="440" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/the-mirror-logo.png" alt="" width="440" height="440" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/cosmopolitan-logo.png" alt="" width="750" height="422" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/huffpost-logo.jpg" alt="" width="600" height="315" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/daily-record-logo.png" alt="" width="620" height="330" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/ok!-logo.png" alt="" width="440" height="440" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/thrive-global-logo.jpg" alt="" width="600" height="315" loading="lazy" decoding="async"></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -255,7 +274,7 @@
   <!-- ============================================================ -->
   <!-- 7. RESOURCES PREVIEW                                          -->
   <!-- ============================================================ -->
-  <section class="section" aria-labelledby="resources-preview-heading">
+  <section class="section section--tight" aria-labelledby="resources-preview-heading">
     <div class="container">
       <p class="eyebrow">Resources</p>
       <h2 id="resources-preview-heading">Useful resources</h2>
@@ -280,7 +299,7 @@
   <!-- ============================================================ -->
   <!-- 8. FINAL CTA                                                  -->
   <!-- ============================================================ -->
-  <section class="section" aria-labelledby="final-cta-heading">
+  <section class="section section--tight" aria-labelledby="final-cta-heading">
     <div class="container">
       <div class="final-cta__motif" aria-hidden="true"><span></span><span></span><span></span></div>
       <h2 id="final-cta-heading">Not sure where to begin?</h2>

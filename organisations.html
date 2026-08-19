@@ -46,16 +46,27 @@
 
 <main id="main">
 
-  <section class="page-hero page-hero--photo page-hero--org">
-    <div class="page-hero__photo">
-      <img src="assets/teresha/teresha-young-image-4-hero.jpg" alt="Teresha Young, Relationship &amp; Emotional Well-being Expert" width="1900" height="2533" loading="eager" fetchpriority="high" decoding="async">
-    </div>
-    <div class="page-hero__scrim" aria-hidden="true"></div>
-    <div class="container page-hero__content">
-      <p class="eyebrow" style="color: var(--color-gold);">For Organisations</p>
-      <h1>Relationship &amp; emotional well-being expertise for your people</h1>
-      <p class="hero__lede" style="color: var(--color-stone-100);">Practical support for the relationship dynamics and emotional well-being that shape how people communicate, collaborate and cope under pressure.</p>
-      <p><a class="btn btn-secondary" href="contact.html">Start a conversation</a></p>
+  <!-- This hero uses the same photograph as the homepage's "Why Teresha"
+       section (teresha-young-image-7), but as a contained portrait panel
+       rather than a full-bleed background: that photo's off-centre gesture
+       and busy background décor crop very awkwardly into the wide, short
+       full-bleed box the other secondary heroes use (object-fit: cover
+       shows the image's full width in that box shape, so the shelf/mirror
+       on the right of frame is always visible and the face ends up in an
+       extreme, badly-balanced close-up). This split layout reuses the
+       exact crop already approved on the homepage, so the image reads as
+       intended: well-aligned and attractive, not cropped into it. -->
+  <section class="page-hero page-hero--split page-hero--org">
+    <div class="container grid grid--2 page-hero__split-inner">
+      <div class="page-hero__content">
+        <p class="eyebrow" style="color: var(--color-gold);">For Organisations</p>
+        <h1>Relationship &amp; emotional well-being expertise for your people</h1>
+        <p class="hero__lede" style="color: var(--color-stone-100);">Practical support for the relationship dynamics and emotional well-being that shape how people communicate, collaborate and cope under pressure.</p>
+        <p><a class="btn btn-secondary" href="contact.html">Start a conversation</a></p>
+      </div>
+      <div class="portrait-card page-hero__portrait">
+        <img src="assets/teresha/teresha-young-image-7-hero.jpg" alt="Teresha Young, Relationship &amp; Emotional Well-being Expert" width="900" height="1200" loading="eager" fetchpriority="high" decoding="async" style="aspect-ratio: 3 / 4; object-fit: cover;">
+      </div>
     </div>
   </section>
 
