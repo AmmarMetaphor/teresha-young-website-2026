@@ -386,14 +386,16 @@ p + p {
 
 .section--corporate .btn-secondary,
 .section--relationship .btn-secondary,
-.section--wellbeing .btn-secondary {
+.section--wellbeing .btn-secondary,
+.page-hero--photo .btn-secondary {
   color: var(--color-white);
   border-color: rgba(255, 255, 255, 0.6);
 }
 
 .section--corporate .btn-secondary:hover,
 .section--relationship .btn-secondary:hover,
-.section--wellbeing .btn-secondary:hover {
+.section--wellbeing .btn-secondary:hover,
+.page-hero--photo .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.12);
 }
 
@@ -892,6 +894,120 @@ p + p {
   border-bottom: 1px solid var(--color-border);
 }
 
+/* ---------------------------------------------------------------------- */
+/* Photographic secondary hero — shared by Organisations, Private Coaching */
+/* and About. A full-bleed approved photograph with a tinted scrim carries */
+/* the copy, echoing the Homepage hero's premium feel without copying it   */
+/* exactly. Each page sets its own scrim tint via a modifier class below.  */
+/* ---------------------------------------------------------------------- */
+
+.page-hero--photo {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: clamp(420px, 56vh, 620px);
+  padding-block: var(--space-xl);
+  border-bottom: none;
+  color: var(--color-white);
+}
+
+.page-hero__photo {
+  position: absolute;
+  inset: 0;
+}
+
+.page-hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+}
+
+.page-hero__scrim {
+  position: absolute;
+  inset: 0;
+}
+
+.page-hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+.page-hero--photo .hero__lede {
+  max-width: 46ch;
+}
+
+.page-hero--photo h1 {
+  /* px, not ch: avoids the same shrink-to-narrow-column trap fixed on the
+     Homepage hero, and keeps a consistent measure across the hero family. */
+  max-width: 680px;
+  text-wrap: normal;
+  color: var(--color-white);
+}
+
+@media (max-width: 767px) {
+  .page-hero--photo .page-hero__photo img {
+    object-position: center 16%;
+  }
+}
+
+/* Restrained authority line — used on the About hero (and reusable by any
+   other photographic hero) for one factual signal, not a credential wall. */
+.hero__trust {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  max-width: 46ch;
+}
+
+.hero__trust-primary {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+.hero__trust-secondary {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* For Organisations — Walnut-led, Corporate Slate kept as a small accent */
+.page-hero--org .page-hero__scrim {
+  background: linear-gradient(100deg,
+    rgba(36, 27, 22, 0.92) 0%,
+    rgba(123, 82, 61, 0.86) 30%,
+    rgba(123, 82, 61, 0.4) 58%,
+    rgba(123, 82, 61, 0.08) 80%,
+    rgba(123, 82, 61, 0) 92%);
+}
+
+/* Private Coaching — Walnut/Gold foundation, Berry as a controlled accent
+   (eyebrow colour only) rather than a full saturated colour block. */
+.page-hero--coaching .page-hero__scrim {
+  background: linear-gradient(100deg,
+    rgba(36, 27, 22, 0.92) 0%,
+    rgba(123, 82, 61, 0.84) 32%,
+    rgba(186, 143, 93, 0.38) 60%,
+    rgba(186, 143, 93, 0.08) 82%,
+    rgba(186, 143, 93, 0) 92%);
+}
+
+/* About — Walnut/Gold, consistent with the other editorial heroes */
+.page-hero--about .page-hero__scrim {
+  background: linear-gradient(100deg,
+    rgba(36, 27, 22, 0.92) 0%,
+    rgba(123, 82, 61, 0.84) 32%,
+    rgba(201, 170, 125, 0.32) 60%,
+    rgba(201, 170, 125, 0.06) 82%,
+    rgba(201, 170, 125, 0) 92%);
+}
+
 .prose {
   max-width: 68ch;
 }
@@ -1229,14 +1345,13 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
   overflow: hidden;
   display: flex;
   align-items: flex-end;
-  min-height: clamp(560px, 88vh, 760px);
+  min-height: clamp(560px, 66vh, 700px);
   background: var(--color-ink);
 }
 
 @media (min-width: 1024px) {
   .hero {
     align-items: center;
-    min-height: clamp(560px, 82vh, 880px);
   }
 }
 
@@ -1278,7 +1393,7 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 26%;
   opacity: 0;
   transition: opacity 1.3s ease;
 }
@@ -1301,13 +1416,13 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 
 @media (max-width: 1023px) {
   .hero__photo-img {
-    object-position: center 15%;
+    object-position: center 18%;
   }
 }
 
 @media (max-width: 480px) {
   .hero__photo-img {
-    object-position: center 13%;
+    object-position: center 16%;
   }
 }
 
@@ -1336,59 +1451,26 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
   }
 }
 
-.hero__rings {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.hero__rings span {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-/* Straddling the dissolve zone between the copy and the open photograph —
-   the brand's own interlocking-circle geometry, used as the visual bridge
-   between the two halves of the composition instead of a hard divider. */
-.hero__rings span:first-child {
-  width: 150px;
-  height: 150px;
-  bottom: 10%;
-  left: 22%;
-}
-
-.hero__rings span:last-child {
-  width: 88px;
-  height: 88px;
-  bottom: 26%;
-  left: 33%;
-  border-color: rgba(201, 170, 125, 0.65);
-}
-
-@media (max-width: 1023px) {
-  .hero__rings {
-    display: none;
-  }
-}
-
 .hero__text {
   position: relative;
   z-index: 3;
-  max-width: 30rem;
+  /* .hero__text is the sole flex item in .hero, so without an explicit
+     flex-basis it sizes to shrink-fit its content (h1's own max-width
+     below would never actually be reached). A generous flex-basis forces
+     real room for the headline; the line-length control still lives on
+     h1/lede, not here, so this is never the accidental bottleneck. */
+  flex: 0 1 58rem;
   padding: var(--space-xl) var(--container-pad) var(--space-2xl);
   color: var(--color-white);
 }
 
 @media (min-width: 1024px) {
   .hero__text {
-    max-width: 34rem;
     /* Matches .container's own left content edge exactly, so the H1 lines
        up with every heading in the sections below it, at any width. */
     padding-left: max(var(--container-pad), calc((100vw - var(--container-max)) / 2 + var(--container-pad)));
     padding-right: var(--space-2xl);
-    padding-block: var(--space-xl);
+    padding-block: var(--space-lg);
   }
 }
 
@@ -1397,14 +1479,14 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 }
 
 .hero h1 {
-  max-width: 22ch;
+  /* Targets ~560-680px measure at desktop widths — enough room for the
+     headline to read as 3-4 elegant lines, not a one-word-per-line stack.
+     text-wrap: normal overrides the global heading `balance` behaviour,
+     which was choosing 5 visually "even" short lines over 3-4 fuller ones
+     at this measure. */
+  max-width: 660px;
+  text-wrap: normal;
   color: var(--color-white);
-}
-
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .hero h1 {
-    font-size: 2.75rem;
-  }
 }
 
 .hero h1 em {
@@ -1414,7 +1496,7 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 .hero__lede {
   font-size: var(--fs-lg);
   color: rgba(255, 255, 255, 0.86);
-  max-width: 42ch;
+  max-width: 520px;
   margin-top: var(--space-sm);
 }
 
@@ -1434,28 +1516,6 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 .hero .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.14);
   color: var(--color-white);
-}
-
-.hero__trust {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  margin-top: var(--space-lg);
-  padding-top: var(--space-md);
-  border-top: 1px solid rgba(255, 255, 255, 0.28);
-  max-width: 46ch;
-}
-
-.hero__trust-primary {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--color-white);
-}
-
-.hero__trust-secondary {
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.72);
 }
 
 @media (max-width: 480px) {
@@ -1503,7 +1563,8 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 /* ---------------------------------------------------------------------- */
 /* Editorial logo field — media-outlet recognition, homepage and Media &  */
 /* Speaking alike. One quiet field, not a sponsor wall: consistent optical */
-/* height, original aspect ratio, restrained monochrome until hover.       */
+/* height, original aspect ratio, full original colour for immediate       */
+/* recognition (no grayscale/monochrome treatment).                       */
 /* ---------------------------------------------------------------------- */
 
 .logo-field {
@@ -1517,25 +1578,19 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 .logo-field li {
   display: flex;
   align-items: center;
-  height: 32px;
+  height: 64px;
 }
 
 .logo-field img {
   height: 100%;
   width: auto;
-  max-width: 132px;
+  max-width: 180px;
   object-fit: contain;
-  filter: grayscale(1) contrast(0.92) brightness(1.05);
-  opacity: 0.7;
-  transition: filter var(--duration-base) var(--ease-editorial),
-    opacity var(--duration-base) var(--ease-editorial),
-    transform var(--duration-fast) var(--ease-editorial);
+  transition: transform var(--duration-fast) var(--ease-editorial);
 }
 
 .logo-field li:hover img,
 .logo-field li:focus-within img {
-  filter: none;
-  opacity: 1;
   transform: translateY(-1px);
 }
 
@@ -1545,13 +1600,33 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
   }
 }
 
+@media (max-width: 640px) {
+  .logo-field li {
+    height: 48px;
+  }
+
+  .logo-field img {
+    max-width: 140px;
+  }
+}
+
 /* Media & Speaking page — a larger, more spacious variant of the same field. */
 .logo-field--large li {
-  height: 42px;
+  height: 76px;
 }
 
 .logo-field--large img {
-  max-width: 160px;
+  max-width: 200px;
+}
+
+@media (max-width: 640px) {
+  .logo-field--large li {
+    height: 52px;
+  }
+
+  .logo-field--large img {
+    max-width: 150px;
+  }
 }
 
 /* ---------------------------------------------------------------------- */
@@ -1578,11 +1653,13 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 
 @media (max-width: 640px) {
   .awards-list__item {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr auto;
+    column-gap: var(--space-sm);
   }
 
   .awards-list__mark {
-    display: none;
+    height: 52px;
+    max-width: 60px;
   }
 }
 
@@ -1609,9 +1686,9 @@ body[data-page="private-coaching"] .section:not(.section--relationship) .eyebrow
 }
 
 .awards-list__mark {
-  height: 56px;
+  height: 96px;
   width: auto;
-  max-width: 72px;
+  max-width: 110px;
   object-fit: contain;
 }
 
