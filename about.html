@@ -46,20 +46,132 @@
 
 <main id="main">
 
-  <section class="page-hero page-hero--photo page-hero--about">
-    <div class="page-hero__photo">
-      <img src="assets/teresha/teresha-young-image-5-hero.jpg" alt="Teresha Young, Relationship &amp; Emotional Well-being Expert" width="1900" height="2533" loading="eager" fetchpriority="high" decoding="async">
-    </div>
-    <div class="page-hero__scrim" aria-hidden="true"></div>
-    <div class="container page-hero__content">
-      <p class="eyebrow" style="color: var(--color-gold);">About Teresha Young</p>
-      <h1>A decade of relationship expertise, broadened for how people live and work today.</h1>
-      <p class="hero__lede" style="color: var(--color-stone-100);">Since 2016, the practice has grown from relationship coaching into a broader body of work spanning organisational well-being, private coaching, media and speaking.</p>
-      <p class="hero__lede" style="color: var(--color-stone-100);">Today, the focus is relationships and emotional well-being in all the places they matter: at work, at home, and in how people connect with themselves and each other.</p>
-      <div class="hero__trust">
-        <p class="hero__trust-primary">IAPC&amp;M Accredited Master Coach</p>
-        <p class="hero__trust-secondary">Multi-award-winning &middot; BBC and national media expertise</p>
+  <!-- ============================================================ -->
+  <!-- ABOUT HERO — editorial split: copy + 2016→2026 progression on  -->
+  <!-- the left, five-image organic collage on the right, over a warm  -->
+  <!-- cream ground, with a dark walnut authority strip beneath.       -->
+  <!-- The collage is built from SVG clipPaths over overlapping        -->
+  <!-- circular geometry (the brand's own logo language), so it stays  -->
+  <!-- fully responsive rather than being flattened into one image.    -->
+  <!-- Supporting panels are warm-desaturated; the central portrait    -->
+  <!-- stays in full colour as the focal point.                        -->
+  <!-- ============================================================ -->
+  <section class="about-hero">
+    <div class="about-hero__motif" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="about-hero__inner">
+
+      <div class="about-hero__copy">
+        <p class="eyebrow about-hero__eyebrow">About Teresha Young</p>
+        <span class="about-hero__rule" aria-hidden="true"></span>
+        <!-- Spaces before each <br> are deliberate: the breaks are hidden at
+             narrow widths, and without them the adjoining words would run
+             together ("for howpeople"). A trailing space before a visible
+             <br> is collapsed by the browser, so it costs nothing. -->
+        <h1 class="about-hero__title">
+          A decade of <br>
+          relationship expertise, <br>
+          <em>expanded for how <br>people live and work today.</em>
+        </h1>
+        <p class="about-hero__lede">Since 2016, the practice has grown from relationship coaching into a broader body of work spanning organisational well-being, private coaching, media and speaking.</p>
+        <p class="about-hero__lede">Today, the focus is relationships and emotional well-being wherever they matter: at work, at home and in the way people connect.</p>
+
+        <div class="evolution" aria-label="Evolution of the practice from 2016 to 2026">
+          <div class="evolution__stage evolution__stage--from">
+            <span class="evolution__year">2016</span>
+            <span class="evolution__role">Relationship Coach</span>
+          </div>
+          <div class="evolution__link" aria-hidden="true">
+            <span class="evolution__line"></span>
+            <span class="evolution__arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12.5 6.5 19 12l-6.5 5.5"/></svg>
+            </span>
+            <span class="evolution__line"></span>
+          </div>
+          <div class="evolution__stage evolution__stage--to">
+            <span class="evolution__year">2026</span>
+            <span class="evolution__role">Relationship &amp;<br>Emotional Well-being Expert</span>
+          </div>
+        </div>
+
+        <p class="about-hero__positioning">Trusted by organisations. Featured across the media.<br>Working with private clients.</p>
       </div>
+
+      <div class="about-hero__collage">
+        <svg class="collage" viewBox="0 0 820 840" role="img"
+             aria-label="Portrait collage of Teresha Young across coaching, speaking and professional settings.">
+          <defs>
+            <clipPath id="clipTopLeft"><circle cx="180" cy="205" r="150"/></clipPath>
+            <clipPath id="clipTopRight"><ellipse cx="638" cy="192" rx="128" ry="168"/></clipPath>
+            <clipPath id="clipBottomLeft"><circle cx="158" cy="612" r="142"/></clipPath>
+            <clipPath id="clipBottomRight"><circle cx="652" cy="628" r="162"/></clipPath>
+            <clipPath id="clipCentre"><ellipse cx="410" cy="418" rx="214" ry="282"/></clipPath>
+          </defs>
+
+          <!-- Supporting panels — warm desaturated, framing the centre -->
+          <g class="collage__support">
+            <image clip-path="url(#clipTopLeft)" href="assets/teresha/about-collage-top-left.jpg"
+                   x="10" y="35" width="340" height="453" preserveAspectRatio="xMidYMin slice"></image>
+            <image clip-path="url(#clipTopRight)" href="assets/teresha/about-collage-top-right.jpg"
+                   x="500" y="8" width="276" height="368" preserveAspectRatio="xMidYMin slice"></image>
+            <!-- Cutout PNG sits on its own warm ground so the transparency reads intentionally -->
+            <circle cx="158" cy="612" r="142" fill="#EFE4D6"></circle>
+            <image clip-path="url(#clipBottomLeft)" href="assets/teresha/about-collage-bottom-left.png"
+                   x="26" y="452" width="264" height="307" preserveAspectRatio="xMidYMin meet"></image>
+            <image clip-path="url(#clipBottomRight)" href="assets/teresha/about-collage-bottom-right.jpg"
+                   x="470" y="452" width="364" height="298" preserveAspectRatio="xMidYMin slice"></image>
+          </g>
+
+          <!-- Supporting outlines: cream separation, then gold hairline over it -->
+          <g class="collage__outline collage__outline--cream" fill="none">
+            <circle cx="180" cy="205" r="150"/>
+            <ellipse cx="638" cy="192" rx="128" ry="168"/>
+            <circle cx="158" cy="612" r="142"/>
+            <circle cx="652" cy="628" r="162"/>
+          </g>
+          <g class="collage__outline collage__outline--gold" fill="none">
+            <circle cx="180" cy="205" r="150"/>
+            <ellipse cx="638" cy="192" rx="128" ry="168"/>
+            <circle cx="158" cy="612" r="142"/>
+            <circle cx="652" cy="628" r="162"/>
+          </g>
+
+          <!-- Dominant central portrait — full natural colour, drawn last -->
+          <image clip-path="url(#clipCentre)" href="assets/teresha/about-collage-centre.jpg"
+                 x="177" y="120" width="466" height="621" preserveAspectRatio="xMidYMin slice"></image>
+          <g class="collage__outline collage__outline--cream" fill="none">
+            <ellipse cx="410" cy="418" rx="214" ry="282"/>
+          </g>
+          <g class="collage__outline collage__outline--gold" fill="none">
+            <ellipse cx="410" cy="418" rx="214" ry="282"/>
+          </g>
+        </svg>
+      </div>
+
+    </div>
+
+    <div class="authority-bar">
+      <ul class="authority-bar__list container" role="list">
+        <li class="authority-bar__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5 7 21l5-2.5L17 21l-1.5-7.5"/></svg>
+          <span>Multi-award<br>winning</span>
+        </li>
+        <li class="authority-bar__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="10" r="6.5"/><path d="m9 9.5 2.2 2.2L15 8"/><path d="M8 16.5 6.5 21 12 19l5.5 2L16 16.5"/></svg>
+          <span>Accredited<br>at Master level</span>
+        </li>
+        <li class="authority-bar__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="9" y="2.5" width="6" height="11.5" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21"/><path d="M9 21h6"/></svg>
+          <span>Media &amp;<br>speaking expert</span>
+        </li>
+        <li class="authority-bar__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="8.5" cy="9" r="3"/><circle cx="16" cy="10" r="2.6"/><path d="M3.5 19c0-2.8 2.2-5 5-5s5 2.2 5 5"/><path d="M14.5 14.6c2.3.2 4 2.1 4 4.4"/></svg>
+          <span>Trusted by<br>organisations</span>
+        </li>
+        <li class="authority-bar__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/></svg>
+          <span>Working with<br>private clients</span>
+        </li>
+      </ul>
     </div>
   </section>
 
