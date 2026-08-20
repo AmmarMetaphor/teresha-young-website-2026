@@ -31,12 +31,26 @@
     <div class="container nav-ribbon__inner">
       <ul class="nav-ribbon__list" role="list">
         <li><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></a></li>
-        <li><a href="organisations.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span>For Organisations</span></a></li>
-        <li><a href="private-coaching.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span>Private Coaching</span></a></li>
-        <li><a href="media-speaking.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span>Media &amp; Speaking</span></a></li>
+        <li class="nav-parent" data-nav-parent>
+          <button class="nav-parent__trigger" type="button" aria-expanded="false" aria-controls="nav-menu-work" data-nav-trigger>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span>Work With Me</span><svg class="nav-ribbon__chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-menu" id="nav-menu-work" role="list" data-nav-menu>
+            <li><a href="organisations.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span class="nav-menu__body"><span class="nav-menu__label">For Organisations</span><span class="nav-menu__desc">Relationship and emotional well-being work with teams.</span></span></a></li>
+            <li><a href="private-coaching.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span class="nav-menu__body"><span class="nav-menu__label">Private Coaching</span><span class="nav-menu__desc">One-to-one support, at your own pace.</span></span></a></li>
+          </ul>
+        </li>
+        <li class="nav-parent" data-nav-parent>
+          <button class="nav-parent__trigger" type="button" aria-expanded="false" aria-controls="nav-menu-media" data-nav-trigger>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span>Media &amp; Speaking</span><svg class="nav-ribbon__chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-menu" id="nav-menu-media" role="list" data-nav-menu>
+            <li><a href="media-speaking.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span class="nav-menu__body"><span class="nav-menu__label">Media &amp; Speaking</span><span class="nav-menu__desc">Expert commentary, talks and the podcast.</span></span></a></li>
+            <li><a href="news.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="1.5"/><path d="M7.5 8.5h9M7.5 12h9M7.5 15.5h5.5"/></svg><span class="nav-menu__body"><span class="nav-menu__label">News</span><span class="nav-menu__desc">Recent appearances, features and milestones.</span></span></a></li>
+          </ul>
+        </li>
         <li><a href="about.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg><span>About</span></a></li>
         <li><a href="resources.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v18H6.5A2.5 2.5 0 0 1 4 18.5v-13Z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v18h5.5a2.5 2.5 0 0 0 2.5-2.5v-13Z"/></svg><span>Resources</span></a></li>
-        <li><a href="news.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="1.5"/><path d="M7.5 8.5h9M7.5 12h9M7.5 15.5h5.5"/></svg><span>News</span></a></li>
         <li><a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg><span>Contact</span></a></li>
       </ul>
       <a class="btn btn-primary nav-ribbon__cta" href="contact.html">Start a conversation</a>
@@ -47,14 +61,15 @@
 <main id="main">
 
   <!-- ============================================================ -->
-  <!-- ABOUT HERO — editorial split: copy + 2016→2026 progression on  -->
-  <!-- the left, five-image organic collage on the right, over a warm  -->
-  <!-- cream ground, with a dark walnut authority strip beneath.       -->
-  <!-- The collage is built from SVG clipPaths over overlapping        -->
-  <!-- circular geometry (the brand's own logo language), so it stays  -->
-  <!-- fully responsive rather than being flattened into one image.    -->
-  <!-- Supporting panels are warm-desaturated; the central portrait    -->
-  <!-- stays in full colour as the focal point.                        -->
+  <!-- ABOUT HERO — editorial split: copy and the 2016→2026            -->
+  <!-- progression on the left, ONE approved professional photograph   -->
+  <!-- on the right, over a warm cream ground.                         -->
+  <!--                                                                 -->
+  <!-- The earlier five-image SVG collage and the dark authority strip  -->
+  <!-- beneath it were both removed this stage, along with their        -->
+  <!-- spacing. The image is a single still, sized to match the height  -->
+  <!-- and visual weight of the copy beside it.                        -->
+  <!-- Source: teresha-young-image-4-hero.jpg.                          -->
   <!-- ============================================================ -->
   <section class="about-hero">
     <div class="about-hero__motif" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -96,82 +111,12 @@
         <p class="about-hero__positioning">Trusted by organisations. Featured across the media.<br>Working with private clients.</p>
       </div>
 
-      <div class="about-hero__collage">
-        <svg class="collage" viewBox="0 0 820 840" role="img"
-             aria-label="Portrait collage of Teresha Young across coaching, speaking and professional settings.">
-          <defs>
-            <clipPath id="clipTopLeft"><circle cx="180" cy="205" r="150"/></clipPath>
-            <clipPath id="clipTopRight"><ellipse cx="638" cy="192" rx="128" ry="168"/></clipPath>
-            <clipPath id="clipBottomLeft"><circle cx="158" cy="612" r="142"/></clipPath>
-            <clipPath id="clipBottomRight"><circle cx="652" cy="628" r="162"/></clipPath>
-            <clipPath id="clipCentre"><ellipse cx="410" cy="418" rx="214" ry="282"/></clipPath>
-          </defs>
-
-          <!-- Supporting panels — warm desaturated, framing the centre -->
-          <g class="collage__support">
-            <image clip-path="url(#clipTopLeft)" href="assets/teresha/about-collage-top-left.jpg"
-                   x="10" y="35" width="340" height="453" preserveAspectRatio="xMidYMin slice"></image>
-            <image clip-path="url(#clipTopRight)" href="assets/teresha/about-collage-top-right.jpg"
-                   x="500" y="8" width="276" height="368" preserveAspectRatio="xMidYMin slice"></image>
-            <!-- Cutout PNG sits on its own warm ground so the transparency reads intentionally -->
-            <circle cx="158" cy="612" r="142" fill="#EFE4D6"></circle>
-            <image clip-path="url(#clipBottomLeft)" href="assets/teresha/about-collage-bottom-left.png"
-                   x="26" y="452" width="264" height="307" preserveAspectRatio="xMidYMin meet"></image>
-            <image clip-path="url(#clipBottomRight)" href="assets/teresha/about-collage-bottom-right.jpg"
-                   x="470" y="452" width="364" height="298" preserveAspectRatio="xMidYMin slice"></image>
-          </g>
-
-          <!-- Supporting outlines: cream separation, then gold hairline over it -->
-          <g class="collage__outline collage__outline--cream" fill="none">
-            <circle cx="180" cy="205" r="150"/>
-            <ellipse cx="638" cy="192" rx="128" ry="168"/>
-            <circle cx="158" cy="612" r="142"/>
-            <circle cx="652" cy="628" r="162"/>
-          </g>
-          <g class="collage__outline collage__outline--gold" fill="none">
-            <circle cx="180" cy="205" r="150"/>
-            <ellipse cx="638" cy="192" rx="128" ry="168"/>
-            <circle cx="158" cy="612" r="142"/>
-            <circle cx="652" cy="628" r="162"/>
-          </g>
-
-          <!-- Dominant central portrait — full natural colour, drawn last -->
-          <image clip-path="url(#clipCentre)" href="assets/teresha/about-collage-centre.jpg"
-                 x="177" y="120" width="466" height="621" preserveAspectRatio="xMidYMin slice"></image>
-          <g class="collage__outline collage__outline--cream" fill="none">
-            <ellipse cx="410" cy="418" rx="214" ry="282"/>
-          </g>
-          <g class="collage__outline collage__outline--gold" fill="none">
-            <ellipse cx="410" cy="418" rx="214" ry="282"/>
-          </g>
-        </svg>
+      <div class="about-hero__portrait">
+        <img src="assets/teresha/teresha-young-image-4-hero.jpg"
+             alt="Teresha Young, Relationship &amp; Emotional Well-being Expert"
+             width="1900" height="2533" loading="eager" fetchpriority="high" decoding="async">
       </div>
 
-    </div>
-
-    <div class="authority-bar">
-      <ul class="authority-bar__list container" role="list">
-        <li class="authority-bar__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5 7 21l5-2.5L17 21l-1.5-7.5"/></svg>
-          <span>Multi-award<br>winning</span>
-        </li>
-        <li class="authority-bar__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="10" r="6.5"/><path d="m9 9.5 2.2 2.2L15 8"/><path d="M8 16.5 6.5 21 12 19l5.5 2L16 16.5"/></svg>
-          <span>Accredited<br>at Master level</span>
-        </li>
-        <li class="authority-bar__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="9" y="2.5" width="6" height="11.5" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21"/><path d="M9 21h6"/></svg>
-          <span>Media &amp;<br>speaking expert</span>
-        </li>
-        <li class="authority-bar__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="8.5" cy="9" r="3"/><circle cx="16" cy="10" r="2.6"/><path d="M3.5 19c0-2.8 2.2-5 5-5s5 2.2 5 5"/><path d="M14.5 14.6c2.3.2 4 2.1 4 4.4"/></svg>
-          <span>Trusted by<br>organisations</span>
-        </li>
-        <li class="authority-bar__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/></svg>
-          <span>Working with<br>private clients</span>
-        </li>
-      </ul>
     </div>
   </section>
 
@@ -197,6 +142,107 @@
       <p class="eyebrow" id="philosophy-heading">Philosophy</p>
       <p>Healthier relationships change how people feel, work and live. Real change starts with communication, self-awareness and emotional well-being, inside a workplace and in personal life alike.</p>
       <p>That approach runs through work with organisations, private coaching, and the public conversations it informs.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- MY STORY                                                       -->
+  <!--                                                                -->
+  <!-- Deliberate exception to the site's usual generalised voice:     -->
+  <!-- this is Teresha's own account, so it is written first person.   -->
+  <!-- Placed after Credentials and Philosophy so professional         -->
+  <!-- credibility still leads the page and the personal account reads  -->
+  <!-- as a deeper dive rather than replacing the positioning.         -->
+  <!--                                                                -->
+  <!-- ############################################################   -->
+  <!-- CONTENT STILL REQUIRED — READ BEFORE REVIEW                    -->
+  <!--                                                                -->
+  <!-- The complete supplied story beginning "Who Is She?!" was NOT    -->
+  <!-- provided with this brief and is not present anywhere in this    -->
+  <!-- repository. The excerpt below is written strictly from the      -->
+  <!-- five communication points the brief sets out for the excerpt.   -->
+  <!--                                                                -->
+  <!-- The expanded panel therefore does NOT contain the narrative.    -->
+  <!-- Nothing about Teresha's childhood, her parents' relationship,   -->
+  <!-- domestic abuse, her father's affairs, her mother's decision to  -->
+  <!-- leave, her 2008 breakup or her recovery from 2010 onward has    -->
+  <!-- been written, paraphrased or inferred, because inventing any of -->
+  <!-- it would fabricate a real person's history.                    -->
+  <!--                                                                -->
+  <!-- TO COMPLETE: paste the supplied story into the panel below,     -->
+  <!-- following the editorial treatment rules (correct obvious        -->
+  <!-- grammar, reduce exclamation marks, break long paragraphs, add   -->
+  <!-- section headings, pull quotes using exact source wording only). -->
+  <!-- Drop the legacy "Time is ticking..." sales language and the     -->
+  <!-- obsolete Coaching Boutique link; the warm internal CTA at the   -->
+  <!-- end of the panel already replaces them.                        -->
+  <!-- See docs/open-decisions.md.                                    -->
+  <!-- ############################################################   -->
+  <!-- ============================================================ -->
+  <section class="section" aria-labelledby="story-heading">
+    <div class="container">
+      <div class="story">
+        <div class="section-header">
+          <p class="eyebrow">In her own words</p>
+          <h2 id="story-heading">My story</h2>
+        </div>
+
+        <div class="story__excerpt">
+          <p>I&rsquo;m really glad you found your way here.</p>
+          <p>My life has not run in a straight line. There have been setbacks, and there have been relationships that were hard to be in and harder to leave. I grew up around a parental relationship that was deeply disconnected, and that shaped what I understood love and closeness to be long before I had the words for any of it.</p>
+          <p>Those years, and the ones that followed, became part of the foundation for the work I do now. Not because everything resolved neatly, but because I learned what it takes to rebuild confidence, communication and self-worth after they have been worn down.</p>
+          <p>The whole of it is here if you would like to read it. If not, that is completely fine too.</p>
+        </div>
+
+        <button class="btn btn-secondary story__toggle" type="button"
+                aria-expanded="false" aria-controls="story-full"
+                data-disclosure-trigger
+                data-label-open="Read the full story"
+                data-label-close="Close the full story">
+          <span data-disclosure-label>Read the full story</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+        </button>
+
+        <div class="story__full" id="story-full" role="region" aria-labelledby="story-heading">
+          <div class="placeholder">
+            <span class="placeholder__tag">To follow</span>
+            <p>The full account is being prepared for publication and will appear here.</p>
+          </div>
+
+          <!-- The four story images the original account referenced
+               (mystory1.jpg to mystory4.jpg) have not been supplied either.
+               These are designed placeholders, not cropped screenshots and
+               not generated likenesses. See docs/asset-manifest.md. -->
+          <div class="story__figures">
+            <figure class="story__figure">
+              <img src="assets/placeholders/story-01.svg" alt="Placeholder for story image 01" width="1000" height="750" loading="lazy" decoding="async">
+              <figcaption>Story image 01</figcaption>
+            </figure>
+            <figure class="story__figure">
+              <img src="assets/placeholders/story-02.svg" alt="Placeholder for story image 02" width="1000" height="750" loading="lazy" decoding="async">
+              <figcaption>Story image 02</figcaption>
+            </figure>
+            <figure class="story__figure">
+              <img src="assets/placeholders/story-03.svg" alt="Placeholder for story image 03" width="1000" height="750" loading="lazy" decoding="async">
+              <figcaption>Story image 03</figcaption>
+            </figure>
+            <figure class="story__figure">
+              <img src="assets/placeholders/story-04.svg" alt="Placeholder for story image 04" width="1000" height="750" loading="lazy" decoding="async">
+              <figcaption>Story image 04</figcaption>
+            </figure>
+          </div>
+
+          <!-- Replaces the legacy "Time is ticking..." close and the obsolete
+               Coaching Boutique link with current internal routes. -->
+          <div class="story__close">
+            <p>If any of this feels familiar, there is no rush and no pressure. Take whichever next step feels right.</p>
+            <div class="story__close-actions">
+              <a class="btn btn-primary" href="private-coaching.html">Explore private coaching</a>
+              <a class="text-link" href="contact.html">Start a conversation &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

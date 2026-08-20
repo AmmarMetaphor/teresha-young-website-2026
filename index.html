@@ -31,12 +31,26 @@
     <div class="container nav-ribbon__inner">
       <ul class="nav-ribbon__list" role="list">
         <li><a href="index.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></a></li>
-        <li><a href="organisations.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span>For Organisations</span></a></li>
-        <li><a href="private-coaching.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span>Private Coaching</span></a></li>
-        <li><a href="media-speaking.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span>Media &amp; Speaking</span></a></li>
+        <li class="nav-parent" data-nav-parent>
+          <button class="nav-parent__trigger" type="button" aria-expanded="false" aria-controls="nav-menu-work" data-nav-trigger>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span>Work With Me</span><svg class="nav-ribbon__chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-menu" id="nav-menu-work" role="list" data-nav-menu>
+            <li><a href="organisations.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span class="nav-menu__body"><span class="nav-menu__label">For Organisations</span><span class="nav-menu__desc">Relationship and emotional well-being work with teams.</span></span></a></li>
+            <li><a href="private-coaching.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span class="nav-menu__body"><span class="nav-menu__label">Private Coaching</span><span class="nav-menu__desc">One-to-one support, at your own pace.</span></span></a></li>
+          </ul>
+        </li>
+        <li class="nav-parent" data-nav-parent>
+          <button class="nav-parent__trigger" type="button" aria-expanded="false" aria-controls="nav-menu-media" data-nav-trigger>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span>Media &amp; Speaking</span><svg class="nav-ribbon__chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-menu" id="nav-menu-media" role="list" data-nav-menu>
+            <li><a href="media-speaking.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span class="nav-menu__body"><span class="nav-menu__label">Media &amp; Speaking</span><span class="nav-menu__desc">Expert commentary, talks and the podcast.</span></span></a></li>
+            <li><a href="news.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="1.5"/><path d="M7.5 8.5h9M7.5 12h9M7.5 15.5h5.5"/></svg><span class="nav-menu__body"><span class="nav-menu__label">News</span><span class="nav-menu__desc">Recent appearances, features and milestones.</span></span></a></li>
+          </ul>
+        </li>
         <li><a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg><span>About</span></a></li>
         <li><a href="resources.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v18H6.5A2.5 2.5 0 0 1 4 18.5v-13Z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v18h5.5a2.5 2.5 0 0 0 2.5-2.5v-13Z"/></svg><span>Resources</span></a></li>
-        <li><a href="news.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="1.5"/><path d="M7.5 8.5h9M7.5 12h9M7.5 15.5h5.5"/></svg><span>News</span></a></li>
         <li><a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg><span>Contact</span></a></li>
       </ul>
       <a class="btn btn-primary nav-ribbon__cta" href="contact.html">Start a conversation</a>
@@ -52,35 +66,34 @@
   <!-- is the entire frame; a blurred ambient echo of it fills the     -->
   <!-- background, and a warm scrim carries the copy, so photo and     -->
   <!-- text read as one continuous picture rather than a white panel   -->
-  <!-- beside an image panel. Rotation set: teresha-young-image-4-hero -->
-  <!-- .jpg and -5-hero.jpg, the two genuinely professional portraits   -->
-  <!-- in assets/teresha/ (see docs/open-decisions.md for why -6, -7   -->
-  <!-- and -8 are not used). Only the photography crossfades — the     -->
-  <!-- eyebrow, H1, supporting copy and buttons stay put. Shortened     -->
-  <!-- and widened this stage (see docs/open-decisions.md item 5);      -->
-  <!-- decorative ring motif and the credential line removed — Awards  -->
-  <!-- & Recognition directly below now carries that authority signal. -->
+  <!-- beside an image panel.                                          -->
+  <!--                                                                 -->
+  <!-- Photography changed this stage to private-coaching-hero.jpg —    -->
+  <!-- the same approved source already working well on the Private     -->
+  <!-- Coaching hero — carrying the same treatment: Teresha fully       -->
+  <!-- visible, full face in frame, no head cut-off, warm walnut blend, -->
+  <!-- no hard split panel and no extreme close-up. The rotation is     -->
+  <!-- retired in favour of one deliberate still, so the composition is -->
+  <!-- tuned to a single frame rather than compromised across two.      -->
+  <!--                                                                 -->
+  <!-- Copy is untouched: eyebrow, H1, supporting line, CTA wording and -->
+  <!-- CTA hierarchy all remain exactly as approved. Only the           -->
+  <!-- photographic layer changed.                                      -->
   <!-- ============================================================ -->
   <section class="hero">
     <div class="hero__ambient" aria-hidden="true"></div>
-    <div class="hero__photo" data-hero-rotation>
-      <img
-        class="hero__photo-img is-active"
-        data-hero-photo
-        src="assets/teresha/teresha-young-image-4-hero.jpg"
-        alt="Teresha Young, Relationship &amp; Emotional Well-being Expert"
-        width="1900" height="2533"
-        fetchpriority="high"
-        decoding="async">
+    <div class="hero__photo">
       <img
         class="hero__photo-img"
-        data-hero-photo
-        src="assets/teresha/teresha-young-image-5-hero.jpg"
+        src="assets/teresha/private-coaching-hero.jpg"
         alt="Teresha Young, Relationship &amp; Emotional Well-being Expert"
-        width="1900" height="2533"
+        width="1400" height="1867"
+        fetchpriority="high"
         decoding="async">
     </div>
     <div class="hero__scrim" aria-hidden="true"></div>
+    <!-- Restrained connection geometry, far left, well clear of her face -->
+    <div class="hero__rings" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="hero__text">
       <p class="eyebrow hero__eyebrow">Relationship &amp; Emotional Well-being Expert</p>
       <h1>Better relationships shape how we <em>feel</em>, work and live.</h1>
@@ -99,40 +112,38 @@
     <div class="container">
       <p class="eyebrow">Awards &amp; recognition</p>
       <h2 id="awards-heading">Recognised for the work</h2>
-      <ul class="awards-list" role="list">
-        <li class="awards-list__item">
-          <span class="awards-list__year">2026</span>
-          <span class="awards-list__body">
-            <span class="awards-list__title">Relationship Coach of the Year (UK)</span>
-            <span class="awards-list__body-sub">Corporate LiveWire Global Awards</span>
-          </span>
-          <img class="awards-list__mark" src="assets/award/award-relationship-coach-of-the-year-uk-2026.png" alt="Corporate LiveWire Global Awards 2026 winner badge" width="84" height="84" loading="lazy" decoding="async">
-        </li>
-        <li class="awards-list__item">
-          <span class="awards-list__year">2025</span>
-          <span class="awards-list__body">
-            <span class="awards-list__title">Most Dedicated Wellness &amp; Relationship Expert</span>
-            <span class="awards-list__body-sub">SME News</span>
-          </span>
-          <img class="awards-list__mark" src="assets/award/award-sme-most-dedicated-wellness-relationship-expert-2025.png" alt="SME News Southern Enterprise Awards 2025 badge" width="84" height="84" loading="lazy" decoding="async">
-        </li>
-        <li class="awards-list__item">
-          <span class="awards-list__year">2025</span>
-          <span class="awards-list__body">
-            <span class="awards-list__title">Leading Wellness &amp; Relationship Coach</span>
-            <span class="awards-list__body-sub">SME News</span>
-          </span>
-          <img class="awards-list__mark" src="assets/award/award-uk-enterprise-2025.png" alt="SME News UK Enterprise Awards 2025 badge" width="84" height="84" loading="lazy" decoding="async">
-        </li>
-        <li class="awards-list__item">
-          <span class="awards-list__year">2024</span>
-          <span class="awards-list__body">
-            <span class="awards-list__title">Best One-to-One Coaching Boutique, South East</span>
-            <span class="awards-list__body-sub">SME News</span>
-          </span>
-          <img class="awards-list__mark" src="assets/award/award-southern-enterprise-2024.png" alt="SME News Southern Enterprise Awards 2024 badge" width="84" height="84" loading="lazy" decoding="async">
-        </li>
-      </ul>
+      <!-- Premium moving ribbon, replacing the earlier vertical list. Same
+           mechanism as the media-logo ribbon below (.marquee): a real set
+           plus an aria-hidden duplicate for the seamless CSS loop, paused on
+           hover/focus, and rendered as a static wrapped row entirely under
+           prefers-reduced-motion. Badges run at their original colours and
+           full artwork, ~132px high on desktop, so the award text inside
+           each badge stays readable. -->
+      <div class="ribbon" data-ribbon>
+      <div class="marquee marquee--awards">
+        <div class="marquee__track">
+          <ul class="logo-field marquee__set" role="list">
+            <li><img src="assets/award/ribbon/award-relationship-coach-of-the-year-uk-2026.png" alt="Relationship Coach of the Year (UK) 2026, Corporate LiveWire Global Awards" width="403" height="400" decoding="async"></li>
+            <li><img src="assets/award/ribbon/award-sme-most-dedicated-wellness-relationship-expert-2025.png" alt="Most Dedicated Wellness &amp; Relationship Expert 2025, SME News" width="414" height="400" decoding="async"></li>
+            <li><img src="assets/award/ribbon/award-uk-enterprise-2025.png" alt="Leading Wellness &amp; Relationship Coach 2025, SME News" width="414" height="400" decoding="async"></li>
+            <li><img src="assets/award/ribbon/award-southern-enterprise-2024.png" alt="Best One-to-One Coaching Boutique 2024, South East, SME News" width="414" height="400" decoding="async"></li>
+          </ul>
+          <ul class="logo-field marquee__set" role="list" aria-hidden="true">
+            <li><img src="assets/award/ribbon/award-relationship-coach-of-the-year-uk-2026.png" alt="" width="403" height="400" decoding="async"></li>
+            <li><img src="assets/award/ribbon/award-sme-most-dedicated-wellness-relationship-expert-2025.png" alt="" width="414" height="400" decoding="async"></li>
+            <li><img src="assets/award/ribbon/award-uk-enterprise-2025.png" alt="" width="414" height="400" decoding="async"></li>
+            <li><img src="assets/award/ribbon/award-southern-enterprise-2024.png" alt="" width="414" height="400" decoding="async"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ribbon-control">
+        <button class="ribbon-control__button" type="button" aria-pressed="false" data-ribbon-toggle>
+          <svg viewBox="0 0 24 24" aria-hidden="true" data-ribbon-icon-pause><path d="M9 5v14M15 5v14"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true" data-ribbon-icon-play><path d="M7 4.5l12 7.5-12 7.5z"/></svg>
+          <span data-ribbon-toggle-label>Pause movement</span>
+        </button>
+      </div>
+      </div>
       <div class="awards-list__amc">
         <img src="assets/logos/logo-amc.png" alt="International Authority for Professional Coaching &amp; Mentoring — Accredited Master Coach" width="220" height="103" loading="lazy" decoding="async">
         <p>IAPC&amp;M Accredited Master Coach, and appointed Head of Mental Health &amp; Well-being for IAPC&amp;M members.</p>
@@ -155,31 +166,40 @@
            aria-hidden duplicate set for the seamless CSS loop. Paused on
            hover/focus, and replaced with a static wrapped row entirely under
            prefers-reduced-motion (see .marquee rules in styles.css). -->
+      <div class="ribbon" data-ribbon>
       <div class="marquee">
         <div class="marquee__track">
           <ul class="logo-field marquee__set" role="list">
-            <li><img src="assets/logos/media/BBC-Radio-Kent-Logo.png" alt="BBC Radio Kent" width="264" height="149" loading="lazy" decoding="async"></li>
-            <li><img src="assets/logos/media/bbc-radio-london-logo.png" alt="BBC Radio London" width="600" height="337" loading="lazy" decoding="async"></li>
-            <li><img src="assets/logos/media/channel-4-logo.png" alt="Channel 4" width="440" height="440" loading="lazy" decoding="async"></li>
-            <li><img src="assets/logos/media/the-mirror-logo.png" alt="The Mirror" width="440" height="440" loading="lazy" decoding="async"></li>
-            <li><img src="assets/logos/media/cosmopolitan-logo.png" alt="Cosmopolitan UK" width="750" height="422" loading="lazy" decoding="async"></li>
-            <li><img src="assets/logos/media/huffpost-logo.jpg" alt="HuffPost" width="600" height="315" loading="lazy" decoding="async"></li>
-            <li><img src="assets/logos/media/daily-record-logo.png" alt="Daily Record" width="620" height="330" loading="lazy" decoding="async"></li>
-            <li><img src="assets/logos/media/ok!-logo.png" alt="OK!" width="440" height="440" loading="lazy" decoding="async"></li>
-            <li><img src="assets/logos/media/thrive-global-logo.jpg" alt="Thrive Global" width="600" height="315" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/BBC-Radio-Kent-Logo.png" alt="BBC Radio Kent" width="264" height="149" decoding="async"></li>
+            <li><img src="assets/logos/media/bbc-radio-london-logo.png" alt="BBC Radio London" width="600" height="337" decoding="async"></li>
+            <li><img src="assets/logos/media/channel-4-logo.png" alt="Channel 4" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/the-mirror-logo.png" alt="The Mirror" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/cosmopolitan-logo.png" alt="Cosmopolitan UK" width="750" height="422" decoding="async"></li>
+            <li><img src="assets/logos/media/huffpost-logo.jpg" alt="HuffPost" width="600" height="315" decoding="async"></li>
+            <li><img src="assets/logos/media/daily-record-logo.png" alt="Daily Record" width="620" height="330" decoding="async"></li>
+            <li><img src="assets/logos/media/ok!-logo.png" alt="OK!" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/thrive-global-logo.jpg" alt="Thrive Global" width="600" height="315" decoding="async"></li>
           </ul>
           <ul class="logo-field marquee__set" role="list" aria-hidden="true">
-            <li><img src="assets/logos/media/BBC-Radio-Kent-Logo.png" alt="" width="264" height="149" loading="lazy" decoding="async"></li>
-            <li><img src="assets/logos/media/bbc-radio-london-logo.png" alt="" width="600" height="337" loading="lazy" decoding="async"></li>
-            <li><img src="assets/logos/media/channel-4-logo.png" alt="" width="440" height="440" loading="lazy" decoding="async"></li>
-            <li><img src="assets/logos/media/the-mirror-logo.png" alt="" width="440" height="440" loading="lazy" decoding="async"></li>
-            <li><img src="assets/logos/media/cosmopolitan-logo.png" alt="" width="750" height="422" loading="lazy" decoding="async"></li>
-            <li><img src="assets/logos/media/huffpost-logo.jpg" alt="" width="600" height="315" loading="lazy" decoding="async"></li>
-            <li><img src="assets/logos/media/daily-record-logo.png" alt="" width="620" height="330" loading="lazy" decoding="async"></li>
-            <li><img src="assets/logos/media/ok!-logo.png" alt="" width="440" height="440" loading="lazy" decoding="async"></li>
-            <li><img src="assets/logos/media/thrive-global-logo.jpg" alt="" width="600" height="315" loading="lazy" decoding="async"></li>
+            <li><img src="assets/logos/media/BBC-Radio-Kent-Logo.png" alt="" width="264" height="149" decoding="async"></li>
+            <li><img src="assets/logos/media/bbc-radio-london-logo.png" alt="" width="600" height="337" decoding="async"></li>
+            <li><img src="assets/logos/media/channel-4-logo.png" alt="" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/the-mirror-logo.png" alt="" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/cosmopolitan-logo.png" alt="" width="750" height="422" decoding="async"></li>
+            <li><img src="assets/logos/media/huffpost-logo.jpg" alt="" width="600" height="315" decoding="async"></li>
+            <li><img src="assets/logos/media/daily-record-logo.png" alt="" width="620" height="330" decoding="async"></li>
+            <li><img src="assets/logos/media/ok!-logo.png" alt="" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/thrive-global-logo.jpg" alt="" width="600" height="315" decoding="async"></li>
           </ul>
         </div>
+      </div>
+      <div class="ribbon-control">
+        <button class="ribbon-control__button" type="button" aria-pressed="false" data-ribbon-toggle>
+          <svg viewBox="0 0 24 24" aria-hidden="true" data-ribbon-icon-pause><path d="M9 5v14M15 5v14"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true" data-ribbon-icon-play><path d="M7 4.5l12 7.5-12 7.5z"/></svg>
+          <span data-ribbon-toggle-label>Pause movement</span>
+        </button>
+      </div>
       </div>
     </div>
   </section>
@@ -191,23 +211,33 @@
     <div class="container">
       <p class="eyebrow">A supporting framework</p>
       <h2 id="safe-heading">The S.A.F.E.&trade; framework</h2>
-      <p class="safe-diagram__intro">S.A.F.E.&trade; brings together four reference points for healthier relationships, clearer communication and greater emotional awareness: feeling secure, staying aligned with what matters, moving toward fulfilment, and building the confidence that comes with feeling empowered.</p>
-      <div class="safe-diagram">
-        <div class="safe-diagram__item">
-          <span class="safe-diagram__letter">S</span>
-          <span class="safe-diagram__word">Secure</span>
-        </div>
-        <div class="safe-diagram__item">
-          <span class="safe-diagram__letter">A</span>
-          <span class="safe-diagram__word">Aligned</span>
-        </div>
-        <div class="safe-diagram__item">
-          <span class="safe-diagram__letter">F</span>
-          <span class="safe-diagram__word">Fulfilled</span>
-        </div>
-        <div class="safe-diagram__item">
-          <span class="safe-diagram__letter">E</span>
-          <span class="safe-diagram__word">Empowered</span>
+      <p class="safe-diagram__intro">Four connected reference points, not four separate ideas. Each one supports the next, and together they describe what healthier relationships and steadier emotional well-being tend to be built on.</p>
+      <!-- Shared component: identical markup, copy and geometry on Private
+           Coaching. The connecting pathway is decorative; the relationship it
+           draws is also stated in the intro copy above. -->
+      <div class="safe-web">
+        <span class="safe-web__path" aria-hidden="true"></span>
+        <div class="safe-web__nodes">
+          <div class="safe-web__node">
+            <span class="safe-web__ring"><span class="safe-web__letter">S</span></span>
+            <span class="safe-web__word">Secure</span>
+            <p class="safe-web__copy">A steadier foundation for honest communication, healthier boundaries and emotional safety.</p>
+          </div>
+          <div class="safe-web__node">
+            <span class="safe-web__ring"><span class="safe-web__letter">A</span></span>
+            <span class="safe-web__word">Aligned</span>
+            <p class="safe-web__copy">Greater clarity between values, needs, choices and the way relationships are handled.</p>
+          </div>
+          <div class="safe-web__node">
+            <span class="safe-web__ring"><span class="safe-web__letter">F</span></span>
+            <span class="safe-web__word">Fulfilled</span>
+            <p class="safe-web__copy">More intentional connection, meaning and satisfaction across personal and working relationships.</p>
+          </div>
+          <div class="safe-web__node">
+            <span class="safe-web__ring"><span class="safe-web__letter">E</span></span>
+            <span class="safe-web__word">Empowered</span>
+            <p class="safe-web__copy">Greater confidence to communicate, make decisions and respond to challenges with self-awareness.</p>
+          </div>
         </div>
       </div>
     </div>

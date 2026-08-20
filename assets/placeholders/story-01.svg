@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="1000" height="750" role="img" aria-label="Story image 01 placeholder">
+<defs>
+<linearGradient id="sstory01" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#7B523D"/><stop offset="1" stop-color="#5B3A2A"/>
+</linearGradient>
+</defs>
+<rect width="1000" height="750" fill="url(#sstory01)"/>
+<g fill="none" stroke="#C9AA7D" stroke-width="2.5" opacity="0.32"><circle cx="429" cy="375.0" r="168"/><circle cx="571" cy="375.0" r="168"/><circle cx="500.0" cy="283" r="168"/></g>
+<text x="500" y="381" text-anchor="middle" font-family="'Bodoni Moda', Didot, Georgia, serif" font-size="60" font-weight="600" fill="#FAF7F3">Story image 01</text>
+<text x="500" y="437" text-anchor="middle" font-family="Manrope, Segoe UI, sans-serif" font-size="21" font-weight="600" letter-spacing="2.6" fill="#C9AA7D">PHOTOGRAPH TO BE SUPPLIED</text>
+</svg>

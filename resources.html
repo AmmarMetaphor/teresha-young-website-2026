@@ -31,12 +31,26 @@
     <div class="container nav-ribbon__inner">
       <ul class="nav-ribbon__list" role="list">
         <li><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></a></li>
-        <li><a href="organisations.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span>For Organisations</span></a></li>
-        <li><a href="private-coaching.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span>Private Coaching</span></a></li>
-        <li><a href="media-speaking.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span>Media &amp; Speaking</span></a></li>
+        <li class="nav-parent" data-nav-parent>
+          <button class="nav-parent__trigger" type="button" aria-expanded="false" aria-controls="nav-menu-work" data-nav-trigger>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span>Work With Me</span><svg class="nav-ribbon__chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-menu" id="nav-menu-work" role="list" data-nav-menu>
+            <li><a href="organisations.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span class="nav-menu__body"><span class="nav-menu__label">For Organisations</span><span class="nav-menu__desc">Relationship and emotional well-being work with teams.</span></span></a></li>
+            <li><a href="private-coaching.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span class="nav-menu__body"><span class="nav-menu__label">Private Coaching</span><span class="nav-menu__desc">One-to-one support, at your own pace.</span></span></a></li>
+          </ul>
+        </li>
+        <li class="nav-parent" data-nav-parent>
+          <button class="nav-parent__trigger" type="button" aria-expanded="false" aria-controls="nav-menu-media" data-nav-trigger>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span>Media &amp; Speaking</span><svg class="nav-ribbon__chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-menu" id="nav-menu-media" role="list" data-nav-menu>
+            <li><a href="media-speaking.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span class="nav-menu__body"><span class="nav-menu__label">Media &amp; Speaking</span><span class="nav-menu__desc">Expert commentary, talks and the podcast.</span></span></a></li>
+            <li><a href="news.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="1.5"/><path d="M7.5 8.5h9M7.5 12h9M7.5 15.5h5.5"/></svg><span class="nav-menu__body"><span class="nav-menu__label">News</span><span class="nav-menu__desc">Recent appearances, features and milestones.</span></span></a></li>
+          </ul>
+        </li>
         <li><a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg><span>About</span></a></li>
         <li><a href="resources.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v18H6.5A2.5 2.5 0 0 1 4 18.5v-13Z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v18h5.5a2.5 2.5 0 0 0 2.5-2.5v-13Z"/></svg><span>Resources</span></a></li>
-        <li><a href="news.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="1.5"/><path d="M7.5 8.5h9M7.5 12h9M7.5 15.5h5.5"/></svg><span>News</span></a></li>
         <li><a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg><span>Contact</span></a></li>
       </ul>
       <a class="btn btn-primary nav-ribbon__cta" href="contact.html">Start a conversation</a>
@@ -55,9 +69,92 @@
     </div>
   </section>
 
-  <section class="section section--tight" aria-labelledby="resources-list-heading">
+  <!-- ============================================================ -->
+  <!-- SECTION 1 — FREE EBOOKS                                        -->
+  <!--                                                                -->
+  <!-- Resources is the ONLY page where the eBooks appear. They must    -->
+  <!-- never be placed on news.html.                                   -->
+  <!--                                                                -->
+  <!-- Every cover is a designed placeholder at book-cover proportions  -->
+  <!-- from assets/placeholders/. No high-resolution cover file has     -->
+  <!-- been supplied for any of the four, and nothing has been cropped  -->
+  <!-- out of the supplied reference screenshot. See                    -->
+  <!-- docs/asset-manifest.md for the required source files.            -->
+  <!-- ============================================================ -->
+  <section class="section section--tight resource-section" aria-labelledby="ebooks-heading">
     <div class="container">
-      <h2 class="visually-hidden" id="resources-list-heading">Resources list</h2>
+      <div class="section-header resource-section__header">
+        <p class="eyebrow">Section one</p>
+        <h2 id="ebooks-heading">Free eBooks</h2>
+      </div>
+      <div class="ebook-grid">
+
+        <article class="ebook-card">
+          <div class="ebook-card__cover">
+            <img src="assets/placeholders/ebook-01.svg" alt="Placeholder cover for 10 Simple Ways To Get Closer To Your Romantic Partner" width="760" height="1000" loading="lazy" decoding="async">
+          </div>
+          <p class="ebook-card__tag">Free eBook</p>
+          <h3 class="ebook-card__title">10 Simple Ways To Get Closer To Your Romantic Partner</h3>
+          <button class="ebook-card__action" type="button" data-gate-open="10 Simple Ways To Get Closer To Your Romantic Partner">
+            Get the eBook
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </article>
+
+        <article class="ebook-card">
+          <div class="ebook-card__cover">
+            <img src="assets/placeholders/ebook-02.svg" alt="Placeholder cover for Nurture Your Relationship" width="760" height="1000" loading="lazy" decoding="async">
+          </div>
+          <p class="ebook-card__tag">Free eBook</p>
+          <h3 class="ebook-card__title">Nurture Your Relationship: 6 Steps To Code Your Emotions &amp; 10 Ways To Plant New Positive Ones</h3>
+          <button class="ebook-card__action" type="button" data-gate-open="Nurture Your Relationship: 6 Steps To Code Your Emotions &amp; 10 Ways To Plant New Positive Ones">
+            Get the eBook
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </article>
+
+        <article class="ebook-card">
+          <div class="ebook-card__cover">
+            <img src="assets/placeholders/ebook-03.svg" alt="Placeholder cover for 7 Tell-Tale Warning Signs That Tit For Tat Is Dominating Your Relationship" width="760" height="1000" loading="lazy" decoding="async">
+          </div>
+          <p class="ebook-card__tag">Free eBook</p>
+          <h3 class="ebook-card__title">7 Tell-Tale Warning Signs That Tit For Tat Is Dominating Your Relationship</h3>
+          <button class="ebook-card__action" type="button" data-gate-open="7 Tell-Tale Warning Signs That Tit For Tat Is Dominating Your Relationship">
+            Get the eBook
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </article>
+
+        <article class="ebook-card">
+          <div class="ebook-card__cover">
+            <img src="assets/placeholders/ebook-04.svg" alt="Placeholder cover for 5 Things Stopping You From Being Decisive In Your Relationship" width="760" height="1000" loading="lazy" decoding="async">
+          </div>
+          <p class="ebook-card__tag">Free eBook</p>
+          <h3 class="ebook-card__title">5 Things Stopping You From Being Decisive In Your Relationship</h3>
+          <button class="ebook-card__action" type="button" data-gate-open="5 Things Stopping You From Being Decisive In Your Relationship">
+            Get the eBook
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 2 — ARTICLES & GUIDES                                  -->
+  <!--                                                                -->
+  <!-- Both native article pages under resources/ remain in the        -->
+  <!-- repository with their full content intact. The listing here is  -->
+  <!-- gated with the same prototype form as the eBooks, shown inline  -->
+  <!-- beneath the selected entry rather than in a modal.              -->
+  <!-- ============================================================ -->
+  <section class="section section--tight resource-section" aria-labelledby="resources-list-heading">
+    <div class="container">
+      <div class="section-header resource-section__header">
+        <p class="eyebrow">Section two</p>
+        <h2 id="resources-list-heading">Articles &amp; guides</h2>
+      </div>
       <ul class="resource-list" role="list">
         <li class="resource-card" style="--resource-color: var(--color-berry);">
           <span class="resource-card__num" aria-hidden="true">01</span>
@@ -67,11 +164,35 @@
             <h3>Igniting Intimacy: 12 Powerful Questions to Transform Your Relationship</h3>
             <p class="resource-card__desc">Twelve reflective questions, plus the L-RUGI technique, for building closeness and honest conversation between partners.</p>
           </span>
-          <a class="resource-card__action" href="resources/igniting-intimacy-12-powerful-questions.html">
-            Read article
+          <button class="resource-card__action" type="button" aria-controls="gate-igniting-intimacy" data-gate-inline-toggle>
+            Send me this
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+          </button>
+
+          <div class="gate-inline" id="gate-igniting-intimacy">
+            <p class="gate-inline__heading">Igniting Intimacy: 12 Powerful Questions</p>
+            <form class="gate-form" novalidate data-gate-inline-form>
+              <div class="gate-form__fields">
+                <div class="gate-form__field">
+                  <label class="gate-form__label" for="ii-name">Name</label>
+                  <input class="gate-form__input" id="ii-name" name="name" type="text" autocomplete="name" aria-describedby="ii-name-error" data-gate-field>
+                  <span class="gate-form__error" id="ii-name-error" role="alert"></span>
+                </div>
+                <div class="gate-form__field">
+                  <label class="gate-form__label" for="ii-email">Email address</label>
+                  <input class="gate-form__input" id="ii-email" name="email" type="email" autocomplete="email" aria-describedby="ii-email-error" data-gate-field>
+                  <span class="gate-form__error" id="ii-email-error" role="alert"></span>
+                </div>
+              </div>
+              <button class="btn btn-primary gate-form__submit" type="submit">Send me the resource</button>
+              <div class="gate-form__confirmation" data-gate-confirmation>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6.5 9.5 17 4 11.5"/></svg>
+                <p>Thanks. The resource has been sent to your email address.</p>
+              </div>
+            </form>
+          </div>
         </li>
+
         <li class="resource-card" style="--resource-color: var(--color-forest);">
           <span class="resource-card__num" aria-hidden="true">02</span>
           <svg class="resource-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 3.5h7l4 4V19a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 19V5A1.5 1.5 0 0 1 7 3.5Z"/><path d="M14 3.5V8h4.2"/><path d="M9 13h6M9 16.5h4"/></svg>
@@ -80,16 +201,79 @@
             <h3>7 Day &lsquo;Me Time&rsquo; Plan</h3>
             <p class="resource-card__desc">A day-by-day structure for building small, consistent pockets of personal time into daily life.</p>
           </span>
-          <a class="resource-card__action" href="resources/7-day-me-time-plan.html">
-            Read article
+          <button class="resource-card__action" type="button" aria-controls="gate-me-time" data-gate-inline-toggle>
+            Send me this
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+          </button>
+
+          <div class="gate-inline" id="gate-me-time">
+            <p class="gate-inline__heading">7 Day &lsquo;Me Time&rsquo; Plan</p>
+            <form class="gate-form" novalidate data-gate-inline-form>
+              <div class="gate-form__fields">
+                <div class="gate-form__field">
+                  <label class="gate-form__label" for="mt-name">Name</label>
+                  <input class="gate-form__input" id="mt-name" name="name" type="text" autocomplete="name" aria-describedby="mt-name-error" data-gate-field>
+                  <span class="gate-form__error" id="mt-name-error" role="alert"></span>
+                </div>
+                <div class="gate-form__field">
+                  <label class="gate-form__label" for="mt-email">Email address</label>
+                  <input class="gate-form__input" id="mt-email" name="email" type="email" autocomplete="email" aria-describedby="mt-email-error" data-gate-field>
+                  <span class="gate-form__error" id="mt-email-error" role="alert"></span>
+                </div>
+              </div>
+              <button class="btn btn-primary gate-form__submit" type="submit">Send me the resource</button>
+              <div class="gate-form__confirmation" data-gate-confirmation>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6.5 9.5 17 4 11.5"/></svg>
+                <p>Thanks. The resource has been sent to your email address.</p>
+              </div>
+            </form>
+          </div>
         </li>
       </ul>
     </div>
   </section>
 
 </main>
+
+<!-- ============================================================ -->
+<!-- EBOOK GATE — PROTOTYPE ONLY.                                    -->
+<!--                                                                -->
+<!-- Nothing entered here is transmitted, stored, persisted or       -->
+<!-- written to localStorage. No email is sent, no CRM or mailing     -->
+<!-- platform is connected, and no database or API is called. The     -->
+<!-- acknowledgement is a visual mockup of a delivery that does not   -->
+<!-- exist yet; production email delivery is still outstanding work.  -->
+<!-- See docs/open-decisions.md.                                     -->
+<!-- ============================================================ -->
+<div class="gate-modal" role="dialog" aria-modal="true" aria-labelledby="gate-modal-title" data-gate-modal hidden>
+  <div class="gate-modal__panel">
+    <button class="gate-modal__close" type="button" data-gate-close>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      <span class="visually-hidden">Close</span>
+    </button>
+    <p class="gate-modal__eyebrow">Free eBook</p>
+    <h2 class="gate-modal__title" id="gate-modal-title"><span data-gate-title>this resource</span></h2>
+    <form class="gate-form" novalidate>
+      <div class="gate-form__fields">
+        <div class="gate-form__field">
+          <label class="gate-form__label" for="gate-name">Name</label>
+          <input class="gate-form__input" id="gate-name" name="name" type="text" autocomplete="name" aria-describedby="gate-name-error" data-gate-field>
+          <span class="gate-form__error" id="gate-name-error" role="alert"></span>
+        </div>
+        <div class="gate-form__field">
+          <label class="gate-form__label" for="gate-email">Email address</label>
+          <input class="gate-form__input" id="gate-email" name="email" type="email" autocomplete="email" aria-describedby="gate-email-error" data-gate-field>
+          <span class="gate-form__error" id="gate-email-error" role="alert"></span>
+        </div>
+      </div>
+      <button class="btn btn-primary gate-form__submit" type="submit">Send me the resource</button>
+      <div class="gate-form__confirmation" data-gate-confirmation>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6.5 9.5 17 4 11.5"/></svg>
+        <p>Thanks. The resource has been sent to your email address.</p>
+      </div>
+    </form>
+  </div>
+</div>
 
 <footer class="site-footer">
   <div class="container">

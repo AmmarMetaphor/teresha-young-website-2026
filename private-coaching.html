@@ -31,12 +31,26 @@
     <div class="container nav-ribbon__inner">
       <ul class="nav-ribbon__list" role="list">
         <li><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></a></li>
-        <li><a href="organisations.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span>For Organisations</span></a></li>
-        <li><a href="private-coaching.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span>Private Coaching</span></a></li>
-        <li><a href="media-speaking.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span>Media &amp; Speaking</span></a></li>
+        <li class="nav-parent" data-nav-parent>
+          <button class="nav-parent__trigger is-active" type="button" aria-expanded="false" aria-controls="nav-menu-work" data-nav-trigger>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span>Work With Me</span><svg class="nav-ribbon__chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-menu" id="nav-menu-work" role="list" data-nav-menu>
+            <li><a href="organisations.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span class="nav-menu__body"><span class="nav-menu__label">For Organisations</span><span class="nav-menu__desc">Relationship and emotional well-being work with teams.</span></span></a></li>
+            <li><a href="private-coaching.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span class="nav-menu__body"><span class="nav-menu__label">Private Coaching</span><span class="nav-menu__desc">One-to-one support, at your own pace.</span></span></a></li>
+          </ul>
+        </li>
+        <li class="nav-parent" data-nav-parent>
+          <button class="nav-parent__trigger" type="button" aria-expanded="false" aria-controls="nav-menu-media" data-nav-trigger>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span>Media &amp; Speaking</span><svg class="nav-ribbon__chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-menu" id="nav-menu-media" role="list" data-nav-menu>
+            <li><a href="media-speaking.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span class="nav-menu__body"><span class="nav-menu__label">Media &amp; Speaking</span><span class="nav-menu__desc">Expert commentary, talks and the podcast.</span></span></a></li>
+            <li><a href="news.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="1.5"/><path d="M7.5 8.5h9M7.5 12h9M7.5 15.5h5.5"/></svg><span class="nav-menu__body"><span class="nav-menu__label">News</span><span class="nav-menu__desc">Recent appearances, features and milestones.</span></span></a></li>
+          </ul>
+        </li>
         <li><a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg><span>About</span></a></li>
         <li><a href="resources.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v18H6.5A2.5 2.5 0 0 1 4 18.5v-13Z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v18h5.5a2.5 2.5 0 0 0 2.5-2.5v-13Z"/></svg><span>Resources</span></a></li>
-        <li><a href="news.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="1.5"/><path d="M7.5 8.5h9M7.5 12h9M7.5 15.5h5.5"/></svg><span>News</span></a></li>
         <li><a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg><span>Contact</span></a></li>
       </ul>
       <a class="btn btn-primary nav-ribbon__cta" href="contact.html">Start a conversation</a>
@@ -73,19 +87,14 @@
       <p class="eyebrow pc-hero__eyebrow">Private Coaching</p>
       <h1 class="pc-hero__title">Support for your relationship and <em>emotional well-being</em></h1>
       <p class="pc-hero__lede">Private coaching for relationship patterns, communication and emotional well-being, explored one-to-one, at a pace that respects where you&rsquo;re starting from.</p>
+      <!-- The early Emma W excerpt that previously sat here has been removed
+           this stage, along with its heading, attribution and figure
+           container. Her full testimonial remains published in the
+           testimonial section further down the page. -->
       <div class="pc-hero__actions">
         <a class="btn btn-primary" href="contact.html">Start a conversation</a>
-        <a class="pc-hero__secondary" href="#private-outcomes-heading">What this means for you</a>
+        <a class="pc-hero__secondary" href="#private-outcomes-heading">What private coaching makes space for</a>
       </div>
-
-      <!-- Short excerpt from the approved Emma W testimonial already published
-           further down this page. Client words, attributed to the client. -->
-      <figure class="pc-hero__quote">
-        <blockquote>
-          <p>&ldquo;I have really noticed a difference in my self-confidence and self-belief.&rdquo;</p>
-        </blockquote>
-        <figcaption>Emma W</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -93,7 +102,7 @@
     <div class="container">
       <div class="section-header">
         <p class="eyebrow">Outcomes</p>
-        <h2 id="private-outcomes-heading">What this means for you</h2>
+        <h2 id="private-outcomes-heading">What private coaching makes space for</h2>
       </div>
       <p>Private coaching creates space to explore the patterns, communication habits and emotional well-being that shape relationships and sense of self, at your own pace.</p>
       <ul class="list-plain list-plain--inline" role="list" style="margin-top: var(--space-md);">
@@ -119,23 +128,32 @@
     <div class="container">
       <p class="eyebrow" style="color: var(--color-walnut);">A supporting framework</p>
       <h2 id="safe-heading">The S.A.F.E.&trade; framework</h2>
-      <p class="safe-diagram__intro">S.A.F.E.&trade; brings together four reference points for healthier relationships, clearer communication and greater emotional awareness: feeling secure, staying aligned with what matters, moving toward fulfilment, and building the confidence that comes with feeling empowered.</p>
-      <div class="safe-diagram">
-        <div class="safe-diagram__item">
-          <span class="safe-diagram__letter">S</span>
-          <span class="safe-diagram__word">Secure</span>
-        </div>
-        <div class="safe-diagram__item">
-          <span class="safe-diagram__letter">A</span>
-          <span class="safe-diagram__word">Aligned</span>
-        </div>
-        <div class="safe-diagram__item">
-          <span class="safe-diagram__letter">F</span>
-          <span class="safe-diagram__word">Fulfilled</span>
-        </div>
-        <div class="safe-diagram__item">
-          <span class="safe-diagram__letter">E</span>
-          <span class="safe-diagram__word">Empowered</span>
+      <p class="safe-diagram__intro">Four connected reference points, not four separate ideas. Each one supports the next, and together they describe what healthier relationships and steadier emotional well-being tend to be built on.</p>
+      <!-- Shared component: identical markup, copy, geometry, colours and
+           responsive behaviour to the Homepage S.A.F.E.™ section. -->
+      <div class="safe-web">
+        <span class="safe-web__path" aria-hidden="true"></span>
+        <div class="safe-web__nodes">
+          <div class="safe-web__node">
+            <span class="safe-web__ring"><span class="safe-web__letter">S</span></span>
+            <span class="safe-web__word">Secure</span>
+            <p class="safe-web__copy">A steadier foundation for honest communication, healthier boundaries and emotional safety.</p>
+          </div>
+          <div class="safe-web__node">
+            <span class="safe-web__ring"><span class="safe-web__letter">A</span></span>
+            <span class="safe-web__word">Aligned</span>
+            <p class="safe-web__copy">Greater clarity between values, needs, choices and the way relationships are handled.</p>
+          </div>
+          <div class="safe-web__node">
+            <span class="safe-web__ring"><span class="safe-web__letter">F</span></span>
+            <span class="safe-web__word">Fulfilled</span>
+            <p class="safe-web__copy">More intentional connection, meaning and satisfaction across personal and working relationships.</p>
+          </div>
+          <div class="safe-web__node">
+            <span class="safe-web__ring"><span class="safe-web__letter">E</span></span>
+            <span class="safe-web__word">Empowered</span>
+            <p class="safe-web__copy">Greater confidence to communicate, make decisions and respond to challenges with self-awareness.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -145,8 +163,9 @@
     <div class="container">
       <div class="section-header">
         <p class="eyebrow" style="color: var(--color-walnut);">In their words</p>
-        <h2 id="testimonials-heading">What private coaching has meant for others</h2>
+        <h2 id="testimonials-heading">What can begin to feel different</h2>
       </div>
+      <p>Sometimes the first changes are quiet. Saying what you need more clearly. Trusting yourself more. Recognising familiar patterns sooner. Feeling more able to have the conversations that once felt difficult.</p>
       <div class="testimonials">
         <figure class="testimonial">
           <blockquote class="pull-quote">

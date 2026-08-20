@@ -11,12 +11,22 @@ window.SITE_CONFIG = {
   },
   nav: [
     { label: 'Home', href: 'index.html' },
-    { label: 'For Organisations', href: 'organisations.html' },
-    { label: 'Private Coaching', href: 'private-coaching.html' },
-    { label: 'Media & Speaking', href: 'media-speaking.html' },
+    {
+      label: 'Work With Me',
+      children: [
+        { label: 'For Organisations', href: 'organisations.html' },
+        { label: 'Private Coaching', href: 'private-coaching.html' },
+      ],
+    },
+    {
+      label: 'Media & Speaking',
+      children: [
+        { label: 'Media & Speaking', href: 'media-speaking.html' },
+        { label: 'News', href: 'news.html' },
+      ],
+    },
     { label: 'About', href: 'about.html' },
     { label: 'Resources', href: 'resources.html' },
-    { label: 'News', href: 'news.html' },
     { label: 'Contact', href: 'contact.html' },
   ],
   footerLegal: [

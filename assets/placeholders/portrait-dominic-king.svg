@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="600" height="750" role="img" aria-label="Portrait placeholder for Dominic King">
+<defs>
+<linearGradient id="pportraitdominicking" x1="0" y1="0" x2="0.6" y2="1">
+<stop offset="0" stop-color="#F1EAE2"/><stop offset="1" stop-color="#DFD2C2"/>
+</linearGradient>
+</defs>
+<rect width="600" height="750" fill="url(#pportraitdominicking)"/>
+<g fill="none" stroke="#7B523D" stroke-width="2" opacity="0.16"><circle cx="237" cy="415.0" r="150"/><circle cx="363" cy="415.0" r="150"/><circle cx="300.0" cy="332" r="150"/></g>
+<circle cx="300" cy="341" r="96" fill="#7B523D" opacity="0.14"/>
+<text x="300" y="367" text-anchor="middle" font-family="'Bodoni Moda', Didot, Georgia, serif" font-size="82" font-weight="600" fill="#7B523D">DK</text>
+<text x="300" y="483" text-anchor="middle" font-family="Manrope, Segoe UI, sans-serif" font-size="24" font-weight="700" letter-spacing="2" fill="#7B523D">DOMINIC KING</text>
+<text x="300" y="696" text-anchor="middle" font-family="Manrope, Segoe UI, sans-serif" font-size="19" font-weight="600" letter-spacing="2.2" fill="#7B523D" opacity="0.62">PHOTOGRAPH TO BE SUPPLIED</text>
+</svg>

@@ -31,12 +31,26 @@
     <div class="container nav-ribbon__inner">
       <ul class="nav-ribbon__list" role="list">
         <li><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></a></li>
-        <li><a href="organisations.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span>For Organisations</span></a></li>
-        <li><a href="private-coaching.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span>Private Coaching</span></a></li>
-        <li><a href="media-speaking.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span>Media &amp; Speaking</span></a></li>
+        <li class="nav-parent" data-nav-parent>
+          <button class="nav-parent__trigger is-active" type="button" aria-expanded="false" aria-controls="nav-menu-work" data-nav-trigger>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span>Work With Me</span><svg class="nav-ribbon__chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-menu" id="nav-menu-work" role="list" data-nav-menu>
+            <li><a href="organisations.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span class="nav-menu__body"><span class="nav-menu__label">For Organisations</span><span class="nav-menu__desc">Relationship and emotional well-being work with teams.</span></span></a></li>
+            <li><a href="private-coaching.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span class="nav-menu__body"><span class="nav-menu__label">Private Coaching</span><span class="nav-menu__desc">One-to-one support, at your own pace.</span></span></a></li>
+          </ul>
+        </li>
+        <li class="nav-parent" data-nav-parent>
+          <button class="nav-parent__trigger" type="button" aria-expanded="false" aria-controls="nav-menu-media" data-nav-trigger>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span>Media &amp; Speaking</span><svg class="nav-ribbon__chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-menu" id="nav-menu-media" role="list" data-nav-menu>
+            <li><a href="media-speaking.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span class="nav-menu__body"><span class="nav-menu__label">Media &amp; Speaking</span><span class="nav-menu__desc">Expert commentary, talks and the podcast.</span></span></a></li>
+            <li><a href="news.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="1.5"/><path d="M7.5 8.5h9M7.5 12h9M7.5 15.5h5.5"/></svg><span class="nav-menu__body"><span class="nav-menu__label">News</span><span class="nav-menu__desc">Recent appearances, features and milestones.</span></span></a></li>
+          </ul>
+        </li>
         <li><a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg><span>About</span></a></li>
         <li><a href="resources.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v18H6.5A2.5 2.5 0 0 1 4 18.5v-13Z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v18h5.5a2.5 2.5 0 0 0 2.5-2.5v-13Z"/></svg><span>Resources</span></a></li>
-        <li><a href="news.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="1.5"/><path d="M7.5 8.5h9M7.5 12h9M7.5 15.5h5.5"/></svg><span>News</span></a></li>
         <li><a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg><span>Contact</span></a></li>
       </ul>
       <a class="btn btn-primary nav-ribbon__cta" href="contact.html">Start a conversation</a>
@@ -70,13 +84,16 @@
     </div>
   </section>
 
-  <section class="section" aria-labelledby="org-outcomes-heading">
+  <!-- Humanised replacement for the earlier "What this means for your
+       organisation" heading. Same approved eleven-topic index beneath it —
+       only the framing changed. -->
+  <section class="section" aria-labelledby="org-everyday-heading">
     <div class="container">
       <div class="section-header">
-        <p class="eyebrow">Outcomes</p>
-        <h2 id="org-outcomes-heading">What this means for your organisation</h2>
+        <p class="eyebrow">In everyday working life</p>
+        <h2 id="org-everyday-heading">What healthier working relationships can make possible</h2>
       </div>
-      <p>Healthy workplaces depend on more than policies. They depend on how people communicate, regulate emotion, navigate pressure and relate to one another. Organisational programmes focus on:</p>
+      <p>Healthy workplaces are shaped through everyday conversations, boundaries, trust and the way people respond under pressure. The aim is not perfection. It is giving people practical ways to communicate more clearly, understand themselves and each other better, and navigate difficult moments with greater confidence.</p>
       <ul class="list-plain" role="list" style="margin-top: var(--space-md);">
         <li class="card">Emotional wellness and resilience</li>
         <li class="card">Relationships at work</li>
@@ -90,6 +107,224 @@
         <li class="card">Confidence</li>
         <li class="card">Personal effectiveness</li>
       </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- OUTCOMES INFOGRAPHIC — six connected nodes on a shared spine.   -->
+  <!-- Deliberately no percentages, no ROI claim and no measurement:   -->
+  <!-- none is supported by docs/approved-facts.md. Every node is       -->
+  <!-- written as what the work can support, not what it guarantees.    -->
+  <!-- Corporate Slate identifies the section; Walnut and Gold keep it  -->
+  <!-- warm rather than corporate-cold.                                -->
+  <!-- ============================================================ -->
+  <section class="section section--muted" aria-labelledby="org-outcomes-heading">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Outcomes</p>
+        <h2 id="org-outcomes-heading">Where the work tends to show</h2>
+      </div>
+      <div class="outcome-web">
+        <article class="outcome-node">
+          <span class="outcome-node__marker" aria-hidden="true">01</span>
+          <h3 class="outcome-node__title">Clearer conversations</h3>
+          <p class="outcome-node__copy">People are better equipped to speak openly and address issues before friction grows.</p>
+        </article>
+        <article class="outcome-node">
+          <span class="outcome-node__marker" aria-hidden="true">02</span>
+          <h3 class="outcome-node__title">Stronger boundaries</h3>
+          <p class="outcome-node__copy">Expectations, workload and personal limits can be discussed with greater clarity.</p>
+        </article>
+        <article class="outcome-node">
+          <span class="outcome-node__marker" aria-hidden="true">03</span>
+          <h3 class="outcome-node__title">Greater self-awareness</h3>
+          <p class="outcome-node__copy">People notice emotional patterns and responses earlier, making more intentional choices possible.</p>
+        </article>
+        <article class="outcome-node">
+          <span class="outcome-node__marker" aria-hidden="true">04</span>
+          <h3 class="outcome-node__title">More resilient working relationships</h3>
+          <p class="outcome-node__copy">Practical tools can support steadier responses during pressure, change and challenge.</p>
+        </article>
+        <article class="outcome-node">
+          <span class="outcome-node__marker" aria-hidden="true">05</span>
+          <h3 class="outcome-node__title">Safer conversations</h3>
+          <p class="outcome-node__copy">Teams can build stronger habits around listening, empathy and accountability.</p>
+        </article>
+        <article class="outcome-node">
+          <span class="outcome-node__marker" aria-hidden="true">06</span>
+          <h3 class="outcome-node__title">Personal effectiveness</h3>
+          <p class="outcome-node__copy">Greater awareness, communication and emotional regulation can support everyday confidence at work.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- RECOGNISED ACROSS THE MEDIA — the same reusable ribbon used on   -->
+  <!-- the Homepage and Media & Speaking: identical component, sizing,  -->
+  <!-- original brand colours, movement and reduced-motion behaviour.   -->
+  <!-- ============================================================ -->
+  <section class="section section--tight" aria-labelledby="org-media-heading">
+    <div class="container">
+      <p class="eyebrow">Recognised across the media</p>
+      <h2 id="org-media-heading" class="visually-hidden">Media recognition</h2>
+      <div class="ribbon" data-ribbon>
+      <div class="marquee">
+        <div class="marquee__track">
+          <ul class="logo-field marquee__set" role="list">
+            <li><img src="assets/logos/media/BBC-Radio-Kent-Logo.png" alt="BBC Radio Kent" width="264" height="149" decoding="async"></li>
+            <li><img src="assets/logos/media/bbc-radio-london-logo.png" alt="BBC Radio London" width="600" height="337" decoding="async"></li>
+            <li><img src="assets/logos/media/channel-4-logo.png" alt="Channel 4" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/the-mirror-logo.png" alt="The Mirror" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/cosmopolitan-logo.png" alt="Cosmopolitan UK" width="750" height="422" decoding="async"></li>
+            <li><img src="assets/logos/media/huffpost-logo.jpg" alt="HuffPost" width="600" height="315" decoding="async"></li>
+            <li><img src="assets/logos/media/daily-record-logo.png" alt="Daily Record" width="620" height="330" decoding="async"></li>
+            <li><img src="assets/logos/media/ok!-logo.png" alt="OK!" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/thrive-global-logo.jpg" alt="Thrive Global" width="600" height="315" decoding="async"></li>
+          </ul>
+          <ul class="logo-field marquee__set" role="list" aria-hidden="true">
+            <li><img src="assets/logos/media/BBC-Radio-Kent-Logo.png" alt="" width="264" height="149" decoding="async"></li>
+            <li><img src="assets/logos/media/bbc-radio-london-logo.png" alt="" width="600" height="337" decoding="async"></li>
+            <li><img src="assets/logos/media/channel-4-logo.png" alt="" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/the-mirror-logo.png" alt="" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/cosmopolitan-logo.png" alt="" width="750" height="422" decoding="async"></li>
+            <li><img src="assets/logos/media/huffpost-logo.jpg" alt="" width="600" height="315" decoding="async"></li>
+            <li><img src="assets/logos/media/daily-record-logo.png" alt="" width="620" height="330" decoding="async"></li>
+            <li><img src="assets/logos/media/ok!-logo.png" alt="" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/thrive-global-logo.jpg" alt="" width="600" height="315" decoding="async"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ribbon-control">
+        <button class="ribbon-control__button" type="button" aria-pressed="false" data-ribbon-toggle>
+          <svg viewBox="0 0 24 24" aria-hidden="true" data-ribbon-icon-pause><path d="M9 5v14M15 5v14"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true" data-ribbon-icon-play><path d="M7 4.5l12 7.5-12 7.5z"/></svg>
+          <span data-ribbon-toggle-label>Pause movement</span>
+        </button>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PROOF — deliberately NOT titled "corporate testimonials". The    -->
+  <!-- four people quoted here came to Teresha through broadcast and    -->
+  <!-- podcast work, not organisational training engagements, so the    -->
+  <!-- heading and every role descriptor say exactly that. Each card    -->
+  <!-- carries a short pull quote only; no biography is reproduced.     -->
+  <!-- All four portraits are placeholders — no approved headshot for    -->
+  <!-- any of them exists in the repository (docs/asset-manifest.md).   -->
+  <!-- ============================================================ -->
+  <section class="section" aria-labelledby="org-proof-heading">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">In their words</p>
+        <h2 id="org-proof-heading">Voices from media, relationships and conversation</h2>
+      </div>
+      <p>Broadcasters, presenters and fellow experts who have worked alongside Teresha on air and in conversation.</p>
+
+      <div class="rail rail--proof" data-rail>
+        <div class="rail__track" data-rail-track tabindex="0" role="group" aria-label="Testimonials, scrollable">
+          <div class="rail__item" data-rail-item>
+            <figure class="proof-card">
+              <div class="proof-card__portrait">
+                <img src="assets/placeholders/portrait-dominic-king.svg" alt="Portrait placeholder for Dominic King" width="600" height="750" loading="lazy" decoding="async">
+              </div>
+              <blockquote class="proof-card__quote">
+                <p>&ldquo;Teresha is one of the best on air guests and experts you could have. She understands the audience and is relatable, clear and honest. She just gets it! She also knows how to enjoy the on air moment and it feels like you are hearing from a friend.&rdquo;</p>
+              </blockquote>
+              <figcaption class="proof-card__footer">
+                <p class="proof-card__name">Dominic King</p>
+                <p class="proof-card__role">Presenter, BBC Radio Kent.</p>
+                <p class="proof-card__links">
+                  <a class="proof-card__link" href="https://youtube.com/playlist?list=PLqjTje63cdC2BJpLYANxcqqpp7Jbj6XyA&amp;si=drAdmxqDfLGguaM-" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    Listen to BBC Radio conversations
+                  </a>
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="rail__item" data-rail-item>
+            <figure class="proof-card">
+              <div class="proof-card__portrait">
+                <img src="assets/placeholders/portrait-paul-c-brunson.svg" alt="Portrait placeholder for Paul C. Brunson" width="600" height="750" loading="lazy" decoding="async">
+              </div>
+              <blockquote class="proof-card__quote">
+                <p>&ldquo;I had the pleasure of joining Teresha&rsquo;s REAL-ationship Talk podcast and had a phenomenal experience and chat. I thoroughly enjoyed our discussion and highly recommend her work as a relationship coach.&rdquo;</p>
+              </blockquote>
+              <figcaption class="proof-card__footer">
+                <p class="proof-card__name">Paul C. Brunson</p>
+                <p class="proof-card__role">Relationship counsellor, matchmaker, television host and author.</p>
+                <p class="proof-card__links">
+                  <a class="proof-card__link" href="https://youtu.be/BiNrDKd3PZU?si=OmNM1_rULhM4dyGo" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    Listen to the conversation
+                  </a>
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="rail__item" data-rail-item>
+            <figure class="proof-card">
+              <div class="proof-card__portrait">
+                <img src="assets/placeholders/portrait-susan-winter.svg" alt="Portrait placeholder for Susan Winter" width="600" height="750" loading="lazy" decoding="async">
+              </div>
+              <blockquote class="proof-card__quote">
+                <p>&ldquo;Fantastic audio/video interview with Teresha. Her interview questions and presentational skills are excellent.&rdquo;</p>
+              </blockquote>
+              <figcaption class="proof-card__footer">
+                <p class="proof-card__name">Susan Winter</p>
+                <p class="proof-card__role">Relationship expert, love coach, author and international media contributor.</p>
+                <span class="proof-card__links">
+                  <a class="proof-card__link" href="https://youtu.be/A2LDqsw1Hls?si=ZUG9K5zOqsbT7ErD" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    Do&rsquo;s and Don&rsquo;ts for Dating and Relationship Success
+                  </a>
+                  <a class="proof-card__link" href="https://youtu.be/8Sc1XKzwq7I?si=KRthmin3T-x05fjs" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    How to Stop Sabotaging Your Love Life
+                  </a>
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="rail__item" data-rail-item>
+            <figure class="proof-card">
+              <div class="proof-card__portrait">
+                <img src="assets/placeholders/portrait-charlene-douglas.svg" alt="Portrait placeholder for Charlene Douglas" width="600" height="750" loading="lazy" decoding="async">
+              </div>
+              <blockquote class="proof-card__quote">
+                <p>&ldquo;Awww, loved speaking with you Teresha. Such a powerful interview. Thank you for the invitation to speak with you!&rdquo;</p>
+              </blockquote>
+              <figcaption class="proof-card__footer">
+                <p class="proof-card__name">Charlene Douglas</p>
+                <p class="proof-card__role">Sex and intimacy expert and television contributor.</p>
+                <p class="proof-card__links">
+                  <a class="proof-card__link" href="https://youtu.be/-HYllM9hHvk?si=LYzBURWoqn3cvdah" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    Listen to the conversation
+                  </a>
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="rail__controls">
+          <button class="rail__button" type="button" data-rail-prev>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+            <span class="visually-hidden">Previous testimonial</span>
+          </button>
+          <button class="rail__button" type="button" data-rail-next>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <span class="visually-hidden">Next testimonial</span>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
