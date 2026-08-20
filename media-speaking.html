@@ -31,12 +31,26 @@
     <div class="container nav-ribbon__inner">
       <ul class="nav-ribbon__list" role="list">
         <li><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></a></li>
-        <li><a href="organisations.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span>For Organisations</span></a></li>
-        <li><a href="private-coaching.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span>Private Coaching</span></a></li>
-        <li><a href="media-speaking.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span>Media &amp; Speaking</span></a></li>
+        <li class="nav-parent" data-nav-parent>
+          <button class="nav-parent__trigger" type="button" aria-expanded="false" aria-controls="nav-menu-work" data-nav-trigger>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span>Work With Me</span><svg class="nav-ribbon__chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-menu" id="nav-menu-work" role="list" data-nav-menu>
+            <li><a href="organisations.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span class="nav-menu__body"><span class="nav-menu__label">For Organisations</span><span class="nav-menu__desc">Relationship and emotional well-being work with teams.</span></span></a></li>
+            <li><a href="private-coaching.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span class="nav-menu__body"><span class="nav-menu__label">Private Coaching</span><span class="nav-menu__desc">One-to-one support, at your own pace.</span></span></a></li>
+          </ul>
+        </li>
+        <li class="nav-parent" data-nav-parent>
+          <button class="nav-parent__trigger is-active" type="button" aria-expanded="false" aria-controls="nav-menu-media" data-nav-trigger>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span>Media &amp; Speaking</span><svg class="nav-ribbon__chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-menu" id="nav-menu-media" role="list" data-nav-menu>
+            <li><a href="media-speaking.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span class="nav-menu__body"><span class="nav-menu__label">Media &amp; Speaking</span><span class="nav-menu__desc">Expert commentary, talks and the podcast.</span></span></a></li>
+            <li><a href="news.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="1.5"/><path d="M7.5 8.5h9M7.5 12h9M7.5 15.5h5.5"/></svg><span class="nav-menu__body"><span class="nav-menu__label">News</span><span class="nav-menu__desc">Recent appearances, features and milestones.</span></span></a></li>
+          </ul>
+        </li>
         <li><a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg><span>About</span></a></li>
         <li><a href="resources.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v18H6.5A2.5 2.5 0 0 1 4 18.5v-13Z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v18h5.5a2.5 2.5 0 0 0 2.5-2.5v-13Z"/></svg><span>Resources</span></a></li>
-        <li><a href="news.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="1.5"/><path d="M7.5 8.5h9M7.5 12h9M7.5 15.5h5.5"/></svg><span>News</span></a></li>
         <li><a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg><span>Contact</span></a></li>
       </ul>
       <a class="btn btn-primary nav-ribbon__cta" href="contact.html">Start a conversation</a>
@@ -46,12 +60,30 @@
 
 <main id="main">
 
-  <section class="page-hero section--wellbeing">
-    <div class="container">
-      <p class="eyebrow" style="color: var(--color-gold);">Media &amp; Speaking</p>
-      <h1>Expert commentary on relationships and emotional well-being</h1>
-      <p class="hero__lede" style="color: var(--color-stone-100);">Expert commentary is available across relationships and emotional well-being for journalists, broadcasters and event teams.</p>
-      <p><a class="btn btn-secondary" href="contact.html">Start a conversation</a></p>
+  <!-- ============================================================ -->
+  <!-- MEDIA & SPEAKING HERO — rebuilt this stage to sit inside the     -->
+  <!-- current Teresha visual system rather than reading as a generic   -->
+  <!-- press-kit banner. Same photographic logic as the Homepage and    -->
+  <!-- Private Coaching heroes: a blurred continuation of the same      -->
+  <!-- approved photograph fills the frame, the sharp portrait is       -->
+  <!-- weighted right behind a soft mask, and a walnut/gold gradient     -->
+  <!-- develops across the left so the copy reads as part of the        -->
+  <!-- picture. Source: teresha-young-image-5-hero.jpg.                 -->
+  <!-- ============================================================ -->
+  <section class="media-hero">
+    <div class="media-hero__ambient" aria-hidden="true"></div>
+    <div class="media-hero__photo">
+      <img src="assets/teresha/teresha-young-image-5-hero.jpg"
+           alt="Teresha Young, Relationship &amp; Emotional Well-being Expert"
+           width="1900" height="2533" loading="eager" fetchpriority="high" decoding="async">
+    </div>
+    <div class="media-hero__scrim" aria-hidden="true"></div>
+    <div class="media-hero__rings" aria-hidden="true"><span></span><span></span></div>
+    <div class="container media-hero__content">
+      <p class="eyebrow media-hero__eyebrow">Media &amp; Speaking</p>
+      <h1 class="media-hero__title">An award-winning voice on relationships and <em>emotional well-being</em>.</h1>
+      <p class="media-hero__lede">Expert commentary, thoughtful conversation and speaking across relationships, communication, emotional well-being and the way people connect.</p>
+      <p class="media-hero__actions"><a class="btn btn-primary" href="contact.html">Start a conversation</a></p>
     </div>
   </section>
 
@@ -111,17 +143,170 @@
         <p class="eyebrow">Media features</p>
         <h2 id="media-outlets-heading">Featured across the media</h2>
       </div>
-      <ul class="logo-field logo-field--large" role="list">
-        <li><img src="assets/logos/media/BBC-Radio-Kent-Logo.png" alt="BBC Radio Kent" width="264" height="149" loading="lazy" decoding="async"></li>
-        <li><img src="assets/logos/media/bbc-radio-london-logo.png" alt="BBC Radio London" width="600" height="337" loading="lazy" decoding="async"></li>
-        <li><img src="assets/logos/media/channel-4-logo.png" alt="Channel 4" width="440" height="440" loading="lazy" decoding="async"></li>
-        <li><img src="assets/logos/media/the-mirror-logo.png" alt="The Mirror" width="440" height="440" loading="lazy" decoding="async"></li>
-        <li><img src="assets/logos/media/daily-record-logo.png" alt="Daily Record" width="620" height="330" loading="lazy" decoding="async"></li>
-        <li><img src="assets/logos/media/ok!-logo.png" alt="OK!" width="440" height="440" loading="lazy" decoding="async"></li>
-        <li><img src="assets/logos/media/cosmopolitan-logo.png" alt="Cosmopolitan UK" width="750" height="422" loading="lazy" decoding="async"></li>
-        <li><img src="assets/logos/media/huffpost-logo.jpg" alt="HuffPost" width="600" height="315" loading="lazy" decoding="async"></li>
-        <li><img src="assets/logos/media/thrive-global-logo.jpg" alt="Thrive Global" width="600" height="315" loading="lazy" decoding="async"></li>
-      </ul>
+      <!-- Same reusable moving ribbon as the Homepage and Organisations
+           pages: identical component, sizing, original brand colours,
+           movement, pause control and reduced-motion behaviour. -->
+      <div class="ribbon" data-ribbon>
+      <div class="marquee">
+        <div class="marquee__track">
+          <ul class="logo-field marquee__set" role="list">
+            <li><img src="assets/logos/media/BBC-Radio-Kent-Logo.png" alt="BBC Radio Kent" width="264" height="149" decoding="async"></li>
+            <li><img src="assets/logos/media/bbc-radio-london-logo.png" alt="BBC Radio London" width="600" height="337" decoding="async"></li>
+            <li><img src="assets/logos/media/channel-4-logo.png" alt="Channel 4" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/the-mirror-logo.png" alt="The Mirror" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/daily-record-logo.png" alt="Daily Record" width="620" height="330" decoding="async"></li>
+            <li><img src="assets/logos/media/ok!-logo.png" alt="OK!" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/cosmopolitan-logo.png" alt="Cosmopolitan UK" width="750" height="422" decoding="async"></li>
+            <li><img src="assets/logos/media/huffpost-logo.jpg" alt="HuffPost" width="600" height="315" decoding="async"></li>
+            <li><img src="assets/logos/media/thrive-global-logo.jpg" alt="Thrive Global" width="600" height="315" decoding="async"></li>
+          </ul>
+          <ul class="logo-field marquee__set" role="list" aria-hidden="true">
+            <li><img src="assets/logos/media/BBC-Radio-Kent-Logo.png" alt="" width="264" height="149" decoding="async"></li>
+            <li><img src="assets/logos/media/bbc-radio-london-logo.png" alt="" width="600" height="337" decoding="async"></li>
+            <li><img src="assets/logos/media/channel-4-logo.png" alt="" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/the-mirror-logo.png" alt="" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/daily-record-logo.png" alt="" width="620" height="330" decoding="async"></li>
+            <li><img src="assets/logos/media/ok!-logo.png" alt="" width="440" height="440" decoding="async"></li>
+            <li><img src="assets/logos/media/cosmopolitan-logo.png" alt="" width="750" height="422" decoding="async"></li>
+            <li><img src="assets/logos/media/huffpost-logo.jpg" alt="" width="600" height="315" decoding="async"></li>
+            <li><img src="assets/logos/media/thrive-global-logo.jpg" alt="" width="600" height="315" decoding="async"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ribbon-control">
+        <button class="ribbon-control__button" type="button" aria-pressed="false" data-ribbon-toggle>
+          <svg viewBox="0 0 24 24" aria-hidden="true" data-ribbon-icon-pause><path d="M9 5v14M15 5v14"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true" data-ribbon-icon-play><path d="M7 4.5l12 7.5-12 7.5z"/></svg>
+          <span data-ribbon-toggle-label>Pause movement</span>
+        </button>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- VISUAL CONTENT RAIL — one continuous horizontal line of stills   -->
+  <!-- covering talks, speaking, podcast episodes, interviews, media     -->
+  <!-- features and video appearances.                                  -->
+  <!--                                                                  -->
+  <!-- IMAGES ONLY at this stage: no video or audio player is embedded   -->
+  <!-- anywhere in this rail. Every card artwork is a designed           -->
+  <!-- placeholder from assets/placeholders/ — no approved per-item      -->
+  <!-- graphic exists in the repository yet, and nothing has been        -->
+  <!-- cropped out of the supplied reference screenshots. See            -->
+  <!-- docs/asset-manifest.md for the required source files.             -->
+  <!-- ============================================================ -->
+  <section class="section section--tight" aria-labelledby="media-rail-heading">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Talks, podcast, interviews and features</p>
+        <h2 id="media-rail-heading">Where the conversation happens</h2>
+      </div>
+      <p>Speaking engagements, podcast conversations, interviews and media contributions, gathered in one place.</p>
+
+      <div class="rail" data-rail data-rail-autoplay>
+        <div class="rail__track" data-rail-track tabindex="0" role="group" aria-label="Talks, podcast episodes, interviews and media features, scrollable">
+          <div class="rail__item" data-rail-item>
+            <article class="rail-card">
+              <div class="rail-card__media">
+                <img src="assets/placeholders/rail-01.svg" alt="Placeholder artwork for keynotes and workshops" width="1200" height="750" loading="lazy" decoding="async">
+              </div>
+              <div class="rail-card__body">
+                <p class="rail-card__category">Talks &amp; speaking</p>
+                <h3 class="rail-card__title">Keynotes and workshops</h3>
+              </div>
+            </article>
+          </div>
+          <div class="rail__item" data-rail-item>
+            <article class="rail-card">
+              <div class="rail-card__media">
+                <img src="assets/placeholders/rail-02.svg" alt="Placeholder artwork for REAL-ationship Talk podcast conversations" width="1200" height="750" loading="lazy" decoding="async">
+              </div>
+              <div class="rail-card__body">
+                <p class="rail-card__category">REAL-ationship Talk</p>
+                <h3 class="rail-card__title">Podcast conversations</h3>
+              </div>
+            </article>
+          </div>
+          <div class="rail__item" data-rail-item>
+            <article class="rail-card">
+              <div class="rail-card__media">
+                <img src="assets/placeholders/rail-03.svg" alt="Placeholder artwork for broadcast commentary" width="1200" height="750" loading="lazy" decoding="async">
+              </div>
+              <div class="rail-card__body">
+                <p class="rail-card__category">Media features</p>
+                <h3 class="rail-card__title">Broadcast commentary</h3>
+              </div>
+            </article>
+          </div>
+          <div class="rail__item" data-rail-item>
+            <article class="rail-card">
+              <div class="rail-card__media">
+                <img src="assets/placeholders/rail-04.svg" alt="Placeholder artwork for guest expert interviews" width="1200" height="750" loading="lazy" decoding="async">
+              </div>
+              <div class="rail-card__body">
+                <p class="rail-card__category">Interviews</p>
+                <h3 class="rail-card__title">Guest expert interviews</h3>
+              </div>
+            </article>
+          </div>
+          <div class="rail__item" data-rail-item>
+            <article class="rail-card">
+              <div class="rail-card__media">
+                <img src="assets/placeholders/rail-05.svg" alt="Placeholder artwork for conference panels" width="1200" height="750" loading="lazy" decoding="async">
+              </div>
+              <div class="rail-card__body">
+                <p class="rail-card__category">Talks &amp; speaking</p>
+                <h3 class="rail-card__title">Conference panels</h3>
+              </div>
+            </article>
+          </div>
+          <div class="rail__item" data-rail-item>
+            <article class="rail-card">
+              <div class="rail-card__media">
+                <img src="assets/placeholders/rail-06.svg" alt="Placeholder artwork for press and print features" width="1200" height="750" loading="lazy" decoding="async">
+              </div>
+              <div class="rail-card__body">
+                <p class="rail-card__category">Media features</p>
+                <h3 class="rail-card__title">Press and print</h3>
+              </div>
+            </article>
+          </div>
+          <div class="rail__item" data-rail-item>
+            <article class="rail-card">
+              <div class="rail-card__media">
+                <img src="assets/placeholders/rail-07.svg" alt="Placeholder artwork for on-camera contributions" width="1200" height="750" loading="lazy" decoding="async">
+              </div>
+              <div class="rail-card__body">
+                <p class="rail-card__category">Interviews</p>
+                <h3 class="rail-card__title">On-camera contributions</h3>
+              </div>
+            </article>
+          </div>
+          <div class="rail__item" data-rail-item>
+            <article class="rail-card">
+              <div class="rail-card__media">
+                <img src="assets/placeholders/rail-08.svg" alt="Placeholder artwork for the REAL-ationship Talk guest expert series" width="1200" height="750" loading="lazy" decoding="async">
+              </div>
+              <div class="rail-card__body">
+                <p class="rail-card__category">REAL-ationship Talk</p>
+                <h3 class="rail-card__title">Guest expert series</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="rail__controls">
+          <button class="rail__button" type="button" data-rail-prev>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+            <span class="visually-hidden">Scroll back</span>
+          </button>
+          <button class="rail__button" type="button" data-rail-next>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <span class="visually-hidden">Scroll forward</span>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 

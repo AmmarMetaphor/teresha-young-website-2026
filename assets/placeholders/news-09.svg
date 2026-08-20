@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Channel 4 and ITV Studios — placeholder artwork">
+<defs>
+<linearGradient id="gnews09" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#BA8F5D"/><stop offset="1" stop-color="#8E6B3F"/>
+</linearGradient>
+</defs>
+<rect width="1200" height="750" fill="url(#gnews09)"/>
+<g fill="none" stroke="#C9AA7D" stroke-width="2.5" opacity="0.28"><circle cx="927" cy="580" r="150"/><circle cx="1053" cy="580" r="150"/><circle cx="990" cy="498" r="150"/></g>
+<rect x="80" y="618" width="94" height="3" fill="#C9AA7D"/>
+<text x="80" y="112" font-family="Manrope, Segoe UI, sans-serif" font-size="26" font-weight="700" letter-spacing="4.6" fill="#C9AA7D">COLLABORATION</text>
+<text y="345" font-family="'Bodoni Moda', Didot, Georgia, serif" font-size="56" font-weight="600" fill="#FAF7F3"><tspan x="80" dy="0">Channel 4 and ITV</tspan><tspan x="80" dy="62">Studios</tspan></text>
+<text x="80" y="658" font-family="Manrope, Segoe UI, sans-serif" font-size="23" font-weight="600" letter-spacing="2.4" fill="#FAF7F3" opacity="0.72">ARTWORK TO BE SUPPLIED</text>
+</svg>

@@ -262,3 +262,71 @@ All nine files in this directory are used, unedited, in the homepage "Recognised
 ### Resource article assets
 
 No new image derivatives were created for the two resource articles. `resources/igniting-intimacy-12-powerful-questions.html` and `resources/7-day-me-time-plan.html` are text-only editorial pages using the shared global stylesheet; the source PDFs are linked only as a secondary "View original PDF" reference and are otherwise unchanged in this directory.
+
+---
+
+## Content architecture stage — placeholders, ribbon derivatives, and required source files
+
+### `assets/placeholders/` — 29 designed SVG placeholders (NEW)
+
+Every file here is a purpose-built SVG in the brand palette. **None is a crop of a
+supplied reference screenshot, and none is a generated photograph of a real
+person.** Each carries visible "to be supplied" wording so it is never mistaken
+for final artwork. All are small (under 1.5KB each, 120KB total).
+
+| Files | Used on | Replaces / awaiting |
+|---|---|---|
+| `news-01.svg` … `news-09.svg` (1200×750) | `news.html` — one per news card | A real image per news item. None supplied. |
+| `rail-01.svg` … `rail-08.svg` (1200×750) | `media-speaking.html` — visual content rail | Real talk/podcast/interview/feature stills. None supplied. |
+| `ebook-01.svg` … `ebook-04.svg` (760×1000, 3:4 book-cover proportions) | `resources.html` — Free eBooks section | The four real high-resolution eBook cover files. None supplied. |
+| `portrait-dominic-king.svg`, `portrait-paul-c-brunson.svg`, `portrait-susan-winter.svg`, `portrait-charlene-douglas.svg` (600×750) | `organisations.html` — proof/testimonial carousel | An approved headshot for each person. **None exists in the repository.** No remote WordPress image is hotlinked and no likeness has been generated. |
+| `story-01.svg` … `story-04.svg` (1000×750) | `about.html` — My Story expanded panel | The four historic story images the supplied account referenced (`mystory1.jpg` … `mystory4.jpg`). None supplied. |
+
+### `assets/award/ribbon/` — web derivatives of the approved award badges (NEW)
+
+The awards ribbon needs its badges loaded eagerly: `loading="lazy"` cannot work
+inside a horizontally-animated, overflow-clipped marquee, because badges sitting
+outside the intersection window never enter it and so never load at all. Loading
+the full-size originals eagerly would have cost 565KB across the ribbon's two
+sets, so a 400px-high derivative of each was generated (Lanczos resample;
+palette-quantised where the original had no alpha channel).
+
+| File | Size | From |
+|---|---|---|
+| `award-relationship-coach-of-the-year-uk-2026.png` | 403×400, 106KB (was 260KB) | the approved original, unedited otherwise |
+| `award-sme-most-dedicated-wellness-relationship-expert-2025.png` | 414×400, 40KB (was 203KB) | as above |
+| `award-uk-enterprise-2025.png` | 414×400, 41KB (was 48KB) | as above |
+| `award-southern-enterprise-2024.png` | 414×400, 40KB (was 52KB) | as above |
+
+Total 227KB, down from 565KB. The full-size originals in `assets/award/` are
+untouched and remain the archival source. Badge artwork is complete in every
+derivative (nothing cropped) and renders at 144px optical height on desktop, so
+the award text inside each badge stays readable.
+
+### Photographs in use after this stage
+
+| File | Used on |
+|---|---|
+| `assets/teresha/private-coaching-hero.jpg` | Private Coaching hero **and now the Homepage hero** (same approved source, same treatment) |
+| `assets/teresha/teresha-young-image-5-hero.jpg` | Media & Speaking hero (new this stage) |
+| `assets/teresha/teresha-young-image-4-hero.jpg` | About hero — the single approved image replacing the five-image collage |
+| `assets/teresha/teresha-young-image-7-hero.jpg` | Organisations hero |
+| `assets/teresha/teresha-young-image-7-card.jpg` | Homepage "Why Teresha" portrait |
+| `assets/teresha/contact-portrait-cutout.png` | Contact page portrait composition |
+
+**Now unused** (kept in the repository, not deleted — all are approved
+photographs that a later stage may want): `about-collage-top-left.jpg`,
+`about-collage-top-right.jpg`, `about-collage-centre.jpg`,
+`about-collage-bottom-left.png`, `about-collage-bottom-right.jpg` (the About
+collage was removed this stage), plus the previously-unused
+`teresha-young-image-3.png`, `-4.jpg`, `-5.jpg`, `-6.jpg`, `-7.jpg`, `-8.jpg`
+originals.
+
+### Source assets still required
+
+1. Four high-resolution eBook cover files.
+2. Nine news-item images.
+3. Talk / podcast / interview / media stills for the Media & Speaking rail.
+4. Approved headshots for Dominic King, Paul C. Brunson, Susan Winter and Charlene Douglas.
+5. `mystory1.jpg` … `mystory4.jpg`, or replacement story images.
+6. The complete supplied "Who Is She?!" story text — see `docs/open-decisions.md`.

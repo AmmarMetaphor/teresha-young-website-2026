@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 1000" width="760" height="1000" role="img" aria-label="10 Simple Ways To Get Closer To Your Romantic Partner — placeholder eBook cover">
+<defs>
+<linearGradient id="cebook01" x1="0" y1="0" x2="0.7" y2="1">
+<stop offset="0" stop-color="#7B523D"/><stop offset="1" stop-color="#5B3A2A"/>
+</linearGradient>
+</defs>
+<rect width="760" height="1000" fill="url(#cebook01)"/>
+<rect x="0" y="0" width="26" height="1000" fill="#241B16" opacity="0.28"/>
+<g fill="none" stroke="#C9AA7D" stroke-width="2.5" opacity="0.3"><circle cx="326" cy="790" r="128"/><circle cx="434" cy="790" r="128"/><circle cx="380.0" cy="720" r="128"/></g>
+<text x="380" y="150" text-anchor="middle" font-family="Manrope, Segoe UI, sans-serif" font-size="24" font-weight="700" letter-spacing="5" fill="#C9AA7D">FREE EBOOK</text>
+<line x1="334" y1="196" x2="426" y2="196" stroke="#C9AA7D" stroke-width="3"/>
+<text y="340" text-anchor="middle" font-family="'Bodoni Moda', Didot, Georgia, serif" font-size="58" font-weight="600" fill="#FAF7F3"><tspan x="380" dy="0">10 Simple Ways To</tspan><tspan x="380" dy="66">Get Closer To Your</tspan><tspan x="380" dy="66">Romantic Partner</tspan></text>
+<text x="380" y="938" text-anchor="middle" font-family="Manrope, Segoe UI, sans-serif" font-size="21" font-weight="600" letter-spacing="2.6" fill="#FAF7F3" opacity="0.7">COVER ART TO BE SUPPLIED</text>
+</svg>

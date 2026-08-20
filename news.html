@@ -31,12 +31,26 @@
     <div class="container nav-ribbon__inner">
       <ul class="nav-ribbon__list" role="list">
         <li><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></a></li>
-        <li><a href="organisations.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span>For Organisations</span></a></li>
-        <li><a href="private-coaching.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span>Private Coaching</span></a></li>
-        <li><a href="media-speaking.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span>Media &amp; Speaking</span></a></li>
+        <li class="nav-parent" data-nav-parent>
+          <button class="nav-parent__trigger" type="button" aria-expanded="false" aria-controls="nav-menu-work" data-nav-trigger>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span>Work With Me</span><svg class="nav-ribbon__chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-menu" id="nav-menu-work" role="list" data-nav-menu>
+            <li><a href="organisations.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span class="nav-menu__body"><span class="nav-menu__label">For Organisations</span><span class="nav-menu__desc">Relationship and emotional well-being work with teams.</span></span></a></li>
+            <li><a href="private-coaching.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span class="nav-menu__body"><span class="nav-menu__label">Private Coaching</span><span class="nav-menu__desc">One-to-one support, at your own pace.</span></span></a></li>
+          </ul>
+        </li>
+        <li class="nav-parent" data-nav-parent>
+          <button class="nav-parent__trigger is-active" type="button" aria-expanded="false" aria-controls="nav-menu-media" data-nav-trigger>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span>Media &amp; Speaking</span><svg class="nav-ribbon__chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-menu" id="nav-menu-media" role="list" data-nav-menu>
+            <li><a href="media-speaking.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg><span class="nav-menu__body"><span class="nav-menu__label">Media &amp; Speaking</span><span class="nav-menu__desc">Expert commentary, talks and the podcast.</span></span></a></li>
+            <li><a href="news.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="1.5"/><path d="M7.5 8.5h9M7.5 12h9M7.5 15.5h5.5"/></svg><span class="nav-menu__body"><span class="nav-menu__label">News</span><span class="nav-menu__desc">Recent appearances, features and milestones.</span></span></a></li>
+          </ul>
+        </li>
         <li><a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg><span>About</span></a></li>
         <li><a href="resources.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v18H6.5A2.5 2.5 0 0 1 4 18.5v-13Z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v18h5.5a2.5 2.5 0 0 0 2.5-2.5v-13Z"/></svg><span>Resources</span></a></li>
-        <li><a href="news.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="1.5"/><path d="M7.5 8.5h9M7.5 12h9M7.5 15.5h5.5"/></svg><span>News</span></a></li>
         <li><a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg><span>Contact</span></a></li>
       </ul>
       <a class="btn btn-primary nav-ribbon__cta" href="contact.html">Start a conversation</a>
@@ -46,39 +60,140 @@
 
 <main id="main">
 
-  <section class="page-hero">
+  <!-- page-hero--light, not the bare .page-hero this page used before:
+       .hero__lede is white by design for the dark photographic heroes, so on
+       this page's light ground the supporting line was rendering invisible. -->
+  <section class="page-hero page-hero--light">
     <div class="container">
       <p class="eyebrow">News</p>
-      <h1>Media mentions</h1>
-      <p class="hero__lede">Media mentions and appearances, with more detail added as new coverage is confirmed.</p>
+      <h1>Appearances, features and milestones</h1>
+      <p class="page-hero__lede-light">Media appearances, interviews, speaking events, collaborations and professional milestones.</p>
     </div>
   </section>
 
+  <!-- ============================================================ -->
+  <!-- NEWS GRID                                                      -->
+  <!--                                                                -->
+  <!-- CONTENT RULE: this page carries media appearances, interviews,  -->
+  <!-- speaking events, collaborations, podcast/news features and      -->
+  <!-- professional milestones ONLY. There are deliberately NO eBooks, -->
+  <!-- NO resource downloads and NO resource-gate forms anywhere on     -->
+  <!-- this page — those belong exclusively to resources.html.         -->
+  <!--                                                                -->
+  <!-- Rendered as static HTML this stage (previously driven by        -->
+  <!-- data/news.json). data/news.json remains the structured record.  -->
+  <!--                                                                -->
+  <!-- Card artwork is a designed placeholder per item: no separate     -->
+  <!-- source image exists for any of these, and nothing has been      -->
+  <!-- cropped out of the supplied reference screenshots. Publication  -->
+  <!-- dates, comment counts, article body copy and engagement figures -->
+  <!-- are deliberately absent — none was supplied, so none is shown.  -->
+  <!-- ============================================================ -->
   <section class="section" aria-labelledby="news-list-heading">
     <div class="container">
-      <h2 class="visually-hidden" id="news-list-heading">News list</h2>
-      <ul class="list-plain" role="list" data-news-list>
-        <li class="placeholder"><span class="placeholder__tag">Loading</span><p>Loading media mentions…</p></li>
-      </ul>
-      <noscript>
-        <ul class="media-logo-grid" role="list">
-          <li>BBC Radio Kent</li>
-          <li>BBC Radio London</li>
-          <li>Channel 4</li>
-          <li>The Mirror</li>
-          <li>Daily Record</li>
-          <li>OK!</li>
-          <li>New</li>
-          <li>Cosmopolitan UK</li>
-          <li>HuffPost</li>
-          <li>Breathe</li>
-          <li>Thrive Global</li>
-          <li>iCN</li>
-          <li>The List</li>
-          <li>Nicki Swift</li>
-          <li>Glam</li>
-        </ul>
-      </noscript>
+      <h2 class="visually-hidden" id="news-list-heading">Recent appearances, features and milestones</h2>
+      <div class="news-grid">
+
+        <article class="news-card">
+          <div class="news-card__media">
+            <img src="assets/placeholders/news-01.svg" alt="Placeholder artwork for the BBC Radio London interview on parental alienation" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="news-card__body">
+            <p class="news-card__category">Interview</p>
+            <h3 class="news-card__title">Parental Alienation: When a Child Pulls Away</h3>
+            <p class="news-card__meta">BBC Radio London</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-card__media">
+            <img src="assets/placeholders/news-02.svg" alt="Placeholder artwork for the Glam feature on Zendaya and Tom Holland" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="news-card__body">
+            <p class="news-card__category">Media feature</p>
+            <h3 class="news-card__title">Zendaya and Tom Holland&rsquo;s Relationship Is Full of Green Flags</h3>
+            <p class="news-card__meta">Glam</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-card__media">
+            <img src="assets/placeholders/news-03.svg" alt="Placeholder artwork for the REAL-ationship Talk Voices of Black Men series" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="news-card__body">
+            <p class="news-card__category">REAL-ationship Talk</p>
+            <h3 class="news-card__title">Voices of Black Men Series</h3>
+            <p class="news-card__meta">REAL-ationship Talk, the podcast</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-card__media">
+            <img src="assets/placeholders/news-04.svg" alt="Placeholder artwork for the Glam feature on Valerie Bertinelli" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="news-card__body">
+            <p class="news-card__category">Media feature</p>
+            <h3 class="news-card__title">Valerie Bertinelli&rsquo;s Relationship Advice</h3>
+            <p class="news-card__meta">Glam</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-card__media">
+            <img src="assets/placeholders/news-05.svg" alt="Placeholder artwork for the Nicki Swift expert commentary feature" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="news-card__body">
+            <p class="news-card__category">Media feature</p>
+            <h3 class="news-card__title">Elizabeth Hurley &amp; Billy Ray Cyrus: We Asked an Expert</h3>
+            <p class="news-card__meta">Nicki Swift</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-card__media">
+            <img src="assets/placeholders/news-06.svg" alt="Placeholder artwork for the International Coaching Week 2026 speaking session" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="news-card__body">
+            <p class="news-card__category">Talks &amp; speaking</p>
+            <h3 class="news-card__title">International Coaching Week 2026 Speaker</h3>
+            <p class="news-card__meta">IAPC&amp;M</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-card__media">
+            <img src="assets/placeholders/news-07.svg" alt="Placeholder artwork for the IAPC&amp;M diversity, equity, inclusion and belonging statement" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="news-card__body">
+            <p class="news-card__category">Professional milestone</p>
+            <h3 class="news-card__title">Why Diversity, Equity, Inclusion &amp; Belonging Matter in Professional Coaching &amp; Mentoring</h3>
+            <p class="news-card__meta">IAPC&amp;M</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-card__media">
+            <img src="assets/placeholders/news-08.svg" alt="Placeholder artwork for the Mind Charity emotional wellness training" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="news-card__body">
+            <p class="news-card__category">Collaboration</p>
+            <h3 class="news-card__title">Emotional Wellness Training for Self &amp; Relationships</h3>
+            <p class="news-card__meta">Mind Charity</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-card__media">
+            <img src="assets/placeholders/news-09.svg" alt="Placeholder artwork for the Channel 4 and ITV Studios emotional wellness feature" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="news-card__body">
+            <p class="news-card__category">Collaboration</p>
+            <h3 class="news-card__title">Emotional Wellness and Relationships Feature</h3>
+            <p class="news-card__meta">Channel 4 and ITV Studios</p>
+          </div>
+        </article>
+
+      </div>
     </div>
   </section>
 

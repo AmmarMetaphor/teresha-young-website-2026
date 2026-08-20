@@ -69,3 +69,178 @@ The hero has also been rebuilt this stage from an asymmetrical split (a white te
 ## 14. "Why Teresha" image — kept portrait, did not force a landscape crop
 
 The brief asked for a horizontal/landscape (16:10 or 3:2) photo in the "Why Teresha" section if a suitable one exists. Two candidate landscape crops were generated and visually reviewed (`teresha-young-image-6.jpg` and `-7.jpg`); both were rejected — cropping either of these 3:4 portrait originals down to a wide landscape frame either cut off part of a gesture or pushed facial features uncomfortably close to the frame edge. No source asset in the repository has enough spare vertical headroom to support a good landscape crop. Rather than ship an awkward crop, the section keeps a portrait-oriented image (`teresha-young-image-7-card.jpg`, a plain resize, not a crop) and instead fixes the underlying layout complaint — empty space beneath a shorter image in a CSS Grid cell — with `align-self: start` on `.portrait-card`. **Action needed:** if the client can supply a genuine landscape/horizontal photograph in the future, it can replace this image directly.
+
+---
+
+# Content architecture stage
+
+## 15. My Story — the supplied story text was never provided (BLOCKING)
+
+**This is the most important open item in this stage.**
+
+The brief instructs that the About page's My Story section be built from "the
+complete story supplied by the user beginning 'Who Is She?!'", and lists its
+chronology: childhood as the eldest of four; parental relationship dysfunction;
+domestic abuse within her parents' relationship; her father's affairs and
+additional children; her mother's eventual decision to leave; Teresha's own
+relationship ending in 2008; the emotional impact of that breakup; the personal
+shift beginning around 2010; renewed confidence and self-love; and her
+professional mission and development.
+
+**That story text was not attached to the brief and does not exist anywhere in
+this repository.** It was searched for by content and by filename.
+
+What was therefore built:
+
+- The **visible excerpt is written**, strictly from the five communication points
+  the brief specifies for the excerpt (glad the visitor found the site; setbacks
+  and difficult relationship experiences; growing up around a deeply
+  disconnected parental relationship shaping her early understanding of
+  relationships; those experiences forming part of the foundation for her later
+  work; the full story available by choice). Nothing beyond those five points is
+  asserted.
+- The **full disclosure mechanism is complete and working** (accessible
+  `aria-expanded` button, keyboard operable, focus moves into the revealed
+  region, no page reload, label toggles between "Read the full story" and
+  "Close the full story").
+- The expanded panel contains the four story-image placeholders and the warm
+  internal closing CTA that replaces the legacy sales close.
+- **No narrative was written.** Nothing about her childhood, her parents'
+  relationship, domestic abuse, her father's affairs, her mother's decision to
+  leave, the 2008 breakup or the recovery from 2010 onward has been drafted,
+  paraphrased or inferred, because inventing any of it would fabricate a real
+  person's history — which `docs/approved-facts.md` forbids absolutely.
+
+**Action needed:** supply the story text. It then pastes into the marked slot in
+`about.html` (an HTML comment marks the exact location and restates the editorial
+treatment rules). Until then the panel shows a "to follow" marker rather than a
+broken promise.
+
+## 16. My Story qualifications — not published, pending approval
+
+The supplied story is described as mentioning: IAPC&M Accredited & Certified
+Master Coach, CIPD, Life Coaching, Counselling Skills, Cognitive Behavioural
+Therapy, Mental Health, Body Language, Reiki 1 and 2, and Equality & Diversity.
+
+Only the **IAPC&M Master Coach accreditation** appears in
+`docs/approved-facts.md`. The other eight are **not published anywhere on the
+site in this stage** — not in the story section and not in the About credentials
+list — because the brief requires them to be verified against approved facts
+before being elevated into site authority messaging.
+
+**Action needed:** confirm which of the eight are current and may be published,
+and add the approved wording to `docs/approved-facts.md` first.
+
+## 17. ITV Studios is not in approved facts
+
+The brief supplies a News item naming "Channel 4 / ITV". `docs/approved-facts.md`
+confirms **Channel 4** and **Mind Charity** as corporate clients; **ITV Studios
+is not listed**. The card is published as supplied by the brief, but the claim is
+not yet backed by approved facts.
+
+**Action needed:** confirm the ITV Studios relationship and add it to
+`docs/approved-facts.md`, or amend the card.
+
+## 18. News items — no dates, excerpts or engagement figures published
+
+The reference screenshots show publication dates and comment counts. None was
+supplied as data, and the brief forbids inventing dates, comment counts, article
+body copy or engagement statistics, and forbids harvesting production content out
+of the screenshots. So each News card carries **image, category, title and outlet
+only**. Nothing was transcribed off a screenshot.
+
+**Action needed:** supply real publication dates and short approved excerpts if
+they should appear. The card component already has a `.news-card__excerpt` slot
+and a `.news-card__meta` line ready for them.
+
+## 19. Resource delivery is a visual prototype — no integration exists
+
+Both resource gates (the eBook modal and the two inline article forms) are
+**prototypes only**, as the brief specifies. Verified by automated browser test:
+
+- No email is sent.
+- No CRM, mailing platform, database or API is connected.
+- No POST/PUT/PATCH request is made on submit (asserted in test).
+- Nothing is written to `localStorage`, `sessionStorage` or cookies (asserted).
+- Submitted values are discarded immediately; the form is reset.
+- The "Thanks. The resource has been sent to your email address." message is a
+  visual mockup of a delivery that does not happen.
+
+Client-side validation, real `<label>` elements, `aria-invalid`, `role="alert"`
+error messages, focus trapping, Escape-to-close and focus restoration are all
+implemented and tested.
+
+No developer-warning text appears on the public page; this limitation is recorded
+here and in HTML comments only.
+
+**Action needed:** choose an email delivery platform and wire up real delivery,
+plus the privacy/consent copy that a real sign-up requires.
+
+## 20. Awards ribbon — pause control rather than manual arrows
+
+The brief lists manual arrows for the awards ribbon as *optional*. They were not
+implemented, deliberately: arrow-stepping fights a CSS `transform` marquee (the
+animation owns `transform`, so a JS offset cannot compose with it cleanly without
+replacing the whole mechanism with a JS scroll loop, which Part 50 of the brief
+argues against).
+
+Instead both ribbons carry an explicit **pause/resume control**. This is the more
+valuable accessibility outcome: hover and keyboard focus already pause the ribbon
+in CSS, but neither is reachable by a touch-only visitor, so the button is what
+actually makes the moving content pausable. Under reduced motion the ribbon is a
+static wrapped row and the control is removed rather than left inert.
+
+Real arrow controls **are** implemented on the Media & Speaking content rail and
+the Organisations proof carousel, where a native `overflow-x` scroller makes them
+behave correctly.
+
+**Action needed:** none, unless the client specifically wants arrows on the
+awards ribbon, in which case it should become a scroll-based rail like the others.
+
+## 21. Lazy loading cannot be used inside a moving ribbon
+
+Worth recording because it caused visible gaps that were easy to miss:
+`loading="lazy"` images inside a horizontally-animated, `overflow: hidden`
+marquee may **never load at all**. The track translates continuously, so an image
+can sit outside the intersection window indefinitely and its load is never
+triggered. This affected the media-logo ribbon already on `main` (the last three
+logos were reliably blank) as well as the new awards ribbon.
+
+Fixed by removing `loading="lazy"` from all ribbon images and adding the smaller
+`assets/award/ribbon/` derivatives so eager loading stays cheap. Any future
+ribbon must follow the same rule.
+
+## 22. News page is now static HTML
+
+`news.html` previously rendered from `data/news.json` at runtime. It is now static
+HTML, matching how `resources.html` already worked. `data/news.json` has been
+updated to match and remains the structured record; the runtime `initNewsList()`
+renderer was removed as dead code.
+
+**Action needed:** if News should become data-driven again as the item count
+grows, the JSON file is already the correct shape to build from.
+
+## 23. Homepage hero rotation retired (supersedes item 13)
+
+Item 13 above describes a two-photograph crossfading homepage hero. That rotation
+was **removed** this stage. The Homepage hero now shows a single still using
+`private-coaching-hero.jpg`, the same approved source already working on the
+Private Coaching hero, with the same photographic treatment (Teresha fully
+visible, full face in frame, no head cut-off, warm walnut blend, no hard split
+panel, no extreme close-up).
+
+A single frame lets the composition be tuned precisely rather than compromised
+across two images with different framing. All hero copy is unchanged: eyebrow,
+H1, supporting line, CTA wording, CTA hierarchy and alignment are exactly as
+approved. `initHeroRotation()` was removed as dead code.
+
+## 24. Footer navigation still lists the retired top-level items
+
+The primary navigation now nests For Organisations and Private Coaching under
+"Work With Me", and Media & Speaking and News under "Media & Speaking". The
+**footer was deliberately left alone** — it is outside this stage's authorised
+change scope, and a flat footer link list is normal and useful even when the
+header is nested.
+
+**Action needed:** confirm the footer should stay flat, or authorise grouping it
+to match the header in a later stage.
