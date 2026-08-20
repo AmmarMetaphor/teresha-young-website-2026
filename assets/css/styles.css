@@ -3662,17 +3662,34 @@ a.resource-card__action:hover svg {
     gap: var(--space-lg);
   }
 
+  /* Grid, not a flex row: the node has three children, so `flex-direction:
+     row` would sit the ring, the word and the copy all side by side and
+     crush the copy into a ~120px column. This keeps the ring in its own
+     column and stacks the word above the copy beside it. */
   .safe-web__node {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: var(--space-md);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: var(--space-md);
+    row-gap: var(--space-3xs);
+    align-items: start;
     text-align: left;
   }
 
   .safe-web__ring {
+    grid-column: 1;
+    grid-row: 1 / span 2;
     width: 84px;
     height: 84px;
-    flex-shrink: 0;
+  }
+
+  .safe-web__word {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .safe-web__copy {
+    grid-column: 2;
+    grid-row: 2;
   }
 
   .safe-web__ring::after {
