@@ -244,3 +244,46 @@ header is nested.
 
 **Action needed:** confirm the footer should stay flat, or authorise grouping it
 to match the header in a later stage.
+
+---
+
+# Prototype completeness verification stage
+
+## 25. Resources list renderer removed as dead code (same treatment as item 22)
+
+`initResourcesList()` in `assets/js/main.js` fetched and rendered
+`data/resources.json` into a `[data-resources-list]` container, but no page has
+carried that container since `resources.html` became static HTML. The renderer,
+its helpers (`fetchJSON`, `renderList`, `renderError`, `escapeHTML`,
+`isApproved`) and the equally-orphaned `initResourceForm()` (its
+`[data-resource-form]` hook left no page when the homepage sign-up form was
+removed — see item 12) have been deleted. This removes the prototype's only
+runtime `fetch()` call: the site now makes **no network requests at all** beyond
+loading its own static files and Google Fonts.
+
+`data/resources.json` stays, unchanged, as the structured content record —
+exactly the arrangement item 22 established for `data/news.json`.
+
+**Action needed:** none.
+
+## 26. Front-end-only completeness audit — verified
+
+This stage's instruction was that the prototype must be a complete clickable
+visual prototype with **no backend of any kind** (no APIs, form endpoints,
+email delivery, CRM/newsletter/booking integrations, databases, auth or
+server-side code). Verified against the whole site:
+
+- **Links and assets:** every `href`/`src` across all 13 pages was checked by
+  script. Zero broken internal links, zero missing files, zero dead `href="#"`
+  links, zero missing in-page anchors. External references are only Google
+  Fonts, YouTube links to Teresha's published videos, and the two resource
+  articles' canonical URLs.
+- **Network behaviour:** browser-verified that no non-GET request is ever made,
+  including on submit of the contact enquiry form and the resource gate forms.
+- **Interactions:** browser-verified working — header dropdowns, mobile nav,
+  contact pathway form validation and mock submit, contact FAQ accordion, About
+  story disclosure (open/close), resource gate modal (open, validation,
+  confirmation, Escape-to-close), awards ribbon pause control, media rail
+  arrow scrolling, and the 404 page's route home.
+
+**Action needed:** none. The prototype is ready for client review.

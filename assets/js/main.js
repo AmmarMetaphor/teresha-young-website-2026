@@ -16,8 +16,6 @@
   initScrollState();
   initMobileNav();
   initNavDropdowns();
-  initResourcesList();
-  initResourceForm();
   initRibbons();
   initRails();
   initDisclosures();
@@ -216,89 +214,6 @@
         firstLink.focus();
       }
     }
-  }
-
-  /**
-   * Only items with real (non-"TODO") content are ever rendered — no
-   * visible TODO/status badge or "pending" language reaches a visitor.
-   * See docs/voice-guide.md.
-   */
-  function isApproved(value) {
-    return typeof value === 'string' && value.trim() !== '' && value.trim().toUpperCase() !== 'TODO';
-  }
-
-  function initResourcesList() {
-    var list = document.querySelector('[data-resources-list]');
-    if (!list) return;
-
-    fetchJSON('data/resources.json')
-      .then(function (data) {
-        var approved = (data.items || []).filter(function (item) {
-          return isApproved(item.title);
-        });
-        renderList(list, approved, function (item) {
-          return (
-            '<article class="card">' +
-            '<h3>' + escapeHTML(item.title) + '</h3>' +
-            '<p>' + escapeHTML(item.description) + '</p>' +
-            '</article>'
-          );
-        }, 'New resources will appear here.');
-      })
-      .catch(function () {
-        renderError(list, 'Resources could not be loaded.');
-      });
-  }
-
-  function fetchJSON(url) {
-    return fetch(url).then(function (response) {
-      if (!response.ok) throw new Error('Request failed: ' + url);
-      return response.json();
-    });
-  }
-
-  function renderList(listEl, items, itemTemplate, emptyMessage) {
-    if (!items || !items.length) {
-      renderError(listEl, emptyMessage || 'Nothing to show yet.');
-      return;
-    }
-
-    listEl.innerHTML = items
-      .map(function (item) {
-        return '<li>' + itemTemplate(item) + '</li>';
-      })
-      .join('');
-  }
-
-  function renderError(listEl, message) {
-    listEl.innerHTML = '<li><p>' + escapeHTML(message) + '</p></li>';
-  }
-
-  function escapeHTML(value) {
-    var div = document.createElement('div');
-    div.textContent = String(value == null ? '' : value);
-    return div.innerHTML;
-  }
-
-  /**
-   * The homepage resource form has no live email-platform connection yet
-   * (see docs/open-decisions.md). This only prevents a real navigation
-   * away from the page and is honest with the reviewer about that status
-   * instead of pretending the sign-up succeeded against a real service.
-   */
-  function initResourceForm() {
-    var form = document.querySelector('[data-resource-form]');
-    if (!form) return;
-
-    var success = form.querySelector('[data-resource-form-success]');
-
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      if (success) {
-        success.classList.add('is-visible');
-      }
-      form.reset();
-    });
   }
 
   /**
